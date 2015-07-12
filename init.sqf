@@ -10,7 +10,7 @@ GAS_EFFECTED = 0;
 NUKE_DETONATE = false;
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
-
+MISSION_COMPLETED = false;
 
 
 if (isServer) then {
@@ -35,17 +35,20 @@ if (isServer) then {
 
 	[] spawn {
 		while {true} do {
-			waitUntil {
-			  ENEMIES_DETECTED
+			newGroup = createGroup west;
+			if ((ENEMIES_DETECTED) && !(isMultiplayer)) exitWith {
+				{
+				hintSilent format ["joining %1", newGroup];
+				[_x] joinSilent newGroup;
+				} forEach switchableUnits;
 			};
+			if ((ENEMIES_DETECTED) && (isMultiplayer)) exitWith {
+				{
 
-			{
-			leader _x joinSilent (createGroup west);
-
-			} forEach playerUnits;
-
-			exitWith {};
-			sleep 1;
+				[_x] joinSilent newGroup;
+				} forEach playableUnits;
+			};
+		sleep 2;
 	};
 };
 
