@@ -1,14 +1,16 @@
 // "Debug tools"//
 //
-["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler; 
+//["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler; 
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen
 0 fadeRadio 0; //mute in-game radio commands
+[] execVM "VCOM_Driving\init.sqf";
 
 reason = false;
 GAS_EFFECTED = 0;
 NUKE_DETONATE = false;
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
+
 
 
 if (isServer) then {
@@ -24,7 +26,38 @@ if (isServer) then {
 
 	COMRADES_FOUND = false;
 	publicVariable "COMRADES_FOUND";
+
+	if (isMultiplayer) then {
+	playerUnits = playableUnits;
+	} else {
+	playerUnits = switchableUnits;
+	};
+
+	[] spawn {
+		while {true} do {
+			waitUntil {
+			  ENEMIES_DETECTED
+			};
+
+			{
+			leader _x joinSilent (createGroup west);
+
+			} forEach playerUnits;
+
+			exitWith {};
+			sleep 1;
+	};
 };
+
+
+{
+	if (side leader _x == west) then {
+		leader _x joinSilent (createGroup east);
+	};
+
+} forEach allUnits;
+
+
 
 // DEBUG STUFF
 [] spawn {
@@ -54,12 +87,3 @@ if (isServer) then {
 	sleep 1;
 	};
 };
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// NUKE RELATED STUFF
-/////////////////////////////////////////////////////////////////////////////////////////
-mdh_nuke_destruction_zone	= 0;	// DESTRUCTION ZONE OF NUKE IN METERS, USE 0 TO DEACTIVATE
-mdh_nuke_camshake			= 1;	// CAEMRASHAKE AT NUKEDETONATION 1=ON, 0=OFF
-mdh_nuke_ash				= 1;	// ASH AFTER NUKEDETONATION 1=ON, 0=OFF
-mdh_nuke_colorcorrection	= 0;	// COLLORCORRECTION AFTER NUKEDETONATION 1=ON, 0=OFF
-/////////////////////////////////////////////////////////////////////////////////////////
