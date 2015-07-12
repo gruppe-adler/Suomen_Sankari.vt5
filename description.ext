@@ -1,0 +1,48 @@
+#include "gasmask\RscRtitles.hpp"
+#include "gasmask\define.hpp"
+
+
+loadScreen = "pic\operatsiya_domoy.paa";
+author = "nomisum";
+
+__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
+class CfgSounds
+{
+   sounds[] = {coughing,steam,explosion,windsound};
+
+	// Definition for cough effect
+	class coughing
+	{
+		// Name for mission editor to use
+		name = "coughing"; 
+		//Path of the .ogg file. since it's in the same folder just use the filename
+		sound[] = {gasmask\coughing.wss, 2.5, 1.0};
+		titles[] = {};
+	};
+	class steam
+	{
+		// Name for mission editor to use
+		name = "steam"; 
+		//Path of the .ogg file. since it's in the same folder just use the filename
+		sound[] = {sounds\steam.ogg, 2.5, 1.0};
+		titles[] = {};
+	};
+	class explosion
+	{
+		// Name for mission editor to use
+		name = "explosion"; 
+		//Path of the .ogg file. since it's in the same folder just use the filename
+		sound[] = {sounds\explosion.ogg, 2.5, 1.0};
+		titles[] = {};
+	};
+	class windsound
+	{
+		// Name for mission editor to use
+		name = "windsound"; 
+		//Path of the .ogg file. since it's in the same folder just use the filename
+		sound[] = {sounds\windsound.ogg, 2.5, 1.0};
+		titles[] = {};
+	};
+
+};
