@@ -1,5 +1,7 @@
 _unit = _this select 0;
 
+if (!local _unit) exitWith {};
+
 comment "Exported from Arsenal by nomisum";
 
 comment "Remove existing items";
@@ -32,5 +34,8 @@ _unit linkItem "ItemWatch";
 //_unit linkItem "tf_anprc152_1";
 
 comment "Set identity";
-//_unit setFace "WhiteHead_10";
-//_unit setSpeaker "ACE_NoVoice";
+_unit setFace "WhiteHead_10";
+_unit setSpeaker "ACE_NoVoice";
+
+
+[[_unit,"infected2"], "setCustomFace"] call BIS_fnc_MP;

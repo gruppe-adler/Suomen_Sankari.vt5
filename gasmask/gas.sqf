@@ -12,6 +12,15 @@ _radius = _this select 2;
 _coughing = 0;
 _breathing = 0;
 
+sleep 10;
+
+coughs = [
+"cough1",
+"cough2",
+"cough3",
+"cough4"
+];
+
 While{true} do {
 	"dynamicBlur" ppEffectEnable true; // enables ppeffect
 	"dynamicBlur" ppEffectAdjust [0]; // enables normal vision
@@ -27,6 +36,7 @@ While{true} do {
 	3 fadeSound 1;	//fades the sound back to normal
 
 	if (NUKE_DETONATE) exitWith {};
+	if (player getvariable "isSpectator" == "true") exitWith {};
 
 	// if player wears one of the masks, nothing happens but breathing sound
 	if ((goggles player == "Mask_M40") || (goggles player == "Mask_M40_OD") || (goggles player == "Mask_M50")) then 
@@ -82,8 +92,8 @@ While{true} do {
 			5 fadeSound 0.1;	// fades the sound to 10% in 5 seconds
 
 			playSound "ACE_heartbeat_fast_3"; // plays heart beating sound
-			if (_coughing > 15) then {
-				player say3d "coughing";
+			if (_coughing > 5) then {
+				player say3d (coughs call BIS_fnc_selectRandom);
 				_coughing = 0;
 			} else {
 			_coughing = _coughing+1;

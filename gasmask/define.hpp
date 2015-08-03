@@ -6,6 +6,7 @@
 //Base Classes//
 ////////////////
 
+
 class RscPicture {
   access = 0;
   idc = -1;

@@ -96,20 +96,46 @@ sleep 0.2;
 _smoke setParticleParams [["A3\Data_F\ParticleEffects\Universal\universal.p3d", 16, 7, 48, 1], "", "Billboard", 1, 25, [0, 0, 0],
 				[0, 0, 45], 0, 1.7, 1, 0, [40,25,80], 
 				[[1, 1, 1, 0.2],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0]]
-				, [0.5, 0.1], 1, 1, "", "", nukepos];
+				, [0.5, 0.1], 1, 1, "", "", getpos nukepos];
 
 _smoke setDropInterval 0.006;
 _Wave setDropInterval 0.001;
 
 sleep 2;
+if (!isDedicated) then {
+	bigFire = [_smoke, "FIRE_BIG"] execVM "helpers\fireAndSmoke.sqf";
+	bigSmoke = [_smoke, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
+	
+};
 if (isServer) then {
-playSound3D [_root + "sounds\explosion.ogg", _smoke, false, getPosASL _smoke, 10, 1, 300];
-playSound3D [_root + "sounds\windsound.ogg", _smoke, false, getPosASL _smoke, 10, 1, 300];
+
+	tapes = 
+	[
+	tape1,
+	tape2,
+	tape3,
+	tape4,
+	tape5,
+	tape6,
+	tape7,
+	tape8,
+	tape9,
+	tape10,
+	tape11
+	];
+
+	{deleteVehicle _x} forEach tapes;
+
+	playSound3D [_root + "sounds\explosion.ogg", _smoke, false, getPosASL _smoke, 10, 1, 300];
+	playSound3D [_root + "sounds\windsound.ogg", _smoke, false, getPosASL _smoke, 10, 1, 300];
+	nul = [5] execVM "spawner\spawnRussianZombiesInCircle.sqf";
+	nul = [25] execVM "spawner\spawnAmericanZombiesAlongRoads.sqf";
+	nul = [30] execVM "spawner\spawnRussianZombiesAlongRoads.sqf";
 };
 _smoke setParticleParams [["A3\Data_F\ParticleEffects\Universal\universal.p3d", 16, 7, 48, 1], "", "Billboard", 1, 25, [0, 0, 0],
 				[0, 0, 30], 0, 1.7, 1, 0, [40,25,80], 
 				[[1, 1, 1, 0.2],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0]]
-				, [0.5, 0.1], 1, 1, "", "", nukepos];
+				, [0.5, 0.1], 1, 1, "", "", getpos nukepos];
 _smoke setDropInterval 0.012;
 _Wave setDropInterval 0.01;
 

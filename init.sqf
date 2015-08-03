@@ -1,22 +1,89 @@
+// tfar shit
+TF_give_microdagr_to_soldier = true;
+publicVariable "TF_give_microdagr_to_soldier";
+
+tf_no_auto_long_range_radio = true; //Long Range Radio an GrpFhr austeilen? - ja ^ nein
+publicVariable "tf_no_auto_long_range_radio";
+
+tf_same_sw_frequencies_for_side = true; //Selbe Freuquenzen für Fraktion? - ja ^ nein
+publicVariable "tf_same_sw_frequencies_for_side";
+
 // "Debug tools"//
+
+"mrk_spawn_f" setMarkerAlphaLocal 0;
+"mrk_spawn_r" setMarkerAlphaLocal 0;
+"mrk_spawn_c" setMarkerAlphaLocal 0;
+"mrk_not_here" setMarkerAlphaLocal 0;
+"mrk_not_here_too" setMarkerAlphaLocal 0;
+"mrk_blufor_patrol" setMarkerAlphaLocal 0;
+"mrk_spawn_crowd" setMarkerAlphaLocal 0;
+"mrk_spawn_crowd2" setMarkerAlphaLocal 0;
+"mrk_spawn_crowd3" setMarkerAlphaLocal 0;
+
+player setVariable ["isSpectator", "false", false];
+
+_nul = [] execVM "helpers\hideMarker.sqf";
+
+// FIREWORKS
+callFireworks = compile preprocessFileLineNumbers "fireworks\callFireworks.sqf";
+_nul = [] execVM "fireworks\fireworks.sqf";
+
+// SPECTATOR
+[] execVM "CSSA3\CSSA3_init.sqf";
+CSSA3_onlySpectatePlayers = true;
+
+titleCut ["", "BLACK FADED", 999];
+[] Spawn {
+	waitUntil{!(isNil "BIS_fnc_init")};
+	["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 5</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
+	
+	sleep 7;
+	titleText ["Somewhere near the finnish-russian border.","PLAIN"]; 
+	titleFadeOut 7;
+	titleCut ["", "BLACK IN"];
+	sleep 7;
+};
 //
 //["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler; 
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen
 0 fadeRadio 0; //mute in-game radio commands
-[] execVM "VCOM_Driving\init.sqf";
+enableSentences false; // disable AI chat
+//[] execVM "VCOM_Driving\init.sqf";
 
-reason = false;
+DEBUG = false;
+
 GAS_EFFECTED = 0;
-NUKE_DETONATE = false;
+
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
+FIGHT = false;
 MISSION_COMPLETED = false;
+AI_KILLED = 0;
+EXTRACTION_IMMINENT = false;
+firstspawn = false;
 
+kalle addAction  ["<t color=""#93E352"">Turn On Radio</t>",{RADIO_PLAYING = true; publicVariable "RADIO_PLAYING";}, _Args, 0, false, false, "","!(RADIO_PLAYING)  && driver ikarus == _this"];
+kalle addAction  ["<t color=""#DD0000"">Turn Off Radio</t>",{RADIO_PLAYING = false; publicVariable "RADIO_PLAYING";}, _Args, 0, false, false, "","(RADIO_PLAYING) && driver ikarus  == _this"];
+
+kalle addAction  ["<t color=""#93E352"">Turn On Interior Light</t>",{LIGHT_ON = true; publicVariable "LIGHT_ON";}, _Args, 0, false, false, "","!(LIGHT_ON)  && driver ikarus == _this"];
+kalle addAction  ["<t color=""#DD0000"">Turn Off Interior Light</t>",{LIGHT_ON = false; publicVariable "LIGHT_ON";}, _Args, 0, false, false, "","(LIGHT_ON) && driver ikarus  == _this"];
+
+
+setCustomFace = 
+{ 
+	_thisunit = _this select 0;
+	_face = _this select 1;
+	_thisunit setFace _face;
+	_thisunit disableConversation true;
+	enableSentences false;
+	_thisunit setVariable ["BIS_noCoreConversations", true];
+	_thisunit setObjectMaterial [0, "A3\Characters_F\Common\Data\basicbody_injury.rvmat"];
+};
 
 if (isServer) then {
 
+	
 	call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
-
 
 	GAS_EFFECTED = 0;
 	publicVariable "GAS_EFFECTED";
@@ -27,66 +94,96 @@ if (isServer) then {
 	COMRADES_FOUND = false;
 	publicVariable "COMRADES_FOUND";
 
+	JUSSI_FREE = false;
+	publicVariable "JUSSI_FREE";
+
+	NUKE_DETONATE = false;
+	publicVariable "NUKE_DETONATE";
+
+	RADIO_PLAYING = false;
+	publicVariable "RADIO_PLAYING";
+
+	LIGHT_ON = false;
+	publicVariable "LIGHT_ON";
+
+	
+	
+
 	if (isMultiplayer) then {
-	playerUnits = playableUnits;
+		playerUnits = playableUnits;
 	} else {
-	playerUnits = switchableUnits;
+		playerUnits = switchableUnits;
 	};
 
+	[playerUnits] spawn {
+			while {true} do {
+				_playerUnits = _this select 0;
+				
+				if ((ENEMIES_DETECTED) && !(isMultiplayer)) exitWith {
+					{
+					_newGroup = createGroup west;
+					//hintSilent format ["joining %1", newGroup];
+					[_x] joinSilent _newGroup;
+					} forEach _playerUnits;
+
+					sleep 3;
+					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
+				};
+				if ((ENEMIES_DETECTED) && (isMultiplayer)) exitWith {
+					{
+
+					_newGroup = createGroup west;
+					//hintSilent format ["joining %1", newGroup];
+					[_x] joinSilent _newGroup;
+					} forEach _playerUnits;
+
+					sleep 3;
+					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
+				};
+		sleep 2;
+		};
+	};
+	
+
+
+
+	/*
+	// DEBUG STUFF
 	[] spawn {
 		while {true} do {
-			newGroup = createGroup west;
-			if ((ENEMIES_DETECTED) && !(isMultiplayer)) exitWith {
-				{
-				hintSilent format ["joining %1", newGroup];
-				[_x] joinSilent newGroup;
-				} forEach switchableUnits;
-			};
-			if ((ENEMIES_DETECTED) && (isMultiplayer)) exitWith {
-				{
+		
 
-				[_x] joinSilent newGroup;
-				} forEach playableUnits;
-			};
-		sleep 2;
+		hintSilent format ["russian: %1", animationState russian];
+		diag_log format ["russian: %1", animationState russian];
+		sleep 1;
+		
+		};
 	};
-};
-
-
-{
-	if (side leader _x == west) then {
-		leader _x joinSilent (createGroup east);
-	};
-
-} forEach allUnits;
-
-
-
-// DEBUG STUFF
-[] spawn {
-	while {true} do {
-	//hintSilent format ["Willi_Demon: %1", animationState willi_demon];
-	//diag_log format ["Willi_Demon: %1", animationState willi_demon];
-	sleep 1;
-	/*
-	hintSilent format ["jussi: %1", animationState jussi];
-	diag_log format ["jussi: %1", animationState jussi];
-	sleep 1;
-
-	hintSilent format ["usmc: %1", animationState usmc];
-	diag_log format ["usmc: %1", animationState usmc];
-	sleep 1;
-
-	hintSilent format ["russian: %1", animationState russian];
-	diag_log format ["russian: %1", animationState russian];
-	sleep 1;
 	*/
-	//hintSilent format ["willi_fast2: %1", animationState willi_fast];
-	//diag_log format ["willi_fast2: %1", animationState willi_fast];
-	sleep 1;
 
-	//hintSilent format ["willi_fast3: %1", animationState willi_fast];
-	//diag_log format ["willi_fast3: %1", animationState willi_fast];
-	sleep 1;
-	};
+
+	sleep 2;
+	{
+		if (!isPlayer _x) then {
+			_x addEventHandler["killed", {if (isPlayer (_this select 1)) then {AI_KILLED = AI_KILLED + 1; publicVariable "AI_KILLED";};}];
+		}
+	} forEach allUnits;
+	diag_log "killed eventhandler added for every ai unit";
+
+
+asr_ai3_main_setskills 		= 0;
+	
+	{
+	_x setSkill ["aimingspeed", 0.4];
+	_x setSkill ["spotdistance", 1];
+	_x setSkill ["aimingaccuracy", 0.1];
+	_x setSkill ["aimingshake", 0.1];
+	_x setSkill ["spottime", 1];
+	_x setSkill ["spotdistance", 1];
+	_x setSkill ["commanding", 1];
+	_x setSkill ["general", 1];
+	} forEach allUnits;
+
+	diag_log "skill set for every ai unit";
+
 };
