@@ -32,23 +32,25 @@ _nul = [] execVM "fireworks\fireworks.sqf";
 [] execVM "CSSA3\CSSA3_init.sqf";
 CSSA3_onlySpectatePlayers = true;
 
-titleCut ["", "BLACK FADED", 999];
-[] Spawn {
-	waitUntil{!(isNil "BIS_fnc_init")};
-	["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 5</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
-	
-	sleep 7;
-	titleText ["Somewhere near the finnish-russian border.","PLAIN"]; 
-	titleFadeOut 7;
-	titleCut ["", "BLACK IN"];
-	sleep 7;
+if (isMultiplayer) then {
+	titleCut ["", "BLACK FADED", 999];
+	[] Spawn {
+		waitUntil{!(isNil "BIS_fnc_init")};
+		["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 5</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
+		
+		sleep 7;
+		titleText ["Somewhere near the finnish-russian border.","PLAIN"]; 
+		titleFadeOut 7;
+		titleCut ["", "BLACK IN"];
+		sleep 7;
+	};
 };
 //
 //["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler; 
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen
 0 fadeRadio 0; //mute in-game radio commands
 enableSentences false; // disable AI chat
-//[] execVM "VCOM_Driving\init.sqf";
+
 
 DEBUG = false;
 
@@ -57,7 +59,7 @@ GAS_EFFECTED = 0;
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
 FIGHT = false;
-MISSION_COMPLETED = false;
+
 AI_KILLED = 0;
 EXTRACTION_IMMINENT = false;
 firstspawn = false;
@@ -82,8 +84,16 @@ setCustomFace =
 
 if (isServer) then {
 
+	// [] execVM "VCOM_Driving\init.sqf";
+	call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
+	call compile preprocessFileLineNumbers "police\blingbling.sqf";
+	call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";
 	
-	call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
+
+	[car_police,0.25,false] spawn attachBluelight;
+	[car_ambulance,0.25,true] spawn attachBluelight;
+	[car_yellowrepair,1] spawn attachYellowlight;
+
 
 	GAS_EFFECTED = 0;
 	publicVariable "GAS_EFFECTED";
@@ -106,6 +116,12 @@ if (isServer) then {
 	LIGHT_ON = false;
 	publicVariable "LIGHT_ON";
 
+	NUKE_DETONATE = false;
+	publicVariable "NUKE_DETONATE";
+
+	MISSION_COMPLETED = false;
+	publicVariable "MISSION_COMPLETED";
+
 	
 	
 
@@ -115,16 +131,23 @@ if (isServer) then {
 		playerUnits = switchableUnits;
 	};
 
-	[playerUnits] spawn {
+	[] spawn {
+
+	neutralGuys = [
+		"neutral1",
+		"neutral2",
+		"neutral3"
+		];
 			while {true} do {
-				_playerUnits = _this select 0;
-				
+
 				if ((ENEMIES_DETECTED) && !(isMultiplayer)) exitWith {
 					{
+					if (!isPlayer _x) then {
 					_newGroup = createGroup west;
-					//hintSilent format ["joining %1", newGroup];
-					[_x] joinSilent _newGroup;
-					} forEach _playerUnits;
+						//hintSilent format ["joining %1", newGroup];
+						[_x] joinSilent _newGroup;
+					};
+					} forEach allUnits;
 
 					sleep 3;
 					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
@@ -132,15 +155,17 @@ if (isServer) then {
 				if ((ENEMIES_DETECTED) && (isMultiplayer)) exitWith {
 					{
 
+					if (!isPlayer _x && !(str _x in neutralGuys)) then {
 					_newGroup = createGroup west;
-					//hintSilent format ["joining %1", newGroup];
-					[_x] joinSilent _newGroup;
-					} forEach _playerUnits;
+						//hintSilent format ["joining %1", newGroup];
+						[_x] joinSilent _newGroup;
+					};
+					} forEach allUnits;
 
 					sleep 3;
 					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
 				};
-		sleep 2;
+		sleep 5;
 		};
 	};
 	
@@ -171,7 +196,7 @@ if (isServer) then {
 	diag_log "killed eventhandler added for every ai unit";
 
 
-asr_ai3_main_setskills 		= 0;
+asr_ai3_main_setskills = 0;
 	
 	{
 	_x setSkill ["aimingspeed", 0.4];

@@ -7,7 +7,7 @@ _ikarusLocal = _this select 0;
 	while {true} do {
 
 		if (!alive _ikarus) exitWith {};
-		waitUntil {(RADIO_PLAYING)};
+		waitUntil {sleep 0.3;(RADIO_PLAYING);};
 
 		_radio = "Land_PenBlack_F" createVehicleLocal (getPos _ikarus);
 		
@@ -15,7 +15,7 @@ _ikarusLocal = _this select 0;
 
 		_radio say3D "music_smells";
 		if (!alive _ikarus) exitWith {};
-		waitUntil {!(RADIO_PLAYING)};
+		waitUntil {sleep 0.3;!(RADIO_PLAYING);};
 		deleteVehicle _radio;
 	};
 };
@@ -26,7 +26,7 @@ _ikarusLocal = _this select 0;
 	while {true} do {
 
 		if (!alive _ikarus) exitWith {};
-		waitUntil {(LIGHT_ON)};
+		waitUntil {sleep 0.3;(LIGHT_ON);};
 
 		_light="#lightpoint"createVehicleLocal(getPos _ikarus);  
 		_light setLightBrightness 0.5;  
@@ -57,7 +57,7 @@ _ikarusLocal = _this select 0;
 
 		
 		if (!alive _ikarus) exitWith {};
-		waitUntil {!(LIGHT_ON)};
+		waitUntil {sleep 0.3;!(LIGHT_ON);};
 		deleteVehicle _light;
 		deleteVehicle _light2;
 		deleteVehicle _light3;

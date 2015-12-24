@@ -12,7 +12,7 @@ _angle = _this select 1;
 	//_ps setParticleRandom [3, [40, 40, 0], [0, 0, 0], 2, 0.5, [0, 0, 0, 0.1], 0, 0];
 	_ps setParticleRandom [3, [_radius, _radius, 0], [0, 0, 0], 2, 0.5, [0, 0, 0, 0.1], 0, 0];
 	_ps setParticleCircle [1, [0, 0, 0]];
-	_ps setDropInterval 0.005;
+	_ps setDropInterval 0.02;
 
 
 

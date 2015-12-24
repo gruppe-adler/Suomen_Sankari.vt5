@@ -25,11 +25,11 @@ _ps setDropInterval 0.05;
 [_ps] spawn {
 _object = _this select 0;
 _root = parsingNamespace getVariable "MISSION_ROOT";
-while {true} do {
-if (isServer) then {
-	playSound3D [_root + "sounds\steam.ogg", _object];
-};
-sleep 4.05;
-	if (NUKE_DETONATE) exitWith {deleteVehicle _object;};
+	while {true} do {
+		if (isServer) then {
+			playSound3D [_root + "sounds\steam.ogg", _object];
+		};
+		sleep 4.05;
+		if (NUKE_DETONATE) exitWith {deleteVehicle _object;};
 	};
 };
