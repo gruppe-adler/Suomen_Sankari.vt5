@@ -131,6 +131,15 @@ if (isServer) then {
 		playerUnits = switchableUnits;
 	};
 
+	if (!isMultiplayer) then {
+	{_x disableAI "MOVE"} forEach allUnits;
+	{_x disableAI "TARGET"} forEach allUnits;
+	{_x disableAI "FSM"} forEach allUnits;
+	{_x disableAI "ANIM"} forEach allUnits;
+	};
+
+
+	// friendlies -> enemies
 	[] spawn {
 
 	neutralGuys = [
