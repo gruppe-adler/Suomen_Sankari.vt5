@@ -1,7 +1,7 @@
 _pos = _this select 0;
 
 _grp = creategroup independent;
-_zombie = _grp createUnit ["RyanZombie_Doc", _pos, [], 0, "NONE"];
+_zombie = _grp createUnit ["nomi_soldier_us_1", _pos, [], 0, "NONE"];
 
 _zombie doMove (getMarkerPos "mrk_doc_target");
 

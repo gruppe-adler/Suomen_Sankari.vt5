@@ -1,9 +1,9 @@
 _pos = _this select 0;
 
 randomCivilian = [
-"RyanZombie_Ziv1",
-"RyanZombie_Ziv2",
-"RyanZombie_Ziv3"
+"nomi_soldier_us_1",
+"nomi_soldier_us_1",
+"nomi_soldier_us_1"
 ];
 
 _grp = creategroup independent;

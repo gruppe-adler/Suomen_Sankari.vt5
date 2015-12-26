@@ -28,7 +28,7 @@ for "_i" from 0 to _count do {
 	};
 
 	_grp = creategroup independent;
-	_zombie = _grp createUnit ["RyanZombie_Russian", _findPosition, [], 0, "NONE"];
+	_zombie = _grp createUnit ["nomi_soldier_us_1", _findPosition, [], 0, "NONE"];
 	sleep 0.5;
 	_nul = [_zombie] execVM "loadout\russian.sqf";
 	sleep 1;
