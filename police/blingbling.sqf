@@ -79,9 +79,9 @@ attachYellowlight = {
     _intensity = 5;
     _sleep = (random 0.5) + 0.5;
 
-    _lightposition1 = [0.3, 2.15, 0.7];
-    _lightposition2 = [0, 2.15, 0.7];
-    _lightposition3 = [-0.3, 2.15, 0.7];
+    _lightposition1 = [0.3, 2.15, 0.71];
+    _lightposition2 = [0, 2.15, 0.71];
+    _lightposition3 = [-0.3, 2.15, 0.71];
     
 
     

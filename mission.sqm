@@ -3252,7 +3252,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3482.9236,24.8475,1600.9525};
+					position[]={3476.5752,24.505856,1605.7012};
 					offsetY=10;
 					id=83;
 					side="LOGIC";
@@ -12384,14 +12384,14 @@ class Mission
 		class Item805
 		{
 			position[]={3468.261,25.138178,1624.1631};
-			azimut=-68.568321;
+			azimut=-68.568298;
 			id=914;
 			side="EMPTY";
 			vehicle="RHS_Ural_Civ_01";
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="if (!isServer) exitWith {}; clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;";
+			init="0 = [this] execVM ""helpers\clearCargo.sqf"";";
 		};
 		class Item806
 		{
