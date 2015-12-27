@@ -15634,7 +15634,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=63;
+		items=64;
 		class Item0
 		{
 			position[]={3215.3804,25.993351,2638.3167};
@@ -15945,7 +15945,7 @@ class Mission
 		};
 		class Item39
 		{
-			position[]={3449.4387,24.486814,1619.1317};
+			position[]={3444.8657,24.796965,1628.9315};
 			name="mrk_priest_target";
 			type="Empty";
 		};
@@ -16097,6 +16097,12 @@ class Mission
 		{
 			position[]={2584.3076,26.737745,5944.875};
 			name="mrk_convoy_03";
+			type="Empty";
+		};
+		class Item63
+		{
+			position[]={3410.5547,23.065086,1670.584};
+			name="mrk_procession_target";
 			type="Empty";
 		};
 	};
@@ -16460,11 +16466,11 @@ class Mission
 			position[]={3470.874,24.731941,1614.8809};
 			a=100;
 			b=100;
-			activationBy="WEST";
+			activationBy="ANY";
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="isServer && {round (time %2) == 0 && {(NUKE_DETONATE)} && {({vehicle _x in thisList} count playerUnits > 0)}}";
-			expActiv="if (isServer) then {0 = [getMarkerPos ""mrk_priest""] execVM ""spawner\createPriest.sqf""; 1 = [getMarkerPos ""mrk_civzomb1""] execVM ""spawner\createRandomCivilian.sqf""; 2 = [getMarkerPos ""mrk_civzomb2""] execVM ""spawner\createRandomCivilian.sqf"";};";
+			expCond="isServer && {round (time %2) == 0 && {(NUKE_DETONATE)} && {({vehicle _x in thisList} count allPlayers > 0)}}";
+			expActiv="if (isServer) then {0 = [getMarkerPos ""mrk_priest""] execVM ""spawner\createPriest.sqf"";};";
 			class Effects
 			{
 			};
