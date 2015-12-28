@@ -1,3 +1,5 @@
+if (!alive rus_patrol_gaz) exitWith {};
+
 rus_patrol_gaz doMove (getPosATL rus_patrol_gaz);
 
 _newTarget = rus_patrol_gaz findNearestEnemy rus_patrol_gaz;

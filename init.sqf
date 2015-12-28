@@ -50,9 +50,9 @@ if (isMultiplayer) then {
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen
 0 fadeRadio 0; //mute in-game radio commands
 enableSentences false; // disable AI chat
+setViewDistance 2000;
 
-
-DEBUG = false;
+DEBUG = true;
 
 GAS_EFFECTED = 0;
 
@@ -131,12 +131,17 @@ if (isServer) then {
 		playerUnits = switchableUnits;
 	};
 
+	/*
+	// cancel AI movement
 	if (!isMultiplayer) then {
 	{_x disableAI "MOVE"} forEach allUnits;
 	{_x disableAI "TARGET"} forEach allUnits;
 	{_x disableAI "FSM"} forEach allUnits;
 	{_x disableAI "ANIM"} forEach allUnits;
 	};
+	*/
+
+
 
 
 	// friendlies -> enemies
@@ -147,36 +152,36 @@ if (isServer) then {
 		"neutral2",
 		"neutral3"
 		];
-			while {true} do {
 
-				if ((ENEMIES_DETECTED) && !(isMultiplayer)) exitWith {
-					{
-					if (!isPlayer _x) then {
+	SET_ENEMY_listener = {
+			{
+			if (DEBUG) then {hintSilent "Enemies detected: true";};
+
+				if (!isPlayer _x) then {
 					_newGroup = createGroup west;
-						//hintSilent format ["joining %1", newGroup];
-						[_x] joinSilent _newGroup;
+					//hintSilent format ["joining %1", newGroup];
+					[_x] joinSilent _newGroup;
 					};
-					} forEach allUnits;
+				} forEach allUnits;
 
-					sleep 3;
-					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
-				};
-				if ((ENEMIES_DETECTED) && (isMultiplayer)) exitWith {
-					{
+				
+				{
+					_x setBehaviour "AWARE";
+				} forEach allUnits;
 
-					if (!isPlayer _x && !(str _x in neutralGuys)) then {
-					_newGroup = createGroup west;
-						//hintSilent format ["joining %1", newGroup];
-						[_x] joinSilent _newGroup;
-					};
-					} forEach allUnits;
+				nul = [] execVM "patrols\rusPatrolGaz.sqf";
+			};
 
-					sleep 3;
-					{_x setBehaviour "AWARE"; sleep (random 1);} forEach allUnits;
-				};
-		sleep 5;
-		};
+			"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;	
+
+		if (!isMultiplayer) then {
+			[] spawn {
+				waitUntil {(ENEMIES_DETECTED)};
+				[] call SET_ENEMY_listener;
+			};
+		};	
 	};
+	
 	
 
 
@@ -196,12 +201,21 @@ if (isServer) then {
 	*/
 
 
-	sleep 2;
+	sleep 1;
+	removeAIEventhandlers = {
+		{
+		_x removeAllEventHandlers "killed";
+		_x removeAllEventHandlers "FiredNear";
+		} forEach allUnits;
+	};
+
 	{
 		if (!isPlayer _x) then {
-			_x addEventHandler["killed", {if (isPlayer (_this select 1)) then {AI_KILLED = AI_KILLED + 1; publicVariable "AI_KILLED";};}];
+			_x addEventHandler["killed", {if (isPlayer (_this select 1)) then { ENEMIES_DETECTED = true; publicVariable "ENEMIES_DETECTED"; [] call removeAIEventhandlers;};}];
+			_x addEventHandler["FiredNear", {if (isPlayer (_this select 1)) then { ENEMIES_DETECTED = true; publicVariable "ENEMIES_DETECTED"; [] call removeAIEventhandlers;};}];
 		}
 	} forEach allUnits;
+
 	diag_log "killed eventhandler added for every ai unit";
 
 
@@ -210,8 +224,8 @@ asr_ai3_main_setskills = 0;
 	{
 	_x setSkill ["aimingspeed", 0.4];
 	_x setSkill ["spotdistance", 1];
-	_x setSkill ["aimingaccuracy", 0.1];
-	_x setSkill ["aimingshake", 0.1];
+	_x setSkill ["aimingaccuracy", 0.3];
+	_x setSkill ["aimingshake", 0.3];
 	_x setSkill ["spottime", 1];
 	_x setSkill ["spotdistance", 1];
 	_x setSkill ["commanding", 1];
