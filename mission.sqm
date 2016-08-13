@@ -43,7 +43,6 @@ addons[]=
 	"ace_explosives",
 	"A3_Structures_F_Walls",
 	"ace_logistics_wirecutter",
-	"xCam_EU",
 	"A3_Structures_F_Civ_Garbage",
 	"CUP_CAStructures_E_HouseA_A_Statue",
 	"A3_Structures_F_Civ_Lamps",
@@ -102,7 +101,6 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"rhs_c_cars",
 	"rds_a2port_cman",
-	"xcam_source",
 	"A3_Modules_F_ObjectModifiers",
 	"ace_zeus",
 	"ace_repair",
@@ -6470,7 +6468,7 @@ class Mission
 				init="this enableSimulation false;this setdir 584.148;this setposATL [3551.108154,3019.669922,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=348;
-			type="xcam_i_Shed_Ind_F";
+			type="Land_SM_01_Shed_F";
 			atlOffset=0.00039672852;
 		};
 		class Item349
@@ -6583,7 +6581,7 @@ class Mission
 				init="this enableSimulation false;this setdir 665.512;this setposATL [3133.192627,2488.626221,-3.26179];this setVectorUp [0,0,1]";
 			};
 			id=354;
-			type="xcam_Cargo_Patrol_V3_F";
+			type="Land_Cargo_Patrol_V3_F";
 			atlOffset=0.0030059814;
 		};
 		class Item355
@@ -8690,7 +8688,7 @@ class Mission
 				init="this enableSimulation false;this setdir 34.148;this setposATL [3109.260498,2486.121826,-1.42124];this setVectorUp [0,0,1]";
 			};
 			id=465;
-			type="xcam_SignT_CommandedDirectionRight";
+			type="cup_sign_rightDirection";
 			atlOffset=0.0004940033;
 		};
 		class Item466
@@ -8709,7 +8707,7 @@ class Mission
 				init="this enableSimulation false;this setdir 34.148;this setposATL [3107.915283,2487.188721,-1.43182];this setVectorUp [0,0,1]";
 			};
 			id=466;
-			type="xcam_SignT_NoPassage";
+			type="cup_sign_noDrivingWronWay";
 			atlOffset=0.0004901886;
 		};
 		class Item467
@@ -8728,7 +8726,7 @@ class Mission
 				init="this enableSimulation false;this setdir 34.148;this setposATL [3117.201416,2483.950684,0];this setVectorUp [0,0,1]";
 			};
 			id=467;
-			type="CUP_SignT_SpeedLimit30";
+			type="CUP_Sign_Speed20";
 			atlOffset=0.0004940033;
 		};
 		class Item468
@@ -15457,7 +15455,7 @@ class Mission
 				skill=0.60000002;
 			};
 			id=823;
-			type="CUP_SignT_SpeedLimit30";
+			type="CUP_Sign_Speed20";
 			atlOffset=0.00046539307;
 		};
 		class Item824
@@ -15476,7 +15474,7 @@ class Mission
 				init="this setdir 34.148;this setposATL [3117.201416,2483.950684,0];this setVectorUp [0,0,1]";
 			};
 			id=824;
-			type="CUP_SignT_SpeedLimit30";
+			type="CUP_Sign_Speed20";
 			atlOffset=0.00092315674;
 		};
 		class Item825
