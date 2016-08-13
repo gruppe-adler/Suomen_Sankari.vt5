@@ -1,9 +1,9 @@
 #include "gasmask\RscRtitles.hpp"
 #include "gasmask\define.hpp"
 
+respawn = 3;
 respawnDelay = 9999999; // 9999999 or greater = No Respawn
-//Changes respawn, respawnDialog and respawnTemplates parameters.
-#include "CSSA3\CSSA3_header.hpp"
+respawnTemplates[] = {"ace_spectator"};
 
 loadScreen = "pic\suomen_sankari.paa";
 author = "nomisum for Gruppe Adler";
@@ -179,14 +179,13 @@ class CfgIdentities
         speaker="Male05ENG"; // use valid codes
         pitch=1.0; // free to change
     };
-   
 };
 
 
 class CfgSounds
 {
    sounds[] = {
-   music_smells, 
+   music_smells,
    steam,
    explosion,
    windsound,
@@ -238,7 +237,7 @@ class CfgSounds
   class music_smells
   {
     // Name for mission editor to use
-    name = "music_smells"; 
+    name = "music_smells";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\music_smells.ogg, 1, 1.0};
     titles[] = {};
@@ -248,7 +247,7 @@ class CfgSounds
 	class cough1
 	{
 		// Name for mission editor to use
-		name = "cough1"; 
+		name = "cough1";
 		//Path of the .ogg file. since it's in the same folder just use the filename
 		sound[] = {sounds\cough1.ogg, 2.5, 1.0};
 		titles[] = {};
@@ -256,7 +255,7 @@ class CfgSounds
   class cough2
   {
     // Name for mission editor to use
-    name = "cough2"; 
+    name = "cough2";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\cough2.ogg, 2.5, 1.0};
     titles[] = {};
@@ -264,7 +263,7 @@ class CfgSounds
   class cough3
   {
     // Name for mission editor to use
-    name = "cough3"; 
+    name = "cough3";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\cough3.ogg, 2.5, 1.0};
     titles[] = {};
@@ -272,7 +271,7 @@ class CfgSounds
   class cough4
   {
     // Name for mission editor to use
-    name = "cough4"; 
+    name = "cough4";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\cough4.ogg, 2.5, 1.0};
     titles[] = {};
@@ -280,7 +279,7 @@ class CfgSounds
 	class steam
 	{
 		// Name for mission editor to use
-		name = "steam"; 
+		name = "steam";
 		//Path of the .ogg file. since it's in the same folder just use the filename
 		sound[] = {sounds\steam.ogg, 2.5, 1.0};
 		titles[] = {};
@@ -288,7 +287,7 @@ class CfgSounds
 	class explosion
 	{
 		// Name for mission editor to use
-		name = "explosion"; 
+		name = "explosion";
 		//Path of the .ogg file. since it's in the same folder just use the filename
 		sound[] = {sounds\explosion.ogg, 2.5, 1.0};
 		titles[] = {};
@@ -296,7 +295,7 @@ class CfgSounds
 	class windsound
 	{
 		// Name for mission editor to use
-		name = "windsound"; 
+		name = "windsound";
 		//Path of the .ogg file. since it's in the same folder just use the filename
 		sound[] = {sounds\windsound.ogg, 2.5, 1.0};
 		titles[] = {};
@@ -304,7 +303,7 @@ class CfgSounds
 	class organ
 	{
 		// Name for mission editor to use
-		name = "organ"; 
+		name = "organ";
 		//Path of the .ogg file. since it's in the same folder just use the filename
 		sound[] = {sounds\organ.ogg, 2.5, 1.0};
 		titles[] = {};
@@ -312,7 +311,7 @@ class CfgSounds
   class bongs1
   {
     // Name for mission editor to use
-    name = "bongs1"; 
+    name = "bongs1";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\bongs1.ogg, 0.8, 1.0};
     titles[] = {};
@@ -320,7 +319,7 @@ class CfgSounds
   class bongs2
   {
     // Name for mission editor to use
-    name = "bongs2"; 
+    name = "bongs2";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\bongs2.ogg, 0.8, 1.0};
     titles[] = {};
@@ -328,7 +327,7 @@ class CfgSounds
   class bongs3
   {
     // Name for mission editor to use
-    name = "bongs3"; 
+    name = "bongs3";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\bongs3.ogg, 0.8, 1.0};
     titles[] = {};
@@ -336,7 +335,7 @@ class CfgSounds
   class bongs4
   {
     // Name for mission editor to use
-    name = "bongs4"; 
+    name = "bongs4";
     //Path of the .ogg file. since it's in the same folder just use the filename
     sound[] = {sounds\bongs4.ogg, 0.8, 1.0};
     titles[] = {};

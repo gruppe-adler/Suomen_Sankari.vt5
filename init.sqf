@@ -28,25 +28,21 @@ _nul = [] execVM "helpers\hideMarker.sqf";
 callFireworks = compile preprocessFileLineNumbers "fireworks\callFireworks.sqf";
 _nul = [] execVM "fireworks\fireworks.sqf";
 
-// SPECTATOR
-[] execVM "CSSA3\CSSA3_init.sqf";
-CSSA3_onlySpectatePlayers = true;
-
 if (isMultiplayer) then {
 	titleCut ["", "BLACK FADED", 999];
 	[] Spawn {
 		waitUntil{!(isNil "BIS_fnc_init")};
 		["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 5</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
-		
+
 		sleep 7;
-		titleText ["Somewhere near the finnish-russian border.","PLAIN"]; 
+		titleText ["Somewhere near the finnish-russian border.","PLAIN"];
 		titleFadeOut 7;
 		titleCut ["", "BLACK IN"];
 		sleep 7;
 	};
 };
 //
-//["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler; 
+//["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler;
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen
 0 fadeRadio 0; //mute in-game radio commands
 enableSentences false; // disable AI chat
@@ -71,8 +67,8 @@ kalle addAction  ["<t color=""#93E352"">Turn On Interior Light</t>",{LIGHT_ON = 
 kalle addAction  ["<t color=""#DD0000"">Turn Off Interior Light</t>",{LIGHT_ON = false; publicVariable "LIGHT_ON";}, _Args, 0, false, false, "","(LIGHT_ON) && driver ikarus  == _this"];
 
 
-setCustomFace = 
-{ 
+setCustomFace =
+{
 	_thisunit = _this select 0;
 	_face = _this select 1;
 	_thisunit setFace _face;
@@ -88,7 +84,7 @@ if (isServer) then {
 	call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
 	call compile preprocessFileLineNumbers "police\blingbling.sqf";
 	call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";
-	
+
 
 	[car_police,0.25,false] spawn attachBluelight;
 	[car_ambulance,0.25,true] spawn attachBluelight;
@@ -122,8 +118,8 @@ if (isServer) then {
 	MISSION_COMPLETED = false;
 	publicVariable "MISSION_COMPLETED";
 
-	
-	
+
+
 
 	if (isMultiplayer) then {
 		playerUnits = playableUnits;
@@ -164,7 +160,7 @@ if (isServer) then {
 					};
 				} forEach allUnits;
 
-				
+
 				{
 					_x setBehaviour "AWARE";
 				} forEach allUnits;
@@ -172,17 +168,17 @@ if (isServer) then {
 				nul = [] execVM "patrols\rusPatrolGaz.sqf";
 			};
 
-			"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;	
+			"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;
 
 		if (!isMultiplayer) then {
 			[] spawn {
 				waitUntil {(ENEMIES_DETECTED)};
 				[] call SET_ENEMY_listener;
 			};
-		};	
+		};
 	};
-	
-	
+
+
 
 
 
@@ -190,12 +186,12 @@ if (isServer) then {
 	// DEBUG STUFF
 	[] spawn {
 		while {true} do {
-		
+
 
 		hintSilent format ["russian: %1", animationState russian];
 		diag_log format ["russian: %1", animationState russian];
 		sleep 1;
-		
+
 		};
 	};
 	*/
@@ -220,7 +216,7 @@ if (isServer) then {
 
 
 asr_ai3_main_setskills = 0;
-	
+
 	{
 	_x setSkill ["aimingspeed", 0.4];
 	_x setSkill ["spotdistance", 1];
