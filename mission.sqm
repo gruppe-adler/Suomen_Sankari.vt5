@@ -18,7 +18,6 @@ class Mission
 		"A3_Structures_F_Bootcamp_Items_Food",
 		"A3_Structures_F_Heli_Ind_Cargo",
 		"vt5",
-		"ga_specialz",
 		"ace_medical",
 		"ace_hearing",
 		"ace_interaction",
@@ -26,7 +25,6 @@ class Mission
 		"ace_vehiclelock",
 		"ace_captives",
 		"ace_explosives",
-		"xCam_EU",
 		"A3_Structures_F_Civ_Lamps",
 		"A3_Structures_F_EPA_Civ_Constructions",
 		"A3_Structures_F_Heli_Ind_Machines",
@@ -60,10 +58,6 @@ class Mission
 		"A3_Structures_F_Heli_Furniture",
 		"A3_Signs_F_AD",
 		"CAMisc",
-		"CST_Industrial_Objects_Container",
-		"SAR_ru_architecture",
-		"sar_obelisk",
-		"NS2",
 		"A3_Structures_F_Ind_Shed",
 		"rhs_c_sprut",
 		"ace_zeus",
@@ -120,7 +114,6 @@ class Mission
 		"A3_Structures_F_Bootcamp_Items_Food",
 		"A3_Structures_F_Heli_Ind_Cargo",
 		"ace_explosives",
-		"xCam_EU",
 		"A3_Structures_F_Civ_Lamps",
 		"A3_Structures_F_EPA_Civ_Constructions",
 		"A3_Structures_F_Walls",
@@ -146,10 +139,6 @@ class Mission
 		"A3_Signs_F_AD",
 		"CAMisc",
 		"cup_ibr_plants",
-		"CST_Industrial_Objects_Container",
-		"SAR_ru_architecture",
-		"sar_obelisk",
-		"NS2",
 		"A3_Structures_F_Heli_Ind_Machines",
 		"A3_Structures_F_Ind_Shed",
 		"rhs_c_sprut",
@@ -14023,7 +14012,7 @@ class Mission
 			offsetY=-0.32572699;
 			id=1074;
 			side="EMPTY";
-			vehicle="Sar_obelisk4_br";
+			vehicle="land_a_Statue01";
 			skill=0.60000002;
 			init="this enableSimulation false;this setdir 115;this setposATL [5508.794434,4448.974121,-0.325727];this setVectorUp [0,0,1]";
 		};
