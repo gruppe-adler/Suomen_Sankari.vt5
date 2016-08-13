@@ -2357,7 +2357,7 @@ class Mission
 				init="this enableSimulation false;this setdir 395.057;this setposATL [3294.299316,3461.994873,0];this setVectorUp [0,0,1]";
 			};
 			id=131;
-			type="xcam_FieldToilet_F";
+			type="Land_FieldToilet_F";
 			atlOffset=0.00094223022;
 		};
 		class Item132
@@ -4137,7 +4137,7 @@ class Mission
 				init="this enableSimulation false;this setdir 576.534;this setposATL [3114.369385,2485.489502,0];this setVectorUp [0,0,1]";
 			};
 			id=225;
-			type="xcam_Mil_WiredFence_Gate_F";
+			type="Land_Mil_WiredFence_Gate_F";
 			atlOffset=0.00098609924;
 		};
 		class Item226
@@ -4156,7 +4156,7 @@ class Mission
 				init="this enableSimulation false;this setdir 576.534;this setposATL [3105.983887,2491.694824,0];this setVectorUp [0,0,1]";
 			};
 			id=226;
-			type="xcam_Mil_WiredFence_Gate_F";
+			type="Land_Mil_WiredFence_Gate_F";
 			atlOffset=0.0010299683;
 		};
 		class Item227
@@ -5790,7 +5790,7 @@ class Mission
 				init="this enableSimulation false;this setdir 310.227;this setposATL [4197.125488,3784.418701,0];this setVectorUp [0,0,1]";
 			};
 			id=312;
-			type="xcam_LampShabby_off_F";
+			type="Land_LampShabby_off_F";
 			atlOffset=6.8664551e-005;
 		};
 		class Item313
@@ -6071,7 +6071,7 @@ class Mission
 				init="this enableSimulation false;this setdir 489.148;this setposATL [3398.9729,2951.607178,-0.0651521];this setVectorUp [0,0,1]";
 			};
 			id=327;
-			type="xcam_Cargo_Tower_V2_F";
+			type="Land_Cargo_Tower_V2_F";
 			atlOffset=0.093444824;
 		};
 		class Item328
@@ -6090,7 +6090,7 @@ class Mission
 				init="this enableSimulation false;this setdir 394.148;this setposATL [3370.887451,2879.269531,-0.2];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=328;
-			type="xcam_BagBunker_Small_F";
+			type="Land_BagBunker_Small_F";
 			atlOffset=0.00082778931;
 		};
 		class Item329
@@ -6147,7 +6147,7 @@ class Mission
 				init="this enableSimulation false;this setdir 214.148;this setposATL [3367.606445,2831.438965,0];this setVectorUp [0,0,1]";
 			};
 			id=331;
-			type="xcam_CncBarrier_stripes_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.00057601929;
 		};
 		class Item332
@@ -6166,7 +6166,7 @@ class Mission
 				init="this enableSimulation false;this setdir 214.148;this setposATL [3345.855957,2845.52124,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=332;
-			type="xcam_CncBarrier_stripes_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0005645752;
 		};
 		class Item333
@@ -6185,7 +6185,7 @@ class Mission
 				init="this enableSimulation false;this setdir 214.148;this setposATL [3343.688965,2846.990967,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=333;
-			type="xcam_CncBarrier_stripes_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0063667297;
 		};
 		class Item334
@@ -6204,7 +6204,7 @@ class Mission
 				init="this enableSimulation false;this setdir 214.148;this setposATL [3341.537842,2848.449951,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=334;
-			type="xcam_CncBarrier_stripes_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0060691833;
 		};
 		class Item335
@@ -6223,7 +6223,7 @@ class Mission
 				init="this enableSimulation false;this setdir 214.148;this setposATL [3339.397217,2849.901855,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=335;
-			type="xcam_CncBarrier_stripes_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.00095748901;
 		};
 		class Item336
@@ -6242,7 +6242,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3363.00292969,2850.703125,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=336;
-			type="xcam_CncBarrierMedium4_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0012664795;
 		};
 		class Item337
@@ -6261,7 +6261,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.153;this setposATL [3367.1604,2856.838379,-8.01086e-005];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=337;
-			type="xcam_CncBarrierMedium4_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0012550354;
 		};
 		class Item338
@@ -6280,7 +6280,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3371.304932,2862.984131,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=338;
-			type="xcam_CncBarrierMedium4_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0012550354;
 		};
 		class Item339
@@ -6299,7 +6299,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3353.552002,2836.393311,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=339;
-			type="xcam_CncBarrierMedium4_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0012550354;
 		};
 		class Item340
@@ -6318,7 +6318,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3349.437256,2830.175537,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=340;
-			type="xcam_CncBarrierMedium4_F";
+			type="Land_CncBarrier_stripes_F";
 			atlOffset=0.0012359619;
 		};
 		class Item341
@@ -6337,7 +6337,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3346.854492,2826.304443,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=341;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012588501;
 		};
 		class Item342
@@ -6356,7 +6356,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3345.84668,2824.818359,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=342;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012588501;
 		};
 		class Item343
@@ -6375,7 +6375,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3344.838867,2823.332275,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=343;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012779236;
 		};
 		class Item344
@@ -6394,7 +6394,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3343.831055,2821.846191,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=344;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012702942;
 		};
 		class Item345
@@ -6413,7 +6413,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3342.823242,2820.360107,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=345;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012626648;
 		};
 		class Item346
@@ -6432,7 +6432,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3341.81543,2818.874023,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=346;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0012626648;
 		};
 		class Item347
@@ -6451,7 +6451,7 @@ class Mission
 				init="this enableSimulation false;this setdir 304.148;this setposATL [3340.807617,2817.387939,0.00126266];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=347;
-			type="xcam_CncBarrierMedium_F";
+			type="Land_CncBarrierMedium_F";
 			atlOffset=0.0025138855;
 		};
 		class Item348
@@ -6489,7 +6489,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.284;this setposATL [3141.2146,2503.291504,-2.20977];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=349;
-			type="xcam_Pier_F";
+			type="Land_Pier_F";
 			atlOffset=-0.0010452271;
 		};
 		class Item350
@@ -6508,7 +6508,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.284;this setposATL [3141.2146,2503.291504,-2.20977];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=350;
-			type="xcam_Pier_F";
+			type="Land_Pier_F";
 			atlOffset=-0.0010452271;
 		};
 		class Item351
@@ -6527,7 +6527,7 @@ class Mission
 				init="this enableSimulation false;this setdir 125.286;this setposATL [3165.269287,2537.284668,-2.21055];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=351;
-			type="xcam_Pier_F";
+			type="Land_Pier_F";
 			atlOffset=0.059667587;
 		};
 		class Item352
@@ -6546,7 +6546,7 @@ class Mission
 				init="this enableSimulation false;this setdir 189.148;this setposATL [3130.151855,2346.561523,-1.90735e-006];this setVectorUp [0,0,1]";
 			};
 			id=352;
-			type="xcam_wpp_Turbine_V1_F";
+			type="Land_wpp_Turbine_V1_F";
 			atlOffset=0.015200615;
 		};
 		class Item353
@@ -6564,7 +6564,7 @@ class Mission
 				init="this enableSimulation false;this setdir 589.148;this setposATL [3018.675293,2313.998047,0];this setVectorUp [0,0,1]";
 			};
 			id=353;
-			type="xcam_wpp_Turbine_V1_F";
+			type="Land_wpp_Turbine_V1_F";
 			atlOffset=1.8063111;
 		};
 		class Item354
@@ -6602,7 +6602,7 @@ class Mission
 				init="this enableSimulation false;this setdir 575.512;this setposATL [3098.485596,2497.919189,-0.263636];this setVectorUp [0,0,1]";
 			};
 			id=355;
-			type="xcam_BagBunker_Tower_F";
+			type="Land_BagBunker_Tower_F";
 			atlOffset=0.0063610077;
 		};
 		class Item356
@@ -6621,7 +6621,7 @@ class Mission
 				init="this enableSimulation false;this setdir 575.512;this setposATL [3110.788818,2489.575439,0];this setVectorUp [0,0,1]";
 			};
 			id=356;
-			type="xcam_BagFence_Round_F";
+			type="Land_BagFence_Round_F";
 			atlOffset=0.00017738342;
 		};
 		class Item357
@@ -6640,7 +6640,7 @@ class Mission
 				init="this enableSimulation false;this setdir 395.512;this setposATL [3109.422363,2487.670898,0];this setVectorUp [0,0,1]";
 			};
 			id=357;
-			type="xcam_BagFence_Round_F";
+			type="Land_BagFence_Round_F";
 			atlOffset=0.00018119812;
 		};
 		class Item358
@@ -6659,7 +6659,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3112.196289,2491.5979,0];this setVectorUp [0,0,1]";
 			};
 			id=358;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00019454956;
 		};
 		class Item359
@@ -6678,7 +6678,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3113.842529,2493.904541,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=359;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00019073486;
 		};
 		class Item360
@@ -6697,7 +6697,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3115.488037,2496.210205,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=360;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017929077;
 		};
 		class Item361
@@ -6716,7 +6716,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3117.133545,2498.515869,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=361;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018310547;
 		};
 		class Item362
@@ -6735,7 +6735,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3118.779053,2500.821533,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=362;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018119812;
 		};
 		class Item363
@@ -6754,7 +6754,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3120.424561,2503.127197,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=363;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018882751;
 		};
 		class Item364
@@ -6773,7 +6773,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3122.0700684,2505.432861,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=364;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018692017;
 		};
 		class Item365
@@ -6792,7 +6792,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3123.715332,2507.738525,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=365;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018501282;
 		};
 		class Item366
@@ -6811,7 +6811,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3125.36084,2510.0441895,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=366;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018501282;
 		};
 		class Item367
@@ -6830,7 +6830,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3127.00634766,2512.349854,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=367;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017738342;
 		};
 		class Item368
@@ -6849,7 +6849,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3128.651855,2514.655518,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=368;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017929077;
 		};
 		class Item369
@@ -6868,7 +6868,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3130.297363,2516.961182,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=369;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00018119812;
 		};
 		class Item370
@@ -6887,7 +6887,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3131.942871,2519.266846,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=370;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017547607;
 		};
 		class Item371
@@ -6906,7 +6906,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3133.588379,2521.57251,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=371;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017547607;
 		};
 		class Item372
@@ -6925,7 +6925,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3135.233887,2523.878418,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=372;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017547607;
 		};
 		class Item373
@@ -6944,7 +6944,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3136.879395,2526.184082,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=373;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017547607;
 		};
 		class Item374
@@ -6963,7 +6963,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3138.524902,2528.48999,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=374;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016593933;
 		};
 		class Item375
@@ -6982,7 +6982,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3140.17041,2530.795898,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=375;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016975403;
 		};
 		class Item376
@@ -7001,7 +7001,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3141.815918,2533.101807,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=376;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016593933;
 		};
 		class Item377
@@ -7020,7 +7020,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3143.461426,2535.407715,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=377;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017166138;
 		};
 		class Item378
@@ -7039,7 +7039,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3145.106934,2537.713623,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=378;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016212463;
 		};
 		class Item379
@@ -7058,7 +7058,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3146.752441,2540.0195313,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=379;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017356873;
 		};
 		class Item380
@@ -7077,7 +7077,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3148.397949,2542.325439,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=380;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017166138;
 		};
 		class Item381
@@ -7096,7 +7096,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3150.043457,2544.631348,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=381;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017356873;
 		};
 		class Item382
@@ -7115,7 +7115,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3151.688965,2546.937256,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=382;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016784668;
 		};
 		class Item383
@@ -7134,7 +7134,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3153.334473,2549.243164,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=383;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016021729;
 		};
 		class Item384
@@ -7153,7 +7153,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3154.97998,2551.549072,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=384;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017166138;
 		};
 		class Item385
@@ -7172,7 +7172,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3156.625488,2553.85498,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=385;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00016212463;
 		};
 		class Item386
@@ -7191,7 +7191,7 @@ class Mission
 				init="this enableSimulation false;this setdir 485.512;this setposATL [3158.270996,2556.160889,0];this setVectorUp (surfacenormal (getPosATL this))";
 			};
 			id=386;
-			type="xcam_BagFence_Long_F";
+			type="Land_BagFence_Long_F";
 			atlOffset=0.00017356873;
 		};
 		class Item387
@@ -8633,7 +8633,7 @@ class Mission
 				init="this enableSimulation false;this setdir 484.148;this setposATL [3135.363525,2495.184082,0];this setVectorUp [0,0,1]";
 			};
 			id=462;
-			type="xcam_LuggageHeap_04_F";
+			type="Land_LuggageHeap_04_F";
 			atlOffset=0.0014724731;
 		};
 		class Item463
@@ -8652,7 +8652,7 @@ class Mission
 				init="this enableSimulation false;this setdir 124.148;this setposATL [3137.222656,2495.708984,0];this setVectorUp [0,0,1]";
 			};
 			id=463;
-			type="xcam_LuggageHeap_03_F";
+			type="Land_LuggageHeap_03_F";
 			atlOffset=0.0014820099;
 		};
 		class Item464
@@ -8728,7 +8728,7 @@ class Mission
 				init="this enableSimulation false;this setdir 34.148;this setposATL [3117.201416,2483.950684,0];this setVectorUp [0,0,1]";
 			};
 			id=467;
-			type="xcam_SignT_SpeedLimit30";
+			type="CUP_SignT_SpeedLimit30";
 			atlOffset=0.0004940033;
 		};
 		class Item468
@@ -15457,7 +15457,7 @@ class Mission
 				skill=0.60000002;
 			};
 			id=823;
-			type="xcam_SignT_SpeedLimit30";
+			type="CUP_SignT_SpeedLimit30";
 			atlOffset=0.00046539307;
 		};
 		class Item824
@@ -15476,7 +15476,7 @@ class Mission
 				init="this setdir 34.148;this setposATL [3117.201416,2483.950684,0];this setVectorUp [0,0,1]";
 			};
 			id=824;
-			type="xcam_SignT_SpeedLimit30";
+			type="CUP_SignT_SpeedLimit30";
 			atlOffset=0.00092315674;
 		};
 		class Item825
@@ -16628,7 +16628,7 @@ class Mission
 				init="this enableSimulation false;this setdir 25;this setposATL [5543.476074,4422.902344,0];this setVectorUp [0,0,1]";
 			};
 			id=888;
-			type="xcam_Mil_WiredFence_Gate_F";
+			type="Land_Mil_WiredFence_Gate_F";
 			atlOffset=0.0013542175;
 		};
 		class Item889
