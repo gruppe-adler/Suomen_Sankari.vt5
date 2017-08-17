@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5879.8008,52.859871,4826.106};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={2205.2686,166.55615,1247.3826};
+		dir[]={-0.5181129,-0.32392284,-0.79165947};
+		up[]={-0.17740659,0.94606751,-0.27107012};
+		aside[]={-0.83676624,-9.6374424e-007,0.54763705};
 	};
 };
 binarizationWanted=0;
@@ -14383,10 +14383,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3055.0259,9.078989,714.61487};
-				angles[]={0,2.0977283,0};
+				position[]={3055.4683,8.6835451,715.63605};
+				angles[]={-0,2.0977287,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -14395,17 +14396,17 @@ class Mission
 			};
 			id=772;
 			type="RDS_S1203_Civ_01";
-			atlOffset=0.39544392;
 		};
 		class Item759
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3511.938,18.635839,758.43427};
+				position[]={3511.938,18.141712,758.43427};
 				angles[]={6.1952996,3.1877046,0.094655499};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -14414,17 +14415,17 @@ class Mission
 			};
 			id=773;
 			type="RDS_Octavia_Civ_01";
-			atlOffset=0.49412727;
 		};
 		class Item760
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1246.9976,30.202564,1213.7401};
+				position[]={1246.9976,29.702564,1213.7401};
 				angles[]={0.016748315,2.4727473,6.2202249};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -14433,17 +14434,17 @@ class Mission
 			};
 			id=774;
 			type="RDS_Gaz24_Civ_01";
-			atlOffset=0.5;
 		};
 		class Item761
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={948.75232,25.482883,857.00134};
+				position[]={948.75232,24.982883,857.00134};
 				angles[]={0.055520006,2.8628459,6.2765622};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -14452,7 +14453,6 @@ class Mission
 			};
 			id=775;
 			type="RDS_Golf4_Civ_01";
-			atlOffset=0.5;
 		};
 		class Item762
 		{
@@ -14510,10 +14510,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3079.5813,10.491425,725.64008};
-				angles[]={6.1432962,4.5750146,0.0424303};
+				position[]={3079.5813,10.038351,725.63977};
+				angles[]={6.1432967,4.5750141,0.042428955};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -14522,7 +14523,6 @@ class Mission
 			};
 			id=779;
 			type="RDS_Gaz24_Civ_02";
-			atlOffset=0.45302963;
 		};
 		class Item766
 		{
@@ -15828,10 +15828,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1242.4493,30.421476,1219.7183};
+				position[]={1242.4493,29.921476,1219.7183};
 				angles[]={6.2794509,2.4727473,6.191597};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -15840,7 +15841,6 @@ class Mission
 			};
 			id=851;
 			type="RDS_Lada_Civ_05";
-			atlOffset=0.5;
 		};
 		class Item837
 		{
@@ -27210,22 +27210,22 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1241.2605,29.21752,1208.6658};
-						angles[]={0.045945313,3.0528598,6.2337289};
+						position[]={1241.26,29.217497,1208.666};
+						angles[]={0.045937065,3.05286,6.2337222};
 					};
 					side="East";
 					flags=2;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="if (!local this) exitWith {};  removeAllWeapons this;  removeAllItems this;  removeAllAssignedItems this;  removeUniform this;  removeVest this;  removeBackpack this;  removeHeadgear this;  removeGoggles this;    this forceAddUniform ""LOP_U_AFR_Fatigue_02"";  this addHeadgear ""rds_worker_cap3"";  for ""_i"" from 1 to 2 do {this addItemToUniform ""rhs_mag_9x18_12_57N181S"";};  this addWeapon ""rhs_weap_makarov_pmm"";  this addGoggles ""L_Shemagh_Red"";    this linkItem ""ItemMap"";  this linkItem ""ItemCompass"";  this linkItem ""ItemWatch"";  this linkItem ""tf_rf7800str"";";
+						init="call{if (!local this) exitWith {};  removeAllWeapons this;  removeAllItems this;  removeAllAssignedItems this;  removeUniform this;  removeVest this;  removeBackpack this;  removeHeadgear this;  removeGoggles this;    this forceAddUniform ""U_BG_Guerilla2_2"";  this addHeadgear ""rds_worker_cap3"";  for ""_i"" from 1 to 2 do {this addItemToUniform ""rhs_mag_9x18_12_57N181S"";};  this addWeapon ""rhs_weap_makarov_pmm"";  this addGoggles ""L_Shemagh_Red"";    this linkItem ""ItemMap"";  this linkItem ""ItemCompass"";  this linkItem ""ItemWatch"";  this linkItem ""tf_rf7800str"";}";
 						name="eino";
 						description="Eino";
 						isPlayable=1;
 					};
 					id=1253;
 					type="O_Soldier_F";
-					atlOffset=0.45302963;
+					atlOffset=0.45299911;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27247,7 +27247,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};
@@ -27255,7 +27293,7 @@ class Mission
 			{
 			};
 			id=1252;
-			atlOffset=0.45302963;
+			atlOffset=0.45299911;
 		};
 		class Item1142
 		{
@@ -35258,7 +35296,7 @@ class Mission
 			name="mrk_route_1";
 			type="hd_arrow";
 			colorName="ColorEAST";
-			angle=239.13698;
+			angle=239.13696;
 			id=1658;
 			atlOffset=-27.615147;
 		};
