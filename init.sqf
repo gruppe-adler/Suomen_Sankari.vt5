@@ -1,3 +1,5 @@
+call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
+
 // tfar shit
 TF_give_microdagr_to_soldier = true;
 publicVariable "TF_give_microdagr_to_soldier";
@@ -51,7 +53,7 @@ setViewDistance 2000;
 DEBUG = true;
 
 GAS_EFFECTED = 0;
-
+NUKE_DETONATE = false;
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
 FIGHT = false;
@@ -60,12 +62,13 @@ AI_KILLED = 0;
 EXTRACTION_IMMINENT = false;
 firstspawn = false;
 
-kalle addAction  ["<t color=""#93E352"">Turn On Radio</t>",{RADIO_PLAYING = true; publicVariable "RADIO_PLAYING";}, _Args, 0, false, false, "","!(RADIO_PLAYING)  && driver ikarus == _this"];
-kalle addAction  ["<t color=""#DD0000"">Turn Off Radio</t>",{RADIO_PLAYING = false; publicVariable "RADIO_PLAYING";}, _Args, 0, false, false, "","(RADIO_PLAYING) && driver ikarus  == _this"];
+kalle addAction  ["<t color=""#93E352"">Turn On Radio</t>",{RADIO_PLAYING = true; publicVariable "RADIO_PLAYING";}, nil, 0, false, false, "","!(RADIO_PLAYING)  && driver ikarus == _this"];
+kalle addAction  ["<t color=""#DD0000"">Turn Off Radio</t>",{RADIO_PLAYING = false; publicVariable "RADIO_PLAYING";}, nil, 0, false, false, "","(RADIO_PLAYING) && driver ikarus  == _this"];
 
-kalle addAction  ["<t color=""#93E352"">Turn On Interior Light</t>",{LIGHT_ON = true; publicVariable "LIGHT_ON";}, _Args, 0, false, false, "","!(LIGHT_ON)  && driver ikarus == _this"];
-kalle addAction  ["<t color=""#DD0000"">Turn Off Interior Light</t>",{LIGHT_ON = false; publicVariable "LIGHT_ON";}, _Args, 0, false, false, "","(LIGHT_ON) && driver ikarus  == _this"];
+kalle addAction  ["<t color=""#93E352"">Turn On Interior Light</t>",{LIGHT_ON = true; publicVariable "LIGHT_ON";}, nil, 0, false, false, "","!(LIGHT_ON)  && driver ikarus == _this"];
+kalle addAction  ["<t color=""#DD0000"">Turn Off Interior Light</t>",{LIGHT_ON = false; publicVariable "LIGHT_ON";}, nil, 0, false, false, "","(LIGHT_ON) && driver ikarus  == _this"];
 
+execVM "fx\init.sqf";
 
 setCustomFace =
 {
@@ -78,10 +81,17 @@ setCustomFace =
 	_thisunit setObjectMaterial [0, "A3\Characters_F\Common\Data\basicbody_injury.rvmat"];
 };
 
+ryanzombiesglow = true;
+ryanzombiesstartinganim = 1;
+Ryanzombiesfeed = 1;
+
 if (isServer) then {
 
-	// [] execVM "VCOM_Driving\init.sqf";
-	call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
+	{
+		_x setVariable ["ace_cookoff_enable", false, true];
+	} forEach vehicles;
+
+
 	call compile preprocessFileLineNumbers "police\blingbling.sqf";
 	call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";
 
@@ -112,20 +122,8 @@ if (isServer) then {
 	LIGHT_ON = false;
 	publicVariable "LIGHT_ON";
 
-	NUKE_DETONATE = false;
-	publicVariable "NUKE_DETONATE";
-
 	MISSION_COMPLETED = false;
 	publicVariable "MISSION_COMPLETED";
-
-
-
-
-	if (isMultiplayer) then {
-		playerUnits = playableUnits;
-	} else {
-		playerUnits = switchableUnits;
-	};
 
 	/*
 	// cancel AI movement
@@ -215,19 +213,18 @@ if (isServer) then {
 	diag_log "killed eventhandler added for every ai unit";
 
 
-asr_ai3_main_setskills = 0;
 
-	{
-	_x setSkill ["aimingspeed", 0.4];
-	_x setSkill ["spotdistance", 1];
-	_x setSkill ["aimingaccuracy", 0.3];
-	_x setSkill ["aimingshake", 0.3];
-	_x setSkill ["spottime", 1];
-	_x setSkill ["spotdistance", 1];
-	_x setSkill ["commanding", 1];
-	_x setSkill ["general", 1];
-	} forEach allUnits;
 
-	diag_log "skill set for every ai unit";
+{
+_x setVariable ["asr_ai_exclude", true];
+_x setSkill ["aimingspeed", 0.4];
+_x setSkill ["spotdistance", 1];
+_x setSkill ["aimingaccuracy", 0.3];
+_x setSkill ["aimingshake", 0.3];
+_x setSkill ["spottime", 1];
+_x setSkill ["spotdistance", 1];
+_x setSkill ["commanding", 1];
+_x setSkill ["general", 1];
+} forEach allUnits;
 
-};
+diag_log "skill set for every ai unit";

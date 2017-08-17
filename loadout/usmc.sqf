@@ -32,7 +32,3 @@ _unit = _this select 0;
 _unit addVest (randVestUSMC call BIS_fnc_selectRandom);
 _unit addHeadgear (randHeadGearUSMC call BIS_fnc_selectRandom);
 _unit addBackpack (randBackPackUSMC call BIS_fnc_selectRandom);
-
-
-_chosenFace = ["infected2","infected1","zombi","zomboy"] call BIS_fnc_selectRandom;
-[[_unit,_chosenFace], "setCustomFace"] call BIS_fnc_MP;

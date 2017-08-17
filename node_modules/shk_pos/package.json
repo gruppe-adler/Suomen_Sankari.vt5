@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:gruppe-adler/shk_pos#master",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:gruppe-adler/shk_pos#master",
+        "spec": "github:gruppe-adler/shk_pos#master",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:gruppe-adler/shk_pos.git#master",
+          "sshUrl": "git+ssh://git@github.com/gruppe-adler/shk_pos.git#master",
+          "httpsUrl": "git+https://github.com/gruppe-adler/shk_pos.git#master",
+          "gitUrl": "git://github.com/gruppe-adler/shk_pos.git#master",
+          "shortcut": "github:gruppe-adler/shk_pos#master",
+          "directUrl": "https://raw.githubusercontent.com/gruppe-adler/shk_pos/master/package.json"
+        }
+      },
+      "C:\\Users\\nomisum\\Documents\\Arma 3\\missions\\TvT_BreakingContact.Stratis"
+    ]
+  ],
+  "_from": "gruppe-adler/shk_pos#master",
+  "_id": "shk_pos@0.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/shk_pos",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:gruppe-adler/shk_pos#master",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:gruppe-adler/shk_pos#master",
+    "spec": "github:gruppe-adler/shk_pos#master",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:gruppe-adler/shk_pos.git#master",
+      "sshUrl": "git+ssh://git@github.com/gruppe-adler/shk_pos.git#master",
+      "httpsUrl": "git+https://github.com/gruppe-adler/shk_pos.git#master",
+      "gitUrl": "git://github.com/gruppe-adler/shk_pos.git#master",
+      "shortcut": "github:gruppe-adler/shk_pos#master",
+      "directUrl": "https://raw.githubusercontent.com/gruppe-adler/shk_pos/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/gruppe-adler/shk_pos.git#65c30a1e4d08ecd23cb85b0b96c7410d7c66415d",
+  "_shasum": "3f5fcd6dd0f3d2c07b8ba50dcfc4ed6dd3b5f1da",
+  "_shrinkwrap": null,
+  "_spec": "github:gruppe-adler/shk_pos#master",
+  "_where": "C:\\Users\\nomisum\\Documents\\Arma 3\\missions\\TvT_BreakingContact.Stratis",
+  "dependencies": {},
+  "description": "Arma3 random position generator/selector by Shuko",
+  "devDependencies": {},
+  "gitHead": "65c30a1e4d08ecd23cb85b0b96c7410d7c66415d",
+  "name": "shk_pos",
+  "optionalDependencies": {},
+  "readme": "Random position generator for Arma3 by Shuko. See https://forums.bistudio.com/topic/153382-shk-pos/\r\n",
+  "readmeFilename": "README.md",
+  "version": "0.0.1"
+}

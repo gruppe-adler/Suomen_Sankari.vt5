@@ -1,5 +1,12 @@
+__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
 #include "gasmask\RscRtitles.hpp"
 #include "gasmask\define.hpp"
+
+class cfgFunctions {
+    #include "fx\cfgFunctions.hpp"
+    #include "spawner\cfgFunctions.hpp"
+};
 
 respawn = 3;
 respawnDelay = 9999999; // 9999999 or greater = No Respawn
@@ -11,12 +18,12 @@ enableDebugConsole = 1;
 
 class Header
 {
-      gameType = Coop; // Game type, see 'class' columns in the table below
+      gameType = "Survive"; // Game type, see 'class' columns in the table below
       minPlayers = 5; //min # of players the mission supports
-      maxPlayers = 19; //max # of players the mission supports
+      maxPlayers = 30; //max # of players the mission supports
 };
 
-__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
 class CfgIdentities {
     class Sampo {
         name = "Sampo";

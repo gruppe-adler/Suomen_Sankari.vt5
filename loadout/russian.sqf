@@ -48,7 +48,3 @@ _unit = _this select 0;
 _unit addVest _randVestRussian;
 _unit addHeadgear _randHeadGearRussian;
 _unit addBackpack _randBackPackRussian;
-
-
-_chosenFace = ["infected2","infected1","zombi","zomboy"] call BIS_fnc_selectRandom;
-[[_unit,_chosenFace], "setCustomFace"] call BIS_fnc_MP;

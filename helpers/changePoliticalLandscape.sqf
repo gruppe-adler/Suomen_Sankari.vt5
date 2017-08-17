@@ -11,7 +11,6 @@ usmc_emptytruck2 setDamage 1;
 usmc_emptytruck3 setDamage 1;
 usmc_emptytruck4 setDamage 1;
 
-usmc_headquarter setDamage 1;
 
 { deleteVehicle _x } forEach units (leader blufor_lead);
 sleep 5;
@@ -20,7 +19,6 @@ sleep 5;
 
 rus_btr setDamage 1;
 sleep 3;
-rus_tripod setDamage 1;
 rus_patrol_gaz setDamage 1;
 sleep 5;
 repair_truck setDamage 1;

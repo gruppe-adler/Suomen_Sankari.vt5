@@ -4,10 +4,7 @@
 ////////////////////////////////////////////////////////////
 
 //if (isDedicated) exitWith {};
-
-_unit = _this select 0;
-_source = _this select 1;
-_radius = _this select 2;
+params ["_source", "_radius"];
 
 _coughing = 0;
 _breathing = 0;

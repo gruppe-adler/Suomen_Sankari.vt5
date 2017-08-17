@@ -1,24 +1,31 @@
-_car = _this select 0;
+params ["_car"];
 
-[_car] spawn  {
-
-	_target = _this select 0;
-
-	_sound = [
-	"sounds\bongs1.ogg",
-	"sounds\bongs2.ogg",
-	"sounds\bongs3.ogg",
-	"sounds\bongs4.ogg"
-	];
+private ["_sounds", "_root"];
 
 _root = parsingNamespace getVariable "MISSION_ROOT";
 
-	while {true} do {
+_sounds = [
+"sounds\bongs1.ogg",
+"sounds\bongs2.ogg",
+"sounds\bongs3.ogg",
+"sounds\bongs4.ogg"
+];
 
-		if (JUSSI_FREE) exitWith {};
 
-		_target setvelocity [random 0.5 * (sin (random 360)), random 0.5 * (cos (random 360)), random 0.2];
-		playSound3D [_root + (_sound call BIS_fnc_selectRandom), _target, false, getPosASL _target, 10, 1, 50];
-		sleep (random 3);
+// loop bonking
+[{
+    params ["_args", "_handle"];
+    _args params ["_root", "_car", "_sounds"];
+
+    if (JUSSI_FREE || !alive _car) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+
+    if (random 1 > 0.7) then {
+		_car setvelocity [random 0.5 * (sin (random 360)), random 0.5 * (cos (random 360)), random 0.2];
+		playSound3D [_root + (selectRandom _sounds), _car, false, getPosATL _car, 20, 1, 75];
 	};
-};
+
+},0.5,[_root, _car, _sounds]] call CBA_fnc_addPerFrameHandler;
+
+// create flies
+_trunkposition = _car modelToWorldVisual [0,-1,0.3];
+[_trunkposition] call suomen_fx_fnc_flies;
