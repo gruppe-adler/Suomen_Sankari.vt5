@@ -1,7 +1,10 @@
 
 class Loadouts {
+perPlayerDelay = 0;
+baseDelay = 0;
+handleRadios = 1;
 
-class AllPlayers {
+class AllUnits {
 		binoculars = "Binocular";
 		map = "ItemMap";
 		compass = "ItemCompass";
@@ -9,111 +12,117 @@ class AllPlayers {
 
 		handgunWeapon = "rhs_weap_makarov_pmm";
 		addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S"};
+		nvg = "";
+		gps = "";
+		vest = "";
 	};
 
-	class tommi {
-		uniform = "rds_uniform_citizen2";
-        headgear = "H_Cap_khaki_specops_UK";
-		goggles = "G_Aviator";
-	};
+	class Name {
 
-	class kalle {
-		uniform = "rds_uniform_citizen1";
-		headgear = "rhs_Booniehat_m81";
-		goggles = "L_Shemagh_Red";
-	};
+		class tommi {
+			uniform = "rds_uniform_citizen2";
+	        headgear = "H_Cap_khaki_specops_UK";
+			goggles = "G_Aviator";
+		};
 
-	class marek {
-		uniform = "rds_uniform_citizen3";
-		headgear = "rds_Profiteer_cap1";
-	};
+		class kalle {
+			uniform = "rds_uniform_citizen1";
+			headgear = "rhs_Booniehat_m81";
+			goggles = "L_Shemagh_Red";
+		};
 
-	class santeri {
-		uniform = "rds_uniform_citizen4";
-		headgear = "rds_worker_cap2";
-		goggles = "NeckTight_WhiteCLR";
-	};
+		class marek {
+			uniform = "rds_uniform_citizen3";
+			headgear = "rds_Profiteer_cap1";
+		};
 
-	class esa {
-		uniform = "U_BG_Guerrilla_6_1";
-		headgear = "rds_worker_cap3";
-		goggles = "L_Shemagh_Red";
-	};
+		class santeri {
+			uniform = "rds_uniform_citizen4";
+			headgear = "rds_worker_cap2";
+			goggles = "NeckTight_WhiteCLR";
+		};
 
-	class mari {
-		uniform = "U_BG_Guerilla2_2";
-		headgear = "H_Bandanna_gry";
-		goggles = "L_Shemagh_Tan";
-	};
+		class esa {
+			uniform = "U_BG_Guerrilla_6_1";
+			headgear = "rds_worker_cap3";
+			goggles = "L_Shemagh_Red";
+		};
 
-	class pekka {
-		uniform = "U_BG_Guerilla2_3";
-		headgear = "H_Bandanna_sgg";
-		goggles = "L_Shemagh_OD";
-	};
+		class mari {
+			uniform = "U_BG_Guerilla2_2";
+			headgear = "H_Bandanna_gry";
+			goggles = "L_Shemagh_Tan";
+		};
 
-	class ville {
-		uniform = "U_BG_Guerilla3_1";
-		headgear = "H_Watchcap_blk";
-		goggles = "L_Shemagh_Gry";
-	};
+		class pekka {
+			uniform = "U_BG_Guerilla2_3";
+			headgear = "H_Bandanna_sgg";
+			goggles = "L_Shemagh_OD";
+		};
 
-	class marco {
-		uniform = "rds_uniform_Profiteer4";
-		headgear = "H_Beret_blk";
-		goggles = "L_Shemagh_OD";
-	};
+		class ville {
+			uniform = "U_BG_Guerilla3_1";
+			headgear = "H_Watchcap_blk";
+			goggles = "L_Shemagh_Gry";
+		};
 
-	class emppu {
-		uniform = "rds_uniform_schoolteacher";
-		headgear = "rhs_beanie_green";
-		goggles = "";
-	};
+		class marco {
+			uniform = "rds_uniform_Profiteer4";
+			headgear = "H_Beret_blk";
+			goggles = "L_Shemagh_OD";
+		};
 
-	class janne {
-		uniform = "rds_uniform_Villager3";
-		headgear = "rds_Villager_cap4";
-		goggles = "";
-	};
+		class emppu {
+			uniform = "rds_uniform_schoolteacher";
+			headgear = "rhs_beanie_green";
+			goggles = "";
+		};
 
-	class antti {
-		uniform = "rds_uniform_Woodlander4";
-		headgear = "rds_Woodlander_cap1";
-		goggles = "";
-	};
+		class janne {
+			uniform = "rds_uniform_Villager3";
+			headgear = "rds_Villager_cap4";
+			goggles = "";
+		};
 
-	class hemmo {
-		uniform = "rds_uniform_Worker3";
-		headgear = "rds_worker_cap3";
-	};
+		class antti {
+			uniform = "rds_uniform_Woodlander4";
+			headgear = "rds_Woodlander_cap1";
+			goggles = "";
+		};
 
-	class kimmo {
-		uniform = "rds_uniform_Profiteer3";
-		headgear = "H_Booniehat_khk";
-	};
+		class hemmo {
+			uniform = "rds_uniform_Worker3";
+			headgear = "rds_worker_cap3";
+		};
 
-	class eino {
-		uniform = "U_BG_Guerilla2_2";
-		headgear = "rds_worker_cap3";
-	};
+		class kimmo {
+			uniform = "rds_uniform_Profiteer3";
+			headgear = "H_Booniehat_khk";
+		};
 
-	class ossi {
-		uniform = "rds_uniform_Profiteer1";
-		headgear = "rds_Woodlander_cap4";
-	};
+		class eino {
+			uniform = "U_BG_Guerilla2_2";
+			headgear = "rds_worker_cap3";
+		};
 
-	class ilpo {
-		uniform = "rds_uniform_Profiteer2";
-		headgear = "H_Booniehat_khk";
-	};
+		class ossi {
+			uniform = "rds_uniform_Profiteer1";
+			headgear = "rds_Woodlander_cap4";
+		};
 
-	class sampo {
-		uniform = "rds_uniform_Woodlander3";
-		headgear = "H_Bandanna_gry";
-	};
+		class ilpo {
+			uniform = "rds_uniform_Profiteer2";
+			headgear = "H_Booniehat_khk";
+		};
 
-	class tuomas {
-		uniform = "rds_uniform_citizen2";
-		headgear = "rhs_Booniehat_m81";
+		class sampo {
+			uniform = "rds_uniform_Woodlander3";
+			headgear = "H_Bandanna_gry";
+		};
+
+		class tuomas {
+			uniform = "rds_uniform_citizen2";
+			headgear = "rhs_Booniehat_m81";
+		};
 	};
 };

@@ -70,6 +70,24 @@ _light setLightBrightness 10000.0;
 
 sleep 0.2;
 
+_light = "#lightpoint" createVehicleLocal [((getpos nukepos select 0)),(getpos nukepos select 1),((getpos nukepos select 2)+500)];
+_light setLightAmbient[1500, 1200, 1000];
+_light setLightColor[1500, 1200, 1000];
+_light setLightBrightness 10000.0;
+
+[_light] spawn {
+	params ["_light"];
+	_i = 0;
+	while {_i < 100} do
+	{
+		_light setLightBrightness 100.0 - _i;
+		_i = _i + 10;
+		sleep 0.1;
+	};
+	deleteVehicle _light;
+};
+
+
 _smoke setParticleParams [["A3\Data_F\ParticleEffects\Universal\universal.p3d", 16, 7, 48, 1], "", "Billboard", 1, 25, [0, 0, 0],
 				[0, 0, 45], 0, 1.7, 1, 0, [40,25,80], 
 				[[1, 1, 1, 0.2],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0.3],[1, 1, 1, 0]]

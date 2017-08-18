@@ -9,9 +9,8 @@ class suomen_spawner {
     class american {
             file = spawner\server\american;
 
+            class getAmericanLoadout {};
             class spawnAmericanZombieCrowd {};
-            class spawnAmericanZombieCrowd2 {};
-            class spawnAmericanZombieCrowd3 {};
             class spawnAmericanZombiesAlongRoads {};
     };
 
@@ -24,10 +23,17 @@ class suomen_spawner {
             class createRandomCivilian {};
     };
 
+    class jussi {
+            file = spawner\server\jussi;
+
+            class createJussi {};
+    };
+
     class russian {
             file = spawner\server\russian;
 
+            class getRussianLoadout {};
             class spawnRussianZombiesAlongRoads {};
-            class spawnRussianZombiesInCircle {};
     };
+
 };

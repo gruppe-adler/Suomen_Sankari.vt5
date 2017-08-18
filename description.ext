@@ -4,10 +4,14 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 #include "gasmask\RscRtitles.hpp"
 #include "gasmask\define.hpp"
 
+
 class cfgFunctions {
     #include "fx\cfgFunctions.hpp"
     #include "spawner\cfgFunctions.hpp"
+    #include "node_modules\grad-loadout\cfgFunctions.hpp"
 };
+
+#include "loadout\playerteam.hpp"
 
 respawn = 3;
 respawnDelay = 9999999; // 9999999 or greater = No Respawn
