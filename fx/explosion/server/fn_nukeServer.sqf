@@ -20,6 +20,5 @@ private ["_root"];
 _root = parsingNamespace getVariable "MISSION_ROOT";
 playSound3D [_root + "sounds\explosion.ogg", nukepos, false, getPosASL nukepos, 15, 1, 500];
 playSound3D [_root + "sounds\windsound.ogg", nukepos, false, getPosASL nukepos, 15, 0.5, 500];
-nul = [5] execVM "spawner\spawnRussianZombiesInCircle.sqf";
-nul = [25] execVM "spawner\spawnAmericanZombiesAlongRoads.sqf";
-nul = [30] execVM "spawner\spawnRussianZombiesAlongRoads.sqf";
+[25] call suomen_spawner_fnc_spawnAmericanZombiesAlongRoads;
+[30] call suomen_spawner_fnc_spawnRussianZombiesAlongRoads;

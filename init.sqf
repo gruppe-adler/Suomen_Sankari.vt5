@@ -14,9 +14,6 @@ publicVariable "tf_same_sw_frequencies_for_side";
 
 "mrk_spawn_f" setMarkerAlphaLocal 0;
 "mrk_spawn_r" setMarkerAlphaLocal 0;
-"mrk_spawn_c" setMarkerAlphaLocal 0;
-"mrk_not_here" setMarkerAlphaLocal 0;
-"mrk_not_here_too" setMarkerAlphaLocal 0;
 "mrk_blufor_patrol" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd2" setMarkerAlphaLocal 0;
@@ -86,11 +83,6 @@ ryanzombiesstartinganim = 1;
 Ryanzombiesfeed = 1;
 
 if (isServer) then {
-
-	{
-		_x setVariable ["ace_cookoff_enable", false, true];
-	} forEach vehicles;
-
 
 	call compile preprocessFileLineNumbers "police\blingbling.sqf";
 	call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";

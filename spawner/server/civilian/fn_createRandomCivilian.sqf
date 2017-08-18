@@ -66,4 +66,4 @@ _randomCivilian = [
 _grp = creategroup independent;
 _zombie = _grp createUnit [selectRandom _randomCivilian, _pos, [], 0, "NONE"];
 _zombie enableDynamicSimulation true;
-_zombie doMove (getMarkerPos "mrk_finland");
+_zombie

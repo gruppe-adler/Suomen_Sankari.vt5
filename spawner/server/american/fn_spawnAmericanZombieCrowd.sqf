@@ -1,14 +1,11 @@
 params ["_count", "_marker"];
 
-sleep 30;
-
 for "_i" from 0 to _count do {
-	
+	_pos = [_marker] call SHK_pos;
 	_grp = creategroup independent;
-	_zombie = _grp createUnit ["GRAD_SoldierZed_rhs_uniform_FROG01_wd_slow", _marker, [], 0, "NONE"];
+	_zombie = _grp createUnit ["GRAD_SoldierZed_rhs_uniform_FROG01_wd_slow", _pos, [], 0, "NONE"];
 	_zombie enableDynamicSimulation true;
-	sleep 1;
-	[_zombie] call suomen_spawner_fnc_getAmericanLoadout;
+	// [_zombie] call suomen_spawner_fnc_getAmericanLoadout;
 
 	// DEBUG
 	if (DEBUG) then {

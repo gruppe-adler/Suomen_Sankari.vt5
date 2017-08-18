@@ -14,6 +14,7 @@ _vests = [
 	"V_BandollierB_khk"
 ];
 
+
 _backpacks = [
 	"B_AssaultPack_Kerry",
 	"B_Kitbag_mcamo",
@@ -21,8 +22,7 @@ _backpacks = [
 	"rhsusf_falconii"
 ];
 
-_unit setUnitLoadout [[],[],["rhs_weap_makarov_pmm","","","",["rhsusf_mag_7x45acp_MHP",7],[],""],[],
-[selectRandom _vests,[]],
-[selectRandom _backpacks,[]],
-selectRandom _headgear,"",["Binocular","","","",[],[],""],
-["ItemMap","","","ItemCompass","",""]];
+
+_unit addHeadgear selectRandom _headgear;
+_unit addVest selectRandom _vests;
+_unit addBackpack selectRandom _backpacks;

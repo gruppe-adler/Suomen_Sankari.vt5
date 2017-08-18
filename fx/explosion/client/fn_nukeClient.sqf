@@ -66,7 +66,8 @@ _light setLightBrightness 10000.0;
 	deleteVehicle _light;
 };
 
-
+bigFire = [_smoke, "FIRE_BIG"] execVM "helpers\fireAndSmoke.sqf";
+bigSmoke = [_smoke, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 
 sleep 0.2;
 
@@ -78,10 +79,10 @@ _light setLightBrightness 10000.0;
 [_light] spawn {
 	params ["_light"];
 	_i = 0;
-	while {_i < 100} do
+	while {_i < 200} do
 	{
 		_light setLightBrightness 100.0 - _i;
-		_i = _i + 10;
+		_i = _i + 5;
 		sleep 0.1;
 	};
 	deleteVehicle _light;
@@ -97,9 +98,6 @@ _smoke setDropInterval 0.006;
 _Wave setDropInterval 0.001;
 
 sleep 2;
-
-bigFire = [_smoke, "FIRE_BIG"] execVM "helpers\fireAndSmoke.sqf";
-bigSmoke = [_smoke, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 
 _smoke setParticleParams [["A3\Data_F\ParticleEffects\Universal\universal.p3d", 16, 7, 48, 1], "", "Billboard", 1, 25, [0, 0, 0],
 				[0, 0, 30], 0, 1.7, 1, 0, [40,25,80], 

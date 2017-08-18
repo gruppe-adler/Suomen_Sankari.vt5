@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2749.6189,25,1941.778};
-		dir[]={0.57909209,-0.33147895,0.74483591};
-		up[]={0.20346011,0.94346321,0.2616933};
-		aside[]={0.78947079,-1.6239937e-008,-0.61379421};
+		pos[]={3245.8303,66.670837,3503.1675};
+		dir[]={-0.29236099,-0.51340878,0.80681145};
+		up[]={-0.17491341,0.85814303,0.4826974};
+		aside[]={0.94018072,-7.6834112e-008,0.34068999};
 	};
 };
 binarizationWanted=0;
@@ -1135,7 +1135,7 @@ class Mission
 			colorName="ColorGreen";
 			a=10;
 			b=20;
-			angle=214.66098;
+			angle=214.66084;
 			id=57;
 			atlOffset=-14.015388;
 		};
@@ -1505,7 +1505,7 @@ class Mission
 			class Attributes
 			{
 				condition="call{isServer && {round (time %2) == 0 && {(NUKE_DETONATE)} && {({vehicle _x in thisList} count allPlayers > 0)}}}";
-				onActivation="call{if (isServer) then {0 = [getMarkerPos ""mrk_priest""] execVM ""spawner\createPriest.sqf"";}; [25] execVM ""spawner\createCivilianCrowd.sqf"";}";
+				onActivation="call{if (isServer) then {0 = [getMarkerPos ""mrk_priest""] execVM ""spawner\createPriest.sqf"";}; [25] call suomen_spawner_fnc_createCivilianCrowd;}";
 				sizeA=150;
 				sizeB=150;
 				interuptable=1;
@@ -2201,7 +2201,7 @@ class Mission
 			};
 			id=125;
 			type="Sign_tape_redwhite";
-			atlOffset=0.048679352;
+			atlOffset=0.048683167;
 		};
 		class Item119
 		{
@@ -15701,8 +15701,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5371.8955,31.973078,6430.0762};
-				angles[]={0,1.5948679,6.1867332};
+				position[]={5916.6309,12.954674,1827.0818};
+				angles[]={0.027514119,1.5948644,0.0037346357};
 			};
 			side="Empty";
 			flags=4;
@@ -15710,17 +15710,42 @@ class Mission
 			{
 				skill=0.60000002;
 				name="usmc_emptytruck1";
+				dynamicSimulation=1;
 			};
 			id=847;
 			type="rhsusf_M1078A1P2_wd_fmtv_usarmy";
+			atlOffset=-0.027176857;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit""],[2,4]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[10,2,2,2,4]],[[""ToolKit""],[1]],[[""rhsusf_falconii""],[1]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item825
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5363.6191,32.716972,6347.3955};
-				angles[]={0,2.2530105,6.2033501};
+				position[]={5919.001,12.866836,1836.6918};
+				angles[]={0.012265562,2.2530105,0.017170085};
 			};
 			side="Empty";
 			flags=4;
@@ -15728,18 +15753,42 @@ class Mission
 			{
 				skill=0.60000002;
 				name="usmc_emptytruck2";
+				dynamicSimulation=1;
 			};
 			id=848;
 			type="rhsusf_M1078A1P2_wd_open_fmtv_usarmy";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-0.020264626;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit""],[2,4]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[10,2,2,2,4]],[[""ToolKit""],[1]],[[""rhsusf_falconii""],[1]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item826
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5233.6729,41.151531,6360.7524};
-				angles[]={0,0.6021927,6.184514};
+				position[]={5892.6104,12.890816,1830.5138};
+				angles[]={0.033161532,0.60219091,6.2739081};
 			};
 			side="Empty";
 			flags=4;
@@ -15747,17 +15796,42 @@ class Mission
 			{
 				skill=0.60000002;
 				name="usmc_emptytruck3";
+				dynamicSimulation=1;
 			};
 			id=849;
 			type="rhsusf_M1078A1P2_wd_fmtv_usarmy";
+			atlOffset=-0.046751022;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit""],[2,4]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[10,2,2,2,4]],[[""ToolKit""],[1]],[[""rhsusf_falconii""],[1]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item827
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5209.2349,43.445816,6269.168};
-				angles[]={0,0.83218515,6.2711358};
+				position[]={5936.0288,13.095321,1832.9161};
+				angles[]={0.0067216433,0.83219045,0.0098143714};
 			};
 			side="Empty";
 			flags=4;
@@ -15765,9 +15839,34 @@ class Mission
 			{
 				skill=0.60000002;
 				name="usmc_emptytruck4";
+				dynamicSimulation=1;
 			};
 			id=850;
 			type="rhsusf_M1078A1P2_wd_open_fmtv_usarmy";
+			atlOffset=-0.0020198822;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit""],[2,4]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[10,2,2,2,4]],[[""ToolKit""],[1]],[[""rhsusf_falconii""],[1]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item828
 		{
