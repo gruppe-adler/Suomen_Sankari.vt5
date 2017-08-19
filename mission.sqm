@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=1;
 	class ItemIDProvider
 	{
 		nextID=1697;
@@ -1324,7 +1324,7 @@ class Mission
 			};
 			id=71;
 			type="EmptyDetector";
-			atlOffset=0.0002822876;
+			atlOffset=0.00022888184;
 		};
 		class Item68
 		{
@@ -2225,7 +2225,7 @@ class Mission
 			};
 			id=125;
 			type="Sign_tape_redwhite";
-			atlOffset=0.04875946;
+			atlOffset=0.048717499;
 		};
 		class Item119
 		{
@@ -28607,8 +28607,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3158.4272,44.691708,3431.6646};
-						angles[]={6.2425656,0.69627976,0.015893703};
+						position[]={2912.9055,7.0569549,2199.03};
+						angles[]={0.02548972,3.8193047,6.2650528};
 					};
 					side="East";
 					flags=6;
@@ -28623,6 +28623,7 @@ class Mission
 					};
 					id=1284;
 					type="O_Soldier_F";
+					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -28652,6 +28653,7 @@ class Mission
 			{
 			};
 			id=1283;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item1150
 		{
@@ -36141,6 +36143,7 @@ class Mission
 					class Attributes
 					{
 						init="call{group this setSpeedMode ""FULL"";}";
+						name="ambulanceD";
 					};
 					id=1695;
 					type="C_Man_Paramedic_01_F";
@@ -36229,6 +36232,7 @@ class Mission
 			class Attributes
 			{
 				init="call{this setPilotLight true; this setDriveOnPath [[2608.76,2020.77,0.00660706], " \n "[2738.72,1970.31,0.00250149], " \n "[2746.04,1968.31,0.00135231], " \n "[2751.23,1968.19,0.00122261], " \n "[2756.65,1970.47,0.00127316], " \n "[2761.61,1974.84,0.00127506], " \n "[2768.35,1983.19,0.00128746], " \n "[2771.2,1991.16,0.00128269], " \n "[2772.08,2000.27,0.00124645], " \n "[2773.24,2006.97,0.00127411], " \n "[2778.3,2017.48,0.00121975], " \n "[2784.99,2019.45,0.0012722], " \n "[2791.41,2020.62,0.000871658], " \n "[2801.29,2030.57,-0.00288582], " \n "[2807.53,2041.7,-0.00272942], " \n "[2810.55,2055.05,-0.00288677], " \n "[2812.41,2065.15,-0.00288486], " \n "[2821.42,2080.63,-0.00339222], " \n "[2828.74,2086.34,-0.00275326], " \n "[2840.63,2091.63,0], " \n "[2857.33,2111.11,-0.00296497], " \n "[2861.98,2127.1,-0.0125933], " \n "[2864.96,2141.77,-0.0125332], " \n "[2877.67,2161.71,-0.0124855], " \n "[2887.28,2167.22,-0.0124035], " \n "[2896.69,2169.85,-0.0129108], " \n "[2904.18,2180.16,4.76837e-007], " \n "[2903.55,2187.83,-0.0137668], " \n "[2891.79,2192.26,0], " \n "[2885.52,2195.12,4.76837e-007] " \n "]; (driver this) forceWeaponFire [currentWeapon this, currentWeapon this];}";
+				name="ambulance";
 				textures="CivAmbulance";
 			};
 			id=1694;

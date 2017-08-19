@@ -7,5 +7,8 @@
 	publicVariable "NUKE_DETONATE";
 	[] execVM "helpers\changePoliticalLandscape.sqf";
 	[] remoteExec ["suomen_fx_fnc_nukeClient", allPlayers];
+	// [150,150] remoteExec ["suomen_fx_fnc_fogMoving", allPlayers];
+	[] execVM "gasmask\gas_secondary.sqf";
+
 	call suomen_fx_fnc_nukeServer;
 }] call CBA_fnc_waitUntilAndExecute;

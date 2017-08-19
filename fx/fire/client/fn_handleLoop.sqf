@@ -1,4 +1,4 @@
-params ["_target", "_radius", "_particles", "_light"];
+params ["_target", "_radius", "_particles", "_light", "_persistent"];
 
 private ["_isHumanOnFire"];
 
@@ -26,9 +26,9 @@ _isHumanOnFire = _target isKindOf "Man";
 // delete if necessary and flicker light
 [{
     params ["_args", "_handle"];
-    _args params ["_target", "_radius", "_particles", "_light"];
+    _args params ["_target", "_radius", "_particles", "_light", "_persistent"];
     
-    if (!alive _target) exitWith { [_handle] call CBA_fnc_removePerFrameHandler;
+    if (!alive _target && !_persistent) exitWith { [_handle] call CBA_fnc_removePerFrameHandler;
     	{ deleteVehicle _x } forEach _particles;
       deleteVehicle _light;
     };
@@ -41,4 +41,4 @@ _isHumanOnFire = _target isKindOf "Man";
       _light setLightAttenuation [/*start*/ _radius/4+random 0.5, /*constant*/90+random 5, /*linear*/ 290+random 5, /*quadratic*/ 1, /*hardlimitstart*/1+random 0.5,/* hardlimitend*/500]; 
     };
 
-},0.05,[_target, _radius, _particles, _light]] call CBA_fnc_addPerFrameHandler;
+},0.05,[_target, _radius, _particles, _light, _persistent]] call CBA_fnc_addPerFrameHandler;

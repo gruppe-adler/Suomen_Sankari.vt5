@@ -31,4 +31,6 @@
 ];
 
 (driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
-ambulance animateDoor ['Door_4_source',1];
+
+ambulance animateDoor ['Door_4_source',1,is3den];
+

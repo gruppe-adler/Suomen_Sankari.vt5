@@ -22,7 +22,6 @@ class suomen_fx {
 		file = fx\explosion\client;
 
                 class addInteractionBomb {};
-                class fogInitial {};
                 class fogMoving {};
                 class nukeClient {};
                 class setFog {};
@@ -52,5 +51,12 @@ class suomen_fx {
             file = fx\flies\client;
 
             class flies {};
+    };
+
+    class gas {
+            file = fx\gas\client;
+
+            class gasEffectsAdd {};
+            class gasEffectsReset {};
     };
 };
