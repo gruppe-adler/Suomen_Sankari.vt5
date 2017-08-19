@@ -2,7 +2,7 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 #define MODULES_DIRECTORY node_modules
 
 
-#include "fx\gas\data\RscRtitles.hpp"
+#include "fx\gas\data\RscTitles.hpp"
 
 
 class cfgFunctions {

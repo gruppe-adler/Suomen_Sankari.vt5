@@ -1,5 +1,5 @@
 class RscTitles{
-    #include "fx\gas\data\define.hpp"
+    #include "define.hpp"
 
     class Default 
     {
