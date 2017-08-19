@@ -1,5 +1,5 @@
 class RscTitles{
-    #include "define.hpp"
+    #include "fx\gas\data\define.hpp"
 
     class Default 
     {
@@ -27,7 +27,7 @@ class RscTitles{
         class controls{
             class gogglesImage: RscPicture{
                 idc = 11111;
-                text = "gasmask\gasmask_texture2.paa";
+                text = "fx\gas\data\gasmask_texture2.paa";
             };
         };
     };
