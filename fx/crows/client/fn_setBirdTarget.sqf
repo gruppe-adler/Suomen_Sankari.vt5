@@ -1,4 +1,5 @@
 params ["_pos", "_index"];
 
-// hintsilent format ["setting target to pos %1 and index %2", _pos, _index];
 missionNamespace setVariable [format ["GRAD_crows_distantTarget_%1", _index], _pos];
+
+diag_log format ["setting variable %1 to pos %2 and index %3", format ["GRAD_crows_distantTarget_%1", _index], _pos, _index];

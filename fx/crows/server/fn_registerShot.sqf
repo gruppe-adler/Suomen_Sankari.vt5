@@ -31,6 +31,13 @@ if (_markersAvailable && (_pos distance (getMarkerPos _nearest)) < STARTLING_DIS
 		for "_i" from 0 to (ceil (random 6)) do {
 			_selectedTree = selectRandom _possibleTrees;
 			[_selectedTree modelToWorld boundingCenter _selectedTree] remoteExec ["suomen_fx_fnc_startleBirds", allPlayers];
+			_count = missionNamespace getVariable ["GRAD_crows_serverCount", 0];
+			_count = _count + 1;
+			missionNamespace setVariable ["GRAD_crows_serverCount", _count];
+
+			// params are destination and index, set after a delay to let them rise vertically first
+			[{[[random worldSize,worldSize + 250,100], _this select 0] remoteExec 
+			["suomen_fx_fnc_setBirdTarget", allPlayers]; }, [_count], 2 + random 2] call CBA_fnc_waitAndExecute;
 		};
 
 

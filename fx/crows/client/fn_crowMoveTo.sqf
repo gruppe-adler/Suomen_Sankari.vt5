@@ -1,7 +1,7 @@
 params ["_crow", "_targetWp"];
 
 
-// hintsilent format ["crow moving %1", velocityModelSpace _crow];
+// diag_log format ["crow moving %1", velocityModelSpace _crow];
 
 _dis = _crow distance _targetWp;
 _time = (_dis);
