@@ -79,7 +79,7 @@ setCustomFace =
 };
 
 ryanzombiesglow = true;
-ryanzombiesstartinganim = 1;
+// ryanzombiesstartinganim = 0;
 Ryanzombiesfeed = 1;
 
 if (isServer) then {

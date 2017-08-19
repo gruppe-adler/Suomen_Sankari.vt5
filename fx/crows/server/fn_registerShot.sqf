@@ -20,7 +20,7 @@ _possibleTrees = [];
 } forEach nearestObjects [_pos, [], STARTLING_DISTANCE/2];
 
 [{
-	_args params ["_possibleTrees"];
+	_possibleTrees = _this select 0;
 
 	if (count _possibleTrees > 0) then {
 		for "_i" from 0 to (ceil (random 5)) do {

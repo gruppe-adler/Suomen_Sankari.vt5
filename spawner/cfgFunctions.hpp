@@ -5,6 +5,7 @@ class suomen_spawner {
 
             class createDriveBy {};
             class createHelicopter {};
+            class spawnDriveByDocs {};
     };
 
     class american {

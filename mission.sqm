@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1726;
+		nextID=1735;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2756.3574,182.13106,1932.3384};
-		dir[]={0.10284545,-0.74380648,0.66047525};
-		up[]={0.11444218,0.66839737,0.73494577};
-		aside[]={0.98811567,1.2572564e-006,-0.15386517};
+		pos[]={3476.575,59.505829,1580.701};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -122,13 +122,15 @@ addons[]=
 	"A3_nature_sm",
 	"CUP_CAStructuresHouse_HouseBT",
 	"po_factions_me",
-	"CUP_CABuildings_Misc"
+	"CUP_CABuildings_Misc",
+	"A3_Characters_F_Orange",
+	"A3_Soft_F_Orange_Van_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=69;
+		items=71;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -582,6 +584,20 @@ class AddonsMetaData
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
+		class Item69
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item70
+		{
+			className="A3_Soft_F_Orange";
+			name="Arma 3 Orange - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -622,7 +638,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1436;
+		items=1438;
 		class Item0
 		{
 			dataType="Marker";
@@ -28583,8 +28599,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2912.9055,7.0569549,2199.03};
-						angles[]={0.02548972,3.8193047,6.2650528};
+						position[]={2911.2969,7.08816,2198.9451};
+						angles[]={0.02548972,3.8193047,6.2652645};
 					};
 					side="East";
 					flags=6;
@@ -28599,7 +28615,6 @@ class Mission
 					};
 					id=1284;
 					type="O_Soldier_F";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -28629,7 +28644,6 @@ class Mission
 			{
 			};
 			id=1283;
-			atlOffset=-9.5367432e-007;
 		};
 		class Item1150
 		{
@@ -36155,6 +36169,75 @@ class Mission
 			};
 			id=1725;
 			type="Land_ClutterCutter_small_F";
+		};
+		class Item1436
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2915.9895,7.0071106,2221.0088};
+						angles[]={6.2768946,0,0.0041575679};
+					};
+					side="Civilian";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=1734;
+					type="C_IDAP_Man_Paramedic_01_F";
+					atlOffset=9.5367432e-007;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=1734;
+						item1=1733;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=1732;
+			atlOffset=9.5367432e-007;
+		};
+		class Item1437
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2915.9822,8.7954063,2220.9475};
+				angles[]={6.2768946,0,0.0041575679};
+			};
+			side="Civilian";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=1733;
+			type="C_IDAP_Van_02_medevac_F";
+			atlOffset=9.5367432e-007;
 		};
 	};
 	class Connections

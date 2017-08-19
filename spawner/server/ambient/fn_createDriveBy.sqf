@@ -48,15 +48,14 @@ missionNamespace setVariable ["suomen_obj_ambulance", _veh];
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 
-_lastPosition = _path select (count _path - 1);
+_lastPosition = _path select (count _path - 2);
 
 _trg = createTrigger ["EmptyDetector", _lastPosition];
 _trg setTriggerArea [5, 5, 0, false];
 _trg setTriggerActivation ["CIV", "PRESENT", true];
 _trg setTriggerStatements [
-"missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
-"hint 'ambulance arrived'; missionNamespace getVariable ['suomen_obj_ambulance', objNull] animateDoor ['Door_4_source',1,true];", 
-""
-];
+"this && missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
+"hint 'ambulance arrived'; call suomen_spawner_fnc_spawnDriveByDocs;", 
+""];
 
 // (driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
