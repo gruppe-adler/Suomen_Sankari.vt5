@@ -177,11 +177,16 @@ class CfgIdentities {
 
 
 class CfgSounds {
+    #include "fx\cfgSounds.hpp"
+
     sounds[] = {
         music_smells,
         steam,
         explosion,
         windsound,
+        alias_fire_furnal,
+        alias_fire_burned,
+        alias_fire_tipat,
         launch1,
         launch2,
         launch3,

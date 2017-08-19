@@ -90,7 +90,7 @@ While{true} do {
 
 			playSound "ACE_heartbeat_fast_3"; // plays heart beating sound
 			if (_coughing > 5) then {
-				player say3d (coughs call BIS_fnc_selectRandom);
+				player say3d selectRandom coughs;
 				_coughing = 0;
 			} else {
 			_coughing = _coughing+1;

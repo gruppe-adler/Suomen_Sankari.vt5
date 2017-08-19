@@ -39,6 +39,15 @@ class suomen_fx {
                 class nukeServer {};
 	};
 
+    class fire {
+            file = fx\fire\client;
+
+            class createFire {};
+            class createLight {};
+            class createParticles {};
+            class handleLoop {};
+    };
+
     class flies {
             file = fx\flies\client;
 

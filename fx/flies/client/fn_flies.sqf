@@ -19,7 +19,7 @@ _pos = _this select 0;
 _interval = if (count _this > 1) then {_this select 1} else {-1};
 _size = if (count _this > 2) then {_this select 2} else {-1};
 
-if (_interval <= 0) then {_interval = 0.05;};
+if (_interval <= 0) then {_interval = 0.1;};
 if (_size <= 0) then {_size = 1;};
 
 // FIXED PARAMS
