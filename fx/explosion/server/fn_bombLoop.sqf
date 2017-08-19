@@ -8,7 +8,7 @@
 	[] execVM "helpers\changePoliticalLandscape.sqf";
 	[] remoteExec ["suomen_fx_fnc_nukeClient", allPlayers];
 	// [150,150] remoteExec ["suomen_fx_fnc_fogMoving", allPlayers];
-	[] execVM "gasmask\gas_secondary.sqf";
+	[leakpos, 5000, {MISSION_COMPLETED}] call suomen_fx_fnc_gasEffectsAdd;
 
 	call suomen_fx_fnc_nukeServer;
 }] call CBA_fnc_waitUntilAndExecute;

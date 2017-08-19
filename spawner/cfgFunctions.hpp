@@ -3,6 +3,7 @@ class suomen_spawner {
     class ambient {
             file = spawner\server\ambient;
 
+            class createDriveBy {};
             class createHelicopter {};
     };
 

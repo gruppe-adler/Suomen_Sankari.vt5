@@ -1,4 +1,7 @@
-[[2608.76,2020.77,0.00660706],
+_startPosition = [2579.38,2022.46,-0.00600052];
+
+_path = [
+[2608.76,2020.77,0.00660706],
 [2738.72,1970.31,0.00250149],
 [2746.04,1968.31,0.00135231],
 [2751.23,1968.19,0.00122261],
@@ -30,7 +33,30 @@
 [2885.52,2195.12,4.76837e-007]
 ];
 
-(driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
+_veh = createVehicle ["C_Van_02_medevac_F",_startPosition,[],0,"NONE"];
 
-ambulance animateDoor ['Door_4_source',1,is3den];
+[
+	_veh,
+	["CivAmbulance",1], 
+	["lights_em_hide",1,"sidesteps_hide",0,"front_protective_frame_hide",0,"beacon_front_hide",0,"beacon_rear_hide",0]
+] call BIS_fnc_initVehicle;
 
+createVehicleCrew _veh;
+
+missionNamespace setVariable ["suomen_obj_ambulance", _veh];
+
+_veh setPilotLight true; 
+_veh setDriveOnPath _path;
+
+_lastPosition = _path select (count _path - 1);
+
+_trg = createTrigger ["EmptyDetector", _lastPosition];
+_trg setTriggerArea [5, 5, 0, false];
+_trg setTriggerActivation ["CIV", "PRESENT", true];
+_trg setTriggerStatements [
+"missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
+"hint 'ambulance arrived'; missionNamespace getVariable ['suomen_obj_ambulance', objNull] animateDoor ['Door_4_source',1,true];", 
+""
+];
+
+// (driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
