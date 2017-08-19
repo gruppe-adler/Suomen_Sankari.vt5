@@ -1,8 +1,7 @@
-params ["_crow"];
+params ["_crow", "_targetWp"];
 
-_targetWp = [_crow] call suomen_fx_fnc_crowGetWp;
 
-// hintsilent format ["moving crows to %1", _targetWp];
+// hintsilent format ["crow moving %1", velocityModelSpace _crow];
 
 _dis = _crow distance _targetWp;
 _time = (_dis);

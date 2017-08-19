@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1735;
+		nextID=1743;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3476.575,59.505829,1580.701};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={3350.45,67.770424,3747.0466};
+		dir[]={-0.55535704,-0.58025551,0.59578025};
+		up[]={-0.39565805,0.8144275,0.42445633};
+		aside[]={0.73150897,2.4883775e-007,0.68187892};
 	};
 };
 binarizationWanted=0;
@@ -122,15 +122,13 @@ addons[]=
 	"A3_nature_sm",
 	"CUP_CAStructuresHouse_HouseBT",
 	"po_factions_me",
-	"CUP_CABuildings_Misc",
-	"A3_Characters_F_Orange",
-	"A3_Soft_F_Orange_Van_02"
+	"CUP_CABuildings_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=71;
+		items=69;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -584,20 +582,6 @@ class AddonsMetaData
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item69
-		{
-			className="A3_Characters_F_Orange";
-			name="Arma 3 Orange - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item70
-		{
-			className="A3_Soft_F_Orange";
-			name="Arma 3 Orange - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 class DynamicSimulation
@@ -638,7 +622,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1438;
+		items=1436;
 		class Item0
 		{
 			dataType="Marker";
@@ -36169,75 +36153,6 @@ class Mission
 			};
 			id=1725;
 			type="Land_ClutterCutter_small_F";
-		};
-		class Item1436
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2915.9895,7.0071106,2221.0088};
-						angles[]={6.2768946,0,0.0041575679};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=1734;
-					type="C_IDAP_Man_Paramedic_01_F";
-					atlOffset=9.5367432e-007;
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1734;
-						item1=1733;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=1732;
-			atlOffset=9.5367432e-007;
-		};
-		class Item1437
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2915.9822,8.7954063,2220.9475};
-				angles[]={6.2768946,0,0.0041575679};
-			};
-			side="Civilian";
-			flags=6;
-			class Attributes
-			{
-			};
-			id=1733;
-			type="C_IDAP_Van_02_medevac_F";
-			atlOffset=9.5367432e-007;
 		};
 	};
 	class Connections

@@ -1,3 +1,10 @@
+class fx_crows_takeoff
+{
+    name = "fx_crows_takeoff";
+    sound[] = {"\fx\crows\sounds\takeoff.ogg", 2, 1};
+    titles[] = {1, ""};
+};
+
 class alias_fire_furnal
 {
     name = "alias_fire_furnal";

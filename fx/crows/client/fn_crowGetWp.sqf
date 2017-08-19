@@ -1,25 +1,24 @@
-params ["_crow"];
-
-_center = missionNamespace getVariable ["GRAD_crows_center", [worldSize/2, worldSize/2, 200]];
-_flockHeight = _center select 2;
-_density = missionNamespace getVariable ["GRAD_crows_density", 20];
+params ["_crow", "_index"];
 
 
+_startlingPoint = missionNamespace getVariable [format ["GRAD_crows_startlingPoint_%1", _index], []];
+_targetPoint = missionNamespace getVariable [format ["GRAD_crows_distantTarget_%1", _index], []];
+_density = missionNamespace getVariable [format ["GRAD_crows_density_%1", _index], 20];
 
-if (typename _center == typename objnull) then {_center = position _center};
+if (typename _startlingPoint == typename objnull) then {_startlingPoint = position _startlingPoint};
 
-
-
+if (count _startlingPoint == 0) then { _startlingPoint = getPos _crow; _startlingPoint set [2,100]; hintsilent "correction"; };
+if (count _targetPoint > 0) then { _startlingPoint = _targetPoint; };
+	
+_flockHeight = _startlingPoint select 2;
 _heightRandom = _flockHeight + 5 - random 10;
 
-/* hintsilent format ["_heightRandom crow %1", _heightRandom];*/
-	
 if (_heightRandom < 5) then {
 	_heightRandom = _flockHeight;
 };
 
-_center set [2,_heightRandom];
+_startlingPoint set [2,_heightRandom];
 
-/* _wp = _center getPos [_density, selectRandom [00,090,180,270]];*/
+_startlingPoint = _startlingPoint getPos [_density, selectRandom [00,090,180,270]];
 
-_center
+_startlingPoint

@@ -6,6 +6,7 @@ class suomen_fx {
             class crowCreate {};
             class crowGetWp {};
             class crowLoop {};
+            class crowMoveNear {};
             class crowMoveTo {};
             class setBirdTarget {};
             class startleBirds {};

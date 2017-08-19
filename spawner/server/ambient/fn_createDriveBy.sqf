@@ -48,10 +48,12 @@ missionNamespace setVariable ["suomen_obj_ambulance", _veh];
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 
+(driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
+
 _lastPosition = _path select (count _path - 2);
 
 _trg = createTrigger ["EmptyDetector", _lastPosition];
-_trg setTriggerArea [5, 5, 0, false];
+_trg setTriggerArea [8, 8, 0, false];
 _trg setTriggerActivation ["CIV", "PRESENT", true];
 _trg setTriggerStatements [
 "this && missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
