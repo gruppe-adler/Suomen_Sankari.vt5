@@ -10,13 +10,13 @@ if (count _startlingPoint == 0) then {
 
 if (count _targetPoint > 0) then { 
 	_startlingPoint = _targetPoint;
-	diag_log format ["targetpoint set to %1", _startlingPoint]; 
+	// diag_log format ["targetpoint set to %1", _startlingPoint]; 
 };
 	
 _flockHeight = _startlingPoint select 2;
-_heightRandom = _flockHeight + 5 - random 10;
+_heightRandom = _flockHeight + 7 - random 14;
 
-if (_heightRandom < 15) then {
+if (_heightRandom < 5) then {
 	_heightRandom = _flockHeight;
 };
 

@@ -22,3 +22,6 @@ playSound3D [_root + "sounds\explosion.ogg", nukepos, false, getPosASL nukepos, 
 playSound3D [_root + "sounds\windsound.ogg", nukepos, false, getPosASL nukepos, 15, 0.5, 500];
 [25] call suomen_spawner_fnc_spawnAmericanZombiesAlongRoads;
 [30] call suomen_spawner_fnc_spawnRussianZombiesAlongRoads;
+
+deleteVehicle explosion_target_top;
+deleteVehicle explosion_target_bottom;

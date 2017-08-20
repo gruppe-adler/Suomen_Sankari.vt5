@@ -42,7 +42,7 @@ _light setLightBrightness _maxLightBrightness;
 	deleteVehicle _light;
 };
 
-[nukepos,10] call suomen_fx_fnc_createFire;
+[nukepos,10, true] call suomen_fx_fnc_createFire;
 
 sleep 0.2;
 

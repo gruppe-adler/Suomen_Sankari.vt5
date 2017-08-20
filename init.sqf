@@ -85,7 +85,6 @@ Ryanzombiesfeed = 1;
 if (isServer) then {
 
 	call compile preprocessFileLineNumbers "police\blingbling.sqf";
-	call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";
 
 
 	[car_police,0.25,false] spawn attachBluelight;
@@ -143,7 +142,7 @@ if (isServer) then {
 			{
 			if (DEBUG) then {hintSilent "Enemies detected: true";};
 
-				if (!isPlayer _x) then {
+				if (!isPlayer _x && side _x == east) then {
 					_newGroup = createGroup west;
 					//hintSilent format ["joining %1", newGroup];
 					[_x] joinSilent _newGroup;

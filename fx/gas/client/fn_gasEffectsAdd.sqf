@@ -45,7 +45,6 @@ _protectingGoggles = [
 				player setVariable ["player_has_gasmask",true];
 				GASMASK_FOUND = true; 
 				publicVariable "GASMASK_FOUND";
-				};
 			} else {
 				cutRsc ["Default", "PLAIN"];
 				player setVariable ["player_has_gasmask", false];

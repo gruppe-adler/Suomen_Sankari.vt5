@@ -31,7 +31,7 @@ for "_i" from 1 to _flockCount do {
 	_crowList = _crowList + [_crow];
 };
 
-[_crowList] call suomen_fx_fnc_crowLoop;
+[_crowList, _index] call suomen_fx_fnc_crowLoop;
 
 _veh = "Land_PenBlack_F" createVehicle _flockPos;
 _veh say3D ["fx_crows_takeoff", 250];
