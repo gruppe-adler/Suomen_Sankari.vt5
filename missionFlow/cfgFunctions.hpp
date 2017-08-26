@@ -15,6 +15,7 @@ class suomen_mission {
             class disembarkAndTurn;
             class getPathNE;
             class makeAllRedBlue;
+            class turnOver;
     };
 };
 

@@ -3,4 +3,10 @@ params ["_truck"];
 {
 	unassignVehicle (vehicle _x);
 	doGetOut _x;
-} forEach units in _truck;
+} forEach units group (driver _truck);
+
+_newGroup = createGroup independent;
+
+{
+	[_x, _newGroup] call suomen_mission_fnc_turnOver;
+} forEach units group (driver _truck);
