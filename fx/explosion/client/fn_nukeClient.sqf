@@ -21,7 +21,7 @@ _wave setParticleCircle [50, [-80, -80, 2.5]];
 _wave setDropInterval 0.0002;
 
 
-_maxLightBrightness = 100;
+_maxLightBrightness = 50;
 
 /* _wave setDropInterval 0.001;*/
 _light = "#lightpoint" createVehicleLocal [((getpos nukepos select 0)),(getpos nukepos select 1),((getpos nukepos select 2)+500)];
@@ -32,7 +32,7 @@ _light setLightBrightness _maxLightBrightness;
 [_light, _maxLightBrightness] spawn {
 	params ["_light", "_maxLightBrightness"];
 	_i = 0;
-	_loops = 100;
+	_loops = 50;
 	while {_i < _loops} do
 	{
 		_light setLightBrightness _maxLightBrightness - (_i *_maxLightBrightness/_loops);
@@ -54,7 +54,7 @@ _light setLightBrightness _maxLightBrightness;
 [_light, _maxLightBrightness] spawn {
 	params ["_light", "_maxLightBrightness"];
 	_i = 1;
-	_loops = 100;
+	_loops = 50;
 	while {_i < 100} do
 	{
 		_light setLightBrightness _maxLightBrightness - (_i *_maxLightBrightness/_loops);

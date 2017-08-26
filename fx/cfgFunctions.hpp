@@ -3,6 +3,7 @@ class suomen_fx {
     class crows_client {
             file = fx\crows\client;
 
+            class crowCircle {};
             class crowCreate {};
             class crowGetWp {};
             class crowLoop {};

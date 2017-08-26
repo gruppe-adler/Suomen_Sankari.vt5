@@ -6,6 +6,7 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 
 
 class cfgFunctions {
+    #include "missionFlow\cfgFunctions.hpp"
     #include "fx\cfgFunctions.hpp"
     #include "spawner\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
@@ -182,11 +183,11 @@ class CfgSounds {
     sounds[] = {
         music_smells,
         steam,
-        explosion,
         windsound,
         alias_fire_furnal,
         alias_fire_burned,
         alias_fire_tipat,
+        fat_explosion,
         launch1,
         launch2,
         launch3,
@@ -288,15 +289,7 @@ class CfgSounds {
         };
         titles[] = {};
     };
-    class explosion {
-        name = "explosion";
-        sound[] = {
-            sounds\explosion.ogg,
-            2.5,
-            1.0
-        };
-        titles[] = {};
-    };
+    
     class windsound {
         name = "windsound";
         sound[] = {

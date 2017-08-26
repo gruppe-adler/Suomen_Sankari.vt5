@@ -81,6 +81,7 @@ setCustomFace =
 ryanzombiesglow = true;
 // ryanzombiesstartinganim = 0;
 Ryanzombiesfeed = 1;
+ryanzombiescivilianattacks = true;
 
 if (isServer) then {
 
@@ -132,39 +133,39 @@ if (isServer) then {
 	// friendlies -> enemies
 	[] spawn {
 
-	neutralGuys = [
-		"neutral1",
-		"neutral2",
-		"neutral3"
-		];
+		neutralGuys = [
+			"neutral1",
+			"neutral2",
+			"neutral3"
+			];
 
-	SET_ENEMY_listener = {
+		SET_ENEMY_listener = {
 			{
-			if (DEBUG) then {hintSilent "Enemies detected: true";};
+				if (DEBUG) then {hintSilent "Enemies detected: true";};
 
 				if (!isPlayer _x && side _x == east) then {
 					_newGroup = createGroup west;
 					//hintSilent format ["joining %1", newGroup];
 					[_x] joinSilent _newGroup;
 					};
-				} forEach allUnits;
+			} forEach allUnits;
 
 
-				{
-					_x setBehaviour "AWARE";
-				} forEach allUnits;
+			{
+				_x setBehaviour "AWARE";
+			} forEach allUnits;
 
-				nul = [] execVM "patrols\rusPatrolGaz.sqf";
-			};
+			nul = [] execVM "patrols\rusPatrolGaz.sqf";
+		};
 
-			"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;
+		"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;
 
 		if (!isMultiplayer) then {
-			[] spawn {
-				waitUntil {(ENEMIES_DETECTED)};
-				[] call SET_ENEMY_listener;
+				[] spawn {
+					waitUntil {(ENEMIES_DETECTED)};
+					[] call SET_ENEMY_listener;
+				};
 			};
-		};
 	};
 
 
@@ -206,16 +207,3 @@ if (isServer) then {
 
 
 
-{
-_x setVariable ["asr_ai_exclude", true];
-_x setSkill ["aimingspeed", 0.4];
-_x setSkill ["spotdistance", 1];
-_x setSkill ["aimingaccuracy", 0.3];
-_x setSkill ["aimingshake", 0.3];
-_x setSkill ["spottime", 1];
-_x setSkill ["spotdistance", 1];
-_x setSkill ["commanding", 1];
-_x setSkill ["general", 1];
-} forEach allUnits;
-
-diag_log "skill set for every ai unit";
