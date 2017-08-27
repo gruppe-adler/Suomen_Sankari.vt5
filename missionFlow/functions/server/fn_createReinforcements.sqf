@@ -58,8 +58,9 @@ _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_truck", "_lastPosition"];
 	if (_truck distance _lastPosition < 5) then {
-		[_truck] call suomen_mission_fnc_disembarkAndTurn;
 		[_handle] call CBA_fnc_removePerFrameHandler;
+		[_truck] call suomen_mission_fnc_disembarkAndTurn;
+		[_truck, 0, true] call suomen_fx_fnc_createFire;
 	};
 }, 1, [_truck, _lastPosition]] call CBA_fnc_addPerFrameHandler;
 

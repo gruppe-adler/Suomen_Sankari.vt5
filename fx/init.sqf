@@ -5,5 +5,5 @@ SUOMEN_EXPLOSION_TIMER = 3;
 
 if (isServer) then {
 	call suomen_fx_fnc_bombLoop;
-	call suomen_fx_fnc_initCrows;
+	/* call suomen_fx_fnc_initCrows;*/ // todo: think of something more performant without fired EH
 };
