@@ -31,7 +31,46 @@ class Header
 
 
 class CfgIdentities {
-    class Sampo {
+
+    class santeri {
+        name = "Santeri";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "WhiteHead_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class marek {
+        name = "Marek";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "WhiteHead_06"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class fritjof {
+        name = "Fritjof";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "WhiteHead_09"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class lenni {
+        name = "Lenni";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_08"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+
+
+    class sampo {
         name = "Sampo";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_04"; // use valid codes
@@ -40,7 +79,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Ossi {
+    class ossi {
         name = "Ossi";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_06"; // use valid codes
@@ -49,7 +88,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Tuomas {
+    class tuomas {
         name = "Tuomas";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_09"; // use valid codes
@@ -58,7 +97,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Ilpo {
+    class ilpo {
         name = "Ilpo";
         nameSound = ""; // leave it empty, or use valid codes
         face = "GreekHead_A3_08"; // use valid codes
@@ -67,7 +106,9 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Kimmo {
+
+
+    class kimmo {
         name = "Kimmo";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_11"; // use valid codes
@@ -76,7 +117,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Janne {
+    class janne {
         name = "Janne";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_12"; // use valid codes
@@ -85,7 +126,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Eino {
+    class eino {
         name = "Eino";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_13"; // use valid codes
@@ -94,7 +135,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Hemmo {
+    class hemmo {
         name = "Hemmo";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_20"; // use valid codes
@@ -103,7 +144,9 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Tommi {
+
+
+    class tommi {
         name = "Tommi";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_15"; // use valid codes
@@ -112,7 +155,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Mari {
+    class mari {
         name = "Mari";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_14"; // use valid codes
@@ -121,7 +164,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Antti {
+    class antti {
         name = "Antti";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_13"; // use valid codes
@@ -130,7 +173,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Pekka {
+    class pekka {
         name = "Pekka";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_12"; // use valid codes
@@ -139,7 +182,10 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Ville {
+
+
+    /* coolios */
+    class ville {
         name = "Ville";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_21"; // use valid codes
@@ -148,7 +194,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Marco {
+    class marco {
         name = "Marco";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_16"; // use valid codes
@@ -157,7 +203,7 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Emppu {
+    class emppu {
         name = "Emppu";
         nameSound = ""; // leave it empty, or use valid codes
         face = "WhiteHead_07"; // use valid codes
@@ -166,8 +212,137 @@ class CfgIdentities {
         pitch = 1.0; // free to change
     };
 
-    class Esa {
+    class esa {
         name = "Esa";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+
+
+    /* bikergang */
+    class henrik {
+        name = "Henrik";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class toini {
+        name = "Toini";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class mikael {
+        name = "Mikael";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class rasmus {
+        name = "Rasmus";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+     class sami {
+        name = "Sami";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class ukko {
+        name = "Ukko";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class jani {
+        name = "Jani";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class herkko {
+        name = "Herkko";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+
+
+
+
+
+
+    /* bauern */
+    class frederik {
+        name = "Frederik";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class pasi {
+        name = "Pasi";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+
+    /* busfahrer */
+    class emil {
+        name = "Emil";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class kalle {
+        name = "Kalle";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "GreekHead_A3_04"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
+    class klaus {
+        name = "Klaus";
         nameSound = ""; // leave it empty, or use valid codes
         face = "GreekHead_A3_04"; // use valid codes
         glasses = "None"; // use valid codes

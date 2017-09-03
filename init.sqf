@@ -1,7 +1,9 @@
+call suomen_mission_fnc_setupGroupIds;
+
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 
 // tfar shit
-TF_give_microdagr_to_soldier = true;
+TF_give_microdagr_to_soldier = false;
 publicVariable "TF_give_microdagr_to_soldier";
 
 tf_no_auto_long_range_radio = true; //Long Range Radio an GrpFhr austeilen? - ja ^ nein
@@ -21,7 +23,6 @@ publicVariable "tf_same_sw_frequencies_for_side";
 
 player setVariable ["isSpectator", "false", false];
 
-_nul = [] execVM "helpers\hideMarker.sqf";
 
 // FIREWORKS
 callFireworks = compile preprocessFileLineNumbers "fireworks\callFireworks.sqf";
