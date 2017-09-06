@@ -133,6 +133,8 @@ if (isServer) then {
 			{
 				if (DEBUG) then {hintSilent "Enemies detected: true";};
 
+
+
 				if (!isPlayer _x && side _x == east) then {
 					_newGroup = createGroup west;
 					//hintSilent format ["joining %1", newGroup];
@@ -146,6 +148,21 @@ if (isServer) then {
 			} forEach allUnits;
 
 			nul = [] execVM "patrols\rusPatrolGaz.sqf";
+
+			[   east,
+			     ["tsk_enemies_detected"],
+			            [
+			                "Russian and finnish defense forces are now aware there is something going on. Stay low!",
+			                "Russian and finnish forces are alert. Be careful and stay hidden.",
+			                ""
+			            ],
+			            "",
+			            "CREATED",
+			            2,
+			            true
+			] call BIS_fnc_taskCreate;
+			["tsk_enemies_detected","danger"] call BIS_fnc_taskSetType;
+			["tsk_enemies_detected","ASSIGNED",true] call BIS_fnc_taskSetState;
 		};
 
 		"ENEMIES_DETECTED" addPublicVariableEventHandler SET_ENEMY_listener;

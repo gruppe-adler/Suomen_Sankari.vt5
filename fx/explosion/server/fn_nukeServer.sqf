@@ -61,6 +61,49 @@ _jussiCar
 	MISSION_COMPLETED = true; 
 	publicVariable "MISSION_COMPLETED"; 
 	60 setFog [0,0,0];
+
+	[   east,
+            ["tsk_evacuate"],
+            [
+                "This is hell... try to find a boat and escape. Check the angling club.",
+                "This is hell... try to find a boat and escape.",
+                ""
+            ],
+            "",
+            "CREATED",
+            2,
+            true
+	] call BIS_fnc_taskCreate;
+	["tsk_evacuate","boat"] call BIS_fnc_taskSetType;
+	["tsk_evacuate","ASSIGNED",true] call BIS_fnc_taskSetState;
 }, 
 []
 ] call CBA_fnc_waitUntilAndExecute;
+
+
+
+[{
+	END_MISSION
+}, 
+{
+	["tsk_evacuate","SUCCEEDED",true] call BIS_fnc_taskSetState;
+}, 
+[]
+] call CBA_fnc_waitUntilAndExecute;
+
+
+
+[   east,
+            ["tsk_extract"],
+            [
+                "Wow, that explosion! Retreat back to your hideout.",
+                "Wow, that explosion! Retreat back to your hideout.",
+                ""
+            ],
+            "",
+            "CREATED",
+            2,
+            true
+] call BIS_fnc_taskCreate;
+["tsk_extract","run"] call BIS_fnc_taskSetType;
+["tsk_extract","ASSIGNED",true] call BIS_fnc_taskSetState;

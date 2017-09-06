@@ -12,7 +12,7 @@ _jussi = _grp createUnit ["GRAD_CivilianZed_rds_uniform_Woodlander4_crawler", _t
 [_jussi, _face] remoteExecCall ["setFace"];
 
 // _jussi setPos [_trunkposition select 0, _trunkposition select 1, 0.4];
-[_jussi, "AinvPercMstpSnonWnonDnon"] remoteExecCall ["fnc_RyanZombies_PlayMoveNow"];
+// [_jussi, "AinvPercMstpSnonWnonDnon"] remoteExecCall ["fnc_RyanZombies_PlayMoveNow"];
 _jussi call RZ_fnc_zombie_AggressiveSound;
 
 
