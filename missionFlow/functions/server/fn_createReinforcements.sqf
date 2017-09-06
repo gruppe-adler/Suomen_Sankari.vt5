@@ -2,6 +2,7 @@ params ["_pos", ["_dir", 0], ["_waypoints",[]]];
 
 _truck = createVehicle ["RHS_Ural_VDV_01", _pos, [], 0, "NONE"];
 _truck setDir _dir;
+_truck enableDynamicSimulation false;
 
 _type = [
 	"rhs_vdv_sergeant",
@@ -22,13 +23,15 @@ _crewGroup = createGroup civilian;
 createVehicleCrew _truck;
 [_truck] joinSilent _crewGroup;
 crew _truck joinSilent _crewGroup;
-
+{
+	_x enableDynamicSimulation false;
+} forEach crew _truck;
 
 // create units
 for "_i" from 0 to 10 do 
 {
 	_unit = _crewGroup createUnit [selectRandom _type, _pos, [], 0, "NONE"];
-
+	_unit enableDynamicSimulation false;
 	removeAllWeapons _unit;
 
 	_face = selectRandom RZ_FaceArray;
@@ -57,6 +60,14 @@ _lastPosition = _waypoints select (count _waypoints - 1);
 _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_truck", "_lastPosition"];
+
+	/*
+	if (!(alive (driver _truck))) exitWith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		[_truck] call suomen_mission_fnc_disembarkAndTurn;
+	};
+	*/
+
 	if (_truck distance _lastPosition < 5) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
 		[_truck] call suomen_mission_fnc_disembarkAndTurn;

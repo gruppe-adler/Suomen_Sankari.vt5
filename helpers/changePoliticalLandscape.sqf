@@ -36,3 +36,7 @@ civ_car setVehicleLock "UNLOCKED";
 	_x setBehaviour "COMBAT";
 	};
 } forEach allUnits;
+
+
+
+[] call suomen_mission_fnc_createReinforcementsNE;

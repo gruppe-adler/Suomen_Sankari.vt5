@@ -8,5 +8,5 @@ params ["_truck"];
 _newGroup = createGroup independent;
 
 {
-	[_x, _newGroup] spawn suomen_mission_fnc_turnOver;
+	[_x, _newGroup, false] spawn suomen_mission_fnc_turnOver;
 } forEach units group (driver _truck);

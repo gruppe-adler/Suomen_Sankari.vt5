@@ -23,21 +23,21 @@ class suomen_fx {
 	class explosion_client {
 		file = fx\explosion\client;
 
-                class addInteractionBomb {};
-                class fogMoving {};
-                class nukeClient {};
-                class setFog {};
-                class steamLeak {};
+            class addInteractionBomb {};
+            class fogMoving {};
+            class nukeClient {};
+            class setFog {};
+            class steamLeak {};
 
 	};
 
 	class explosion_server {
 		file = fx\explosion\server;
 
-                class bombLoop {};
-                class explosiveDetonation {};
-                class explosivePlanted {};
-                class nukeServer {};
+            class bombLoop {};
+            class explosiveDetonation {};
+            class explosivePlanted {};
+            class nukeServer {};
 	};
 
     class fire {
@@ -60,5 +60,11 @@ class suomen_fx {
 
             class gasEffectsAdd {};
             class gasEffectsReset {};
+    };
+
+    class police {
+            file = fx\police\client;
+
+            class addBlueLight {};
     };
 };

@@ -60,12 +60,6 @@ AI_KILLED = 0;
 EXTRACTION_IMMINENT = false;
 firstspawn = false;
 
-kalle addAction  ["<t color=""#93E352"">Turn On Radio</t>",{RADIO_PLAYING = true; publicVariable "RADIO_PLAYING";}, nil, 0, false, false, "","!(RADIO_PLAYING)  && driver ikarus == _this"];
-kalle addAction  ["<t color=""#DD0000"">Turn Off Radio</t>",{RADIO_PLAYING = false; publicVariable "RADIO_PLAYING";}, nil, 0, false, false, "","(RADIO_PLAYING) && driver ikarus  == _this"];
-
-kalle addAction  ["<t color=""#93E352"">Turn On Interior Light</t>",{LIGHT_ON = true; publicVariable "LIGHT_ON";}, nil, 0, false, false, "","!(LIGHT_ON)  && driver ikarus == _this"];
-kalle addAction  ["<t color=""#DD0000"">Turn Off Interior Light</t>",{LIGHT_ON = false; publicVariable "LIGHT_ON";}, nil, 0, false, false, "","(LIGHT_ON) && driver ikarus  == _this"];
-
 execVM "fx\init.sqf";
 
 setCustomFace =
@@ -86,11 +80,9 @@ ryanzombiescivilianattacks = true;
 
 if (isServer) then {
 
-	call compile preprocessFileLineNumbers "police\blingbling.sqf";
 
-
-	[car_police,0.25,false] spawn attachBluelight;
-	[car_ambulance,0.25,true] spawn attachBluelight;
+	[car_police,0.25,false] call suomen_fx_fnc_addBlueLight;
+	[car_ambulance,0.25,true] call suomen_fx_fnc_addBlueLight;
 	[car_yellowrepair,1] spawn attachYellowlight;
 
 
@@ -102,9 +94,6 @@ if (isServer) then {
 
 	COMRADES_FOUND = false;
 	publicVariable "COMRADES_FOUND";
-
-	JUSSI_FREE = false;
-	publicVariable "JUSSI_FREE";
 
 	NUKE_DETONATE = false;
 	publicVariable "NUKE_DETONATE";

@@ -16,6 +16,7 @@ class suomen_mission {
             class getPathNE;
             class makeAllRedBlue;
             class setupGroupIds;
+            class setTaskTrigger;
             class turnOver;
     };
 };

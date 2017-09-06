@@ -60,10 +60,41 @@ _randomCivilian = [
 "GRAD_CivilianZed_rds_uniform_Rocker1_crawler",
 "GRAD_CivilianZed_rds_uniform_Rocker2_crawler",
 "GRAD_CivilianZed_rds_uniform_Rocker3_crawler",
-"GRAD_CivilianZed_rds_uniform_Rocker4_crawler"
+"GRAD_CivilianZed_rds_uniform_Rocker4_crawler",
+"GRAD_CivilianZed_rds_schoolteacher_walker",
+"GRAD_CivilianZed_rds_Functionary1_walker",
+"GRAD_CivilianZed_rds_Functionary2_walker",
+"GRAD_CivilianZed_rds_doctor_walker",
+"GRAD_CivilianZed_rds_uniform_priest_walker",
+"GRAD_CivilianZed_rds_uniform_assistant_walker",
+"GRAD_CivilianZed_rds_uniform_Worker1_walker",
+"GRAD_CivilianZed_rds_uniform_Worker2_walker",
+"GRAD_CivilianZed_rds_uniform_Worker3_walker",
+"GRAD_CivilianZed_rds_uniform_Worker4_walker",
+"GRAD_CivilianZed_rds_uniform_Woodlander1_walker",
+"GRAD_CivilianZed_rds_uniform_Woodlander2_walker",
+"GRAD_CivilianZed_rds_uniform_Woodlander3_walker",
+"GRAD_CivilianZed_rds_uniform_Woodlander4_walker",
+"GRAD_CivilianZed_rds_uniform_Villager1_walker",
+"GRAD_CivilianZed_rds_uniform_Villager2_walker",
+"GRAD_CivilianZed_rds_uniform_Villager3_walker",
+"GRAD_CivilianZed_rds_uniform_Villager4_walker",
+"GRAD_CivilianZed_rds_uniform_Profiteer1_walker",
+"GRAD_CivilianZed_rds_uniform_Profiteer2_walker",
+"GRAD_CivilianZed_rds_uniform_Profiteer3_walker",
+"GRAD_CivilianZed_rds_uniform_Profiteer4_walker",
+"GRAD_CivilianZed_rds_uniform_citizen1_walker",
+"GRAD_CivilianZed_rds_uniform_citizen2_walker",
+"GRAD_CivilianZed_rds_uniform_citizen3_walker",
+"GRAD_CivilianZed_rds_uniform_citizen4_walker",
+"GRAD_CivilianZed_rds_uniform_Rocker1_walker",
+"GRAD_CivilianZed_rds_uniform_Rocker2_walker",
+"GRAD_CivilianZed_rds_uniform_Rocker3_walker",
+"GRAD_CivilianZed_rds_uniform_Rocker4_walker"
 ];
 
 _grp = creategroup independent;
 _zombie = _grp createUnit [selectRandom _randomCivilian, _pos, [], 0, "NONE"];
 _zombie enableDynamicSimulation true;
+_zombie setVariable ["RZ_isDemon", false];
 _zombie

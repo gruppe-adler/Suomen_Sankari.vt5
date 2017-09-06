@@ -15,7 +15,7 @@ _vehicles = nearestObjects [getPos nukepos, ["Car"], 100];
 
 
 
-hintsilent format ["vehicles %1", _vehicles];
+// hintsilent format ["vehicles %1", _vehicles];
 
 {
 	_range = 150 + random 5;

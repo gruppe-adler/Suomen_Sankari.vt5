@@ -21,7 +21,7 @@ _root = parsingNamespace getVariable "MISSION_ROOT";
 [nukepos, ["fat_explosion", 500]] remoteExec ["say3D", allPlayers];
 playSound3D [_root + "sounds\windsound.ogg", nukepos, false, getPosASL nukepos, 15, 0.5, 500];
 [25] call suomen_spawner_fnc_spawnAmericanZombiesAlongRoads;
-[30] call suomen_spawner_fnc_spawnRussianZombiesAlongRoads;
+
 
 deleteVehicle explosion_target_top;
 explosion_target_bottom setPos [getPos explosion_target_bottom select 0, getPos explosion_target_bottom select 1, -9.5];
@@ -31,3 +31,36 @@ explosion_target_bottom setPos [getPos explosion_target_bottom select 0, getPos 
 _orepile1 = createVehicle ["Land_SY_01_stockpile_02_F", [3263.5,3495.05,0.0163422], [], 0, "CAN_COLLIDE"];
 _orepile2 = createVehicle ["Land_SY_01_stockpile_02_F", [3263.29,3495.28,0], [], 0, "CAN_COLLIDE"];
 _orepile2 setDir 80;
+
+
+_jussiCar = [getMarkerPos "mrk_jussi"] call suomen_spawner_fnc_createJussiCar;
+
+
+[{
+_this doorPhase "trunk" == 1
+}, 
+{
+	[_this] call suomen_spawner_fnc_releaseJussi;
+}, 
+_jussiCar
+] call CBA_fnc_waitUntilAndExecute;
+
+[{
+	EXTRACTION_IMMINENT
+}, 
+{
+	[getMarkerPos "mrk_doc"] call suomen_spawner_fnc_createDoc;
+}, 
+[]
+] call CBA_fnc_waitUntilAndExecute;
+
+[{
+	EXTRACTION_IMMINENT
+}, 
+{
+	MISSION_COMPLETED = true; 
+	publicVariable "MISSION_COMPLETED"; 
+	60 setFog [0,0,0];
+}, 
+[]
+] call CBA_fnc_waitUntilAndExecute;

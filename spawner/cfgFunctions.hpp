@@ -28,7 +28,9 @@ class suomen_spawner {
     class jussi {
             file = spawner\server\jussi;
 
-            class createJussi {};
+            class createJussiCar {};
+            class releaseJussi {};
+            class shakeDatCar {};
     };
 
     class russian {

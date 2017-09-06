@@ -5,6 +5,7 @@ for "_i" from 0 to _count do {
 	_grp = creategroup independent;
 	_zombie = _grp createUnit ["GRAD_SoldierZed_rhs_uniform_FROG01_wd_slow", _pos, [], 0, "NONE"];
 	_zombie enableDynamicSimulation true;
+	_zombie setVariable ["RZ_isDemon", false];
 	// [_zombie] call suomen_spawner_fnc_getAmericanLoadout;
 
 	// DEBUG

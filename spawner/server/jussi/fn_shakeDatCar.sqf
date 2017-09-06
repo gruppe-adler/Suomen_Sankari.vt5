@@ -1,4 +1,4 @@
-params ["_car"];
+params ["_car", "_fake_jussi"];
 
 private ["_sounds", "_root"];
 
@@ -15,16 +15,16 @@ _sounds = [
 // loop bonking
 [{
     params ["_args", "_handle"];
-    _args params ["_root", "_car", "_sounds"];
+    _args params ["_root", "_car", "_sounds", "_fake_jussi"];
 
-    if (JUSSI_FREE || !alive _car) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+    if (!(_fake_jussi in _car) || !alive _car) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
     if (random 1 > 0.7) then {
 		_car setvelocity [random 0.5 * (sin (random 360)), random 0.5 * (cos (random 360)), random 0.2];
 		playSound3D [_root + (selectRandom _sounds), _car, false, getPosATL _car, 20, 1, 75];
 	};
 
-},0.5,[_root, _car, _sounds]] call CBA_fnc_addPerFrameHandler;
+},0.5,[_root, _car, _sounds, _fake_jussi]] call CBA_fnc_addPerFrameHandler;
 
 // create flies
 _trunkposition = _car modelToWorldVisual [0,-1,0.3];
