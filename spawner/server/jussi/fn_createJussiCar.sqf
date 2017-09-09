@@ -8,7 +8,9 @@ _fake_jussi = (createGroup civilian) createUnit ["C_man_1", _pos, [], 0, "NONE"]
 _face = selectRandom RZ_FaceArray;
 [_fake_jussi, _face] remoteExecCall ["setFace"];
 
-_fake_jussi moveInCargo [_veh,3]; 
+_fake_jussi moveInCargo [_veh,3];
+_veh lockCargo true;
+
 _fake_jussi disableAI "ALL"; 
 _veh setVariable ["suomen_fakeJussi", _fake_jussi];
 

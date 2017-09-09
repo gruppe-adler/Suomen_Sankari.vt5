@@ -4,6 +4,7 @@ class suomen_mission {
             file = missionFlow\functions\client;
 
             class debugKnowsAbout;
+            class endMission;
     };
 
     class ai_server {
@@ -12,6 +13,7 @@ class suomen_mission {
             class changeSides;
             class createReinforcements;
             class createReinforcementsNE;
+            class deleteAllUnitsInTrigger;
             class disembarkAndTurn;
             class getPathNE;
             class makeAllRedBlue;

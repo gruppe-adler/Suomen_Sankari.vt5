@@ -5,7 +5,12 @@ class suomen_spawner {
 
             class createDriveBy {};
             class createHelicopter {};
+            class createJetFlyBy {};
+            class createLightHouseFeed {};
+            class createRepairVan {};
+            class handleRepairVan {};
             class spawnDriveByDocs {};
+            class spawnHunt {};
     };
 
     class american {
@@ -23,6 +28,20 @@ class suomen_spawner {
             class createDoc {};
             class createPriest {};
             class createRandomCivilian {};
+    };
+
+    class enemies {
+            file = spawner\server\enemies;
+
+            class enemies_aceDamage {};
+            class enemies_attackHuman {};
+            class enemies_attackHumanOriginal {};
+            class enemies_engageTarget {};
+            class enemies_engageTargetOriginal {};
+            class enemies_feedOnTarget {};
+            class enemies_overwriteRZfunction {
+                postInit = 1;
+            };
     };
 
     class jussi {

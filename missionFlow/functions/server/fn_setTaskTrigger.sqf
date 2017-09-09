@@ -3,6 +3,57 @@ params ["_vehicleArray"];
 // CREATE TASKS
 // _owner,_taskid,_texts,_destination,_state,_priority,_showNotification,_taskType,_alwaysVisible
 
+sleep 10;
+// jussi
+[   east,
+    ["tsk_findComrades"],
+    [
+        "Find your comrade Jussi",
+        "Find Jussi and bring him back",
+        ""
+    ],
+    objNull,
+    "ASSIGNED",
+    2,
+    true
+] call BIS_fnc_taskCreate;
+["tsk_findComrades","search"] call BIS_fnc_taskSetType;
+
+sleep 20;
+[   east,
+    ["tsk_ikarus"],
+    [
+        "Meet Kalle and the others and get in the Vans to drive over the border in disguise.",
+        "Meet Kalle and the others and get in the Vans.",
+        ""
+    ],
+    objNull,
+    "ASSIGNED",
+    2,
+    true
+] call BIS_fnc_taskCreate;
+["tsk_ikarus","meet"] call BIS_fnc_taskSetType;
+   
+// ALL DEAD
+[{
+    params ["_args", "_handle"];
+    
+    _allDead = (({side _x != civilian} count playableUnits) + ({side _x != civilian} count switchableUnits) == 0);
+
+    // hintSilent format ["%1", _playersInVehicles];
+
+    if (_allDead) then {
+        MISSION_FAILED = true;
+
+        ["tsk_evacuate","FAILED",true] call BIS_fnc_taskSetState;
+        ["tsk_extract","FAILED",true] call BIS_fnc_taskSetState;
+        ["tsk_findComrades","CANCELED",true] call BIS_fnc_taskSetState;
+        ["tsk_findGasmasks","CANCELED",true] call BIS_fnc_taskSetState;
+
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+},3,[]] call CBA_fnc_addPerFrameHandler;
 
 // GET IN VANS
 [{
@@ -47,7 +98,7 @@ params ["_vehicleArray"];
                 "Find gasmasks to protect yourself",
                 ""
             ],
-            "",
+            objNull,
             "CREATED",
             2,
             true
@@ -60,6 +111,8 @@ params ["_vehicleArray"];
 
 },3,[]] call CBA_fnc_addPerFrameHandler;
 
+
+// FIND GASMASKS SUCCEED
 [{
     params ["_args", "_handle"];
     
@@ -72,7 +125,34 @@ params ["_vehicleArray"];
 },3,[]] call CBA_fnc_addPerFrameHandler;
 
 
-// FIND JUSSI
+// EXTRACT ASSIGNED
+[{
+    params ["_args", "_handle"];
+    
+    if (NUKE_DETONATE) then {
+        [   east,
+            ["tsk_extract"],
+            [
+                "Wow, that explosion! Retreat back to your hideout.",
+                "Wow, that explosion! Retreat back to your hideout.",
+                ""
+            ],
+            "",
+            "ASSIGNED",
+            2,
+            true
+        ] call BIS_fnc_taskCreate;
+        ["tsk_extract","run"] call BIS_fnc_taskSetType;
+
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+},5,[]] call CBA_fnc_addPerFrameHandler;
+
+
+
+
+// FIND JUSSI CANCEL
 [{
     params ["_args", "_handle"];
     
@@ -86,6 +166,7 @@ params ["_vehicleArray"];
 },3,[]] call CBA_fnc_addPerFrameHandler;
 
 
+// EXTRACT SUCCEED
 [{
     params ["_args", "_handle"];
     
@@ -97,14 +178,85 @@ params ["_vehicleArray"];
 
 },3,[]] call CBA_fnc_addPerFrameHandler;
 
-
+// EVACUATE CREATE
 [{
     params ["_args", "_handle"];
     
     if (FIGHT) then {
-        ["tsk_evacuate","ASSIGNED",true] call BIS_fnc_taskSetState;
+         [   east,
+                    ["tsk_evacuate"],
+                    [
+                        "This is hell... try to find a boat and escape. Check the angling club.",
+                        "This is hell... try to find a boat and escape.",
+                        ""
+                    ],
+                    objNull,
+                    "ASSIGNED",
+                    2,
+                    true
+            ] call BIS_fnc_taskCreate;
+        ["tsk_evacuate","boat"] call BIS_fnc_taskSetType;
 
         [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+},3,[]] call CBA_fnc_addPerFrameHandler;
+
+
+// CREATE DOC
+[{
+    params ["_args", "_handle"];
+
+    if (EXTRACTION_IMMINENT) then {
+        [getMarkerPos "mrk_doc"] call suomen_spawner_fnc_createDoc;
+        MISSION_COMPLETED = true; 
+        publicVariable "MISSION_COMPLETED"; 
+        60 setFog [0,0,0];
+        [getMarkerPos "mrk_lightHouseFeed"] call suomen_spawner_fnc_createLightHouseFeed;
+          
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+},3,[]] call CBA_fnc_addPerFrameHandler;
+
+
+// RELEASE JUSSI
+[{
+    params ["_args", "_handle"];
+    
+    _jussiCar = (missionNamespace getVariable ["suomen_obj_jussiCar", objNull]);
+
+    if (!isNull _jussiCar && {_jussiCar doorPhase "trunk" == 1}) then {
+        [_this] call suomen_spawner_fnc_releaseJussi;
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+},3,[]] call CBA_fnc_addPerFrameHandler;
+
+
+// EVACUATE SUCCEEDED
+[{
+    params ["_args", "_handle"];
+    
+    _jussiCar = (missionNamespace getVariable ["suomen_obj_jussiCar", objNull]);
+
+    if (END_MISSION) then {
+        ["tsk_evacuate","SUCCEEDED",true] call BIS_fnc_taskSetState;
+
+        [] remoteExec ["suomen_mission_fnc_endMission", allPlayers, true];
+        
+        [   getMarkerPos "mrk_tupolew_start",
+            getMarkerPos "mrk_tupolew_boom" ,
+            getMarkerPos "mrk_tupolew_end",
+            25,"FULL","B_Plane_Fighter_01_F",WEST] call suomen_spawner_fnc_createJetFlyBy;
+
+        [   getMarkerPos "mrk_mig29_start", 
+            getMarkerPos "mrk_mig29_boom" ,
+            getMarkerPos "mrk_mig29_end",
+            25,"FULL","B_Plane_Fighter_01_F",WEST] call suomen_spawner_fnc_createJetFlyBy;
+
+        [_handle] call CBA_fnc_removePerFrameHandler;
+
     };
 
 },3,[]] call CBA_fnc_addPerFrameHandler;

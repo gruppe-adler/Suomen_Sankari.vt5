@@ -27,7 +27,6 @@ hideObject (nearestObject [(getPos leakaction), "Land_barracks_ruins_F"]);
 	[] execVM "helpers\changePoliticalLandscape.sqf";
 	[] remoteExec ["suomen_fx_fnc_nukeClient", allPlayers];
 	// [150,150] remoteExec ["suomen_fx_fnc_fogMoving", allPlayers];
-	[leakpos, 5000, {MISSION_COMPLETED}] call suomen_fx_fnc_gasEffectsAdd;
 
 	call suomen_fx_fnc_nukeServer;
 }] call CBA_fnc_waitUntilAndExecute;

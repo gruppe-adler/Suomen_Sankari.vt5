@@ -70,6 +70,7 @@ _handle = [{
 
 	if (_truck distance _lastPosition < 5) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
+		_truck removeAllEventHandlers "GetOut";
 		[_truck] call suomen_mission_fnc_disembarkAndTurn;
 		[_truck, 0, true] call suomen_fx_fnc_createFire;
 	};

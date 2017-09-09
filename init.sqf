@@ -104,6 +104,8 @@ if (isServer) then {
 	LIGHT_ON = false;
 	publicVariable "LIGHT_ON";
 
+	MISSION_FAILED = false;
+
 	MISSION_COMPLETED = false;
 	publicVariable "MISSION_COMPLETED";
 

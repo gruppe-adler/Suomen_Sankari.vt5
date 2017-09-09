@@ -18,8 +18,13 @@ _protectingGoggles = [
     params ["_args", "_handle"];
     _args params ["_coughs", "_protectingGoggles", "_pos", "_distance", "_condition"];
     
+    if (NUKE_DETONATED) exitWith {
+    	[leakpos, 5000, {MISSION_COMPLETED}] call suomen_fx_fnc_gasEffectsAdd;
+    };
+
     if (!alive player || _condition) exitWith { 
     	[_handle] call CBA_fnc_removePerFrameHandler;
+    	call suomen_fx_fnc_gasEffectsReset;
     };
 
    	call suomen_fx_fnc_gasEffectsReset;

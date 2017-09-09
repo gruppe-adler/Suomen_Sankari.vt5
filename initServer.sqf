@@ -1,1 +1,1 @@
-[[transporter_1, transporter_2, transporter_3]] call suomen_mission_fnc_setTaskTrigger;
+[[transporter_1, transporter_2, transporter_3]] spawn suomen_mission_fnc_setTaskTrigger;

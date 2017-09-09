@@ -356,6 +356,8 @@ class CfgSounds {
     #include "fx\cfgSounds.hpp"
 
     sounds[] = {
+        sonicboom_01,
+        sonicboom_02,
         music_smells,
         steam,
         windsound,
@@ -407,6 +409,26 @@ class CfgSounds {
         cough4
     };
 
+
+    class sonicboom_01 {
+        name = "sonicboom_01";
+        sound[] = {
+            sounds\sonicboom_01.wss,
+            30,
+            1.0
+        };
+        titles[] = {};
+    };
+
+    class sonicboom_02 {
+        name = "sonicboom_02";
+        sound[] = {
+            sounds\sonicboom_02.wss,
+            30,
+            1.0
+        };
+        titles[] = {};
+    };
 
     class music_smells {
         name = "music_smells";
