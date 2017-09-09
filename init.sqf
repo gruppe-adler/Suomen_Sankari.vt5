@@ -16,6 +16,7 @@ publicVariable "tf_same_sw_frequencies_for_side";
 
 "mrk_spawn_f" setMarkerAlphaLocal 0;
 "mrk_spawn_r" setMarkerAlphaLocal 0;
+"mrk_spawn_tankstelle" setMarkerAlphaLocal 0;
 "mrk_blufor_patrol" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd2" setMarkerAlphaLocal 0;

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2874;
+		nextID=2876;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3780.4053,89.398735,7.5174093};
-		dir[]={0.83638668,-0.54700398,-0.036385488};
-		up[]={0.54649001,0.8371284,-0.023774099};
-		aside[]={-0.043461267,-3.5390258e-008,-0.99909592};
+		pos[]={3019.8662,351.79712,2088.7229};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -945,7 +945,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1667;
+		items=1669;
 		class Item0
 		{
 			dataType="Marker";
@@ -1596,7 +1596,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3937.7539,-0.24400043,-108.47};
-			angle=6.1395097;
+			angle=6.1395068;
 			class Attributes
 			{
 				name="trg_end_mission";
@@ -1621,11 +1621,11 @@ class Mission
 			angle=0.78539819;
 			class Attributes
 			{
-				condition="call{round (time %5) == 0 && {(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}}";
+				condition="call{(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}";
 				onActivation="call{FIGHT = true; publicVariable ""FIGHT""; [20, ""mrk_spawn_crowd""] call suomen_spawner_fnc_spawnAmericanZombieCrowd; [10, ""mrk_spawn_crowd2""] call suomen_spawner_fnc_spawnAmericanZombieCrowd; [10, ""mrk_spawn_crowd3""] call suomen_spawner_fnc_spawnAmericanZombieCrowd;}";
 				sizeA=2500;
 				interuptable=1;
-				activationBy="WEST";
+				activationBy="ANYPLAYER";
 				isRectangle=1;
 				isServerOnly=1;
 			};
@@ -1639,7 +1639,7 @@ class Mission
 			class Attributes
 			{
 				condition="call{round (time %2) == 0 && {(NUKE_DETONATE)} && {({vehicle _x in thisList} count allPlayers > 0)}}";
-				onActivation="call{[getMarkerPos ""mrk_priest""] call suomen_spawner_fnc_createPriest; [40] spawn suomen_spawner_fnc_createCivilianCrowd;}";
+				onActivation="call{[getMarkerPos ""mrk_priest""] call suomen_spawner_fnc_createPriest; [40] spawn suomen_spawner_fnc_createCivilianCrowd; [trg_areaCleaner_3] call suomen_mission_fnc_deleteAllUnitsInTrigger;}";
 				sizeA=150;
 				sizeB=150;
 				interuptable=1;
@@ -41756,11 +41756,11 @@ class Mission
 			angle=0.78539819;
 			class Attributes
 			{
-				condition="call{round (time %5) == 0 && {(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}}";
-				onActivation="call{call suomen_spawner_fnc_createDriveBy; [areacleaner_1] call suomen_mission_fnc_deleteAllUnitsInTrigger;}";
+				condition="call{(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}";
+				onActivation="call{[] call suomen_spawner_fnc_createDriveBy; [trg_areacleaner_1] call suomen_mission_fnc_deleteAllUnitsInTrigger; [40, ""mrk_spawn_tankstelle""] spawn suomen_spawner_fnc_spawnAmericanZombieCrowd;}";
 				sizeA=250;
 				interuptable=1;
-				activationBy="WEST";
+				activationBy="ANYPLAYER";
 				isRectangle=1;
 				isServerOnly=1;
 			};
@@ -41771,14 +41771,14 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={2908.1831,16.111666,1818.568};
-			angle=5.3554897;
+			angle=5.3554902;
 			class Attributes
 			{
-				condition="call{round (time %5) == 0 && {(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}}";
-				onActivation="call{[areacleaner_2] call suomen_mission_fnc_deleteAllUnitsInTrigger;}";
+				condition="call{(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}";
+				onActivation="call{[trg_areacleaner_2] call suomen_mission_fnc_deleteAllUnitsInTrigger;}";
 				sizeA=250;
 				interuptable=1;
-				activationBy="WEST";
+				activationBy="ANYPLAYER";
 				isRectangle=1;
 				isServerOnly=1;
 			};
@@ -41796,8 +41796,9 @@ class Mission
 				condition="call{this}";
 				sizeA=3000;
 				sizeB=2000;
-				activationBy="WEST";
+				activationBy="ANY";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=2456;
 			type="EmptyDetector";
@@ -41814,8 +41815,9 @@ class Mission
 				condition="call{this}";
 				sizeA=3000;
 				sizeB=500;
-				activationBy="WEST";
+				activationBy="ANY";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=2457;
 			type="EmptyDetector";
@@ -47514,6 +47516,39 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item1667
+		{
+			dataType="Marker";
+			position[]={2610.303,0,1767.1021};
+			name="mrk_spawn_tankstelle";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlack";
+			a=20;
+			b=7;
+			angle=304.38284;
+			id=2874;
+			atlOffset=-9.863678;
+		};
+		class Item1668
+		{
+			dataType="Trigger";
+			position[]={1238.8171,20.374224,2233.0659};
+			angle=2.2732236;
+			class Attributes
+			{
+				name="trg_areaCleaner_3";
+				condition="call{this}";
+				sizeA=1500;
+				sizeB=1500;
+				activationBy="ANY";
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=2875;
+			type="EmptyDetector";
+			atlOffset=1.0330009;
 		};
 	};
 	class Connections
