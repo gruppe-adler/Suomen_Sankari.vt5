@@ -21,9 +21,9 @@ usmc_emptytruck3 setPos (getMarkerPos "mrk_usmc_emptytruck3");
 usmc_emptytruck4 setPos (getMarkerPos "mrk_usmc_emptytruck4");
 
 
-{ deleteVehicle _x } forEach units (leader blufor_lead);
-sleep 5;
 { deleteVehicle _x } forEach units (leader rus_group_1);
+{ _x linkItem "mask_m50"; } forEach units (leader blufor_lead);
+
 sleep 5;
 
 {deleteVehicle _x;}forEach crew civ_car;

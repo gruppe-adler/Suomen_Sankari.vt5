@@ -4,6 +4,9 @@ class suomen_spawner {
             file = spawner\server\ambient;
 
             class createDriveBy {};
+            class createGasStationAction {};
+            class createGasStationDisembark {};
+            class createGasStationDriveBy {};
             class createHelicopter {};
             class createJetFlyBy {};
             class createLightHouseFeed {};

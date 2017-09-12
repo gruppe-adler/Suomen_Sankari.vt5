@@ -35,3 +35,21 @@ _orepile2 setDir 80;
 
 _jussiCar = [getMarkerPos "mrk_jussi"] call suomen_spawner_fnc_createJussiCar;
 missionNamespace setVariable ["suomen_obj_jussiCar", _jussiCar];
+
+{
+	if (isMultiplayer) then {
+		_x enableSimulationGlobal true;
+		_x hideObjectGlobal false;
+	} else {
+		_x enableSimulation true;
+		_x hideObject false;
+	};
+} forEach 
+[
+	tanktrap_1,
+	tanktrap_2,
+	tanktrap_3,
+	tanktrap_4,
+	tanktrap_5,
+	tanktrap_6
+];

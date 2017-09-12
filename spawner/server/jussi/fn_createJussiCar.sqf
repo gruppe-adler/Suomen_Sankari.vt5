@@ -10,8 +10,13 @@ _face = selectRandom RZ_FaceArray;
 
 _fake_jussi moveInCargo [_veh,3];
 _veh lockCargo true;
+_veh setVehicleLock "LOCKED";
 
-_fake_jussi disableAI "ALL"; 
+_fake_jussi disableAI "MOVE"; 
+_fake_jussi disableAI "ANIM"; 
+_fake_jussi disableAI "FSM"; 
+_fake_jussi disableAI "AUTOTARGET";
+_fake_jussi disableAI "TARGET";
 _veh setVariable ["suomen_fakeJussi", _fake_jussi];
 
 [_veh, _fake_jussi] call suomen_spawner_fnc_shakeDatCar;

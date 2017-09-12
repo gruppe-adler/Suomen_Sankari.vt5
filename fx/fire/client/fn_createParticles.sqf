@@ -7,13 +7,13 @@ _pos = getPosATL _target;
 
 // if fire is small
 if (!(_radius > 0)) then {
-
-	_colorRed = 0.5;
-	_colorGreen = 0.0;
-	_colorBlue = 0.0;
-	_effectSize = 0.1; // 0.05 molotov, 0.1 man
+	
+	_colorRed = 1;
+	_colorGreen = 0.65;
+	_colorBlue = 0.4;
+	_effectSize = 0.15; // 0.05 molotov, 0.1 man
 	_orientation = 5.4;
-	_particleLifeTime = 1;
+	_particleLifeTime = 0.5;
 	_particleDensity = 25;
 	_particleSize = 1;
 	_particleSpeed = 1;
@@ -25,9 +25,9 @@ if (!(_radius > 0)) then {
 							[1], 0.01, 0.02, "", "", "",_orientation,false,-1,[[3,3,3,0]]];
 	_fire setParticleRandom [_particleLifeTime/4, [0.15*_effectSize,0.15*_effectSize,0], [0.2,0.2,0],  0.4,               0,  [0,0,0,0], 0, 0, 0.2];
 							//[lifeTime,             position,                              moveVelocity, rotationVelocity, size, color, randomDirectionPeriod, randomDirectionIntensity] 
-	_fire setParticleFire [0.6, 0.25, 0.1];
+	_fire setParticleFire [0.1, 0.25, 0.5];
 	_fire setDropInterval (1/_particleDensity);
-	_fire attachTo [_target,[0,0,1]];
+	_fire attachTo [_target,[0,0,0.6]];
 
 	_refract = "#particlesource" createVehicleLocal _pos;
 	_refract setParticleCircle [0, [0, 0, 0]];
@@ -35,7 +35,7 @@ if (!(_radius > 0)) then {
 	_refract setParticleParams [["\A3\data_f\ParticleEffects\Universal\Refract.p3d", 1, 0, 1],"","billboard",1,_particleLifeTime,[0,0,0],[0,0,0.4*_particleSpeed],0,0.0565,0.05,0.03,[0.9*_particleSize,0],
 							[[1*_colorRed,1*_colorGreen,1*_colorBlue,-0],[1*_colorRed,1*_colorGreen,1*_colorBlue,-1],[1*_colorRed,1*_colorGreen,1*_colorBlue,-1],[1*_colorRed,1*_colorGreen,1*_colorBlue,-1],[1*_colorRed,1*_colorGreen,1*_colorBlue,-1],[1*_colorRed,1*_colorGreen,1*_colorBlue,0]],
 							[1], 0.01, 0.02, "", "", "",_orientation,false,-1,[[3,3,3,0]]];
-	_refract setDropInterval 0.1;
+	_refract setDropInterval 0.05;
 
 
 	//--- variables set by user

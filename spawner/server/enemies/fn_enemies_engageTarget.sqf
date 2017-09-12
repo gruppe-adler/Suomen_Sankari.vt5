@@ -1,5 +1,8 @@
 params ["_unit","_target"];
 _unit setVariable ["RZ_TargetVehType",""];
+
+if (_unit getVariable ["suomen_ignoreTargets", false]) exitWith {};
+
 if (!isNull _target) then
 {
 	if (((getPosATL _target select 2) > 20) AND (_target iskindof "AIR")) exitwith {sleep 2};

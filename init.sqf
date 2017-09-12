@@ -99,6 +99,9 @@ if (isServer) then {
 	NUKE_DETONATE = false;
 	publicVariable "NUKE_DETONATE";
 
+	GASSTATION_ACTION = false;
+	publicVariable "GASSTATION_ACTION";
+
 	RADIO_PLAYING = false;
 	publicVariable "RADIO_PLAYING";
 

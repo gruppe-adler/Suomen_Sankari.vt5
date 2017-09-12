@@ -20,6 +20,12 @@ class suomen_fx {
             class registerShot {};
     };
 
+     class earthquake_client {
+            file = fx\earthquake;
+
+            class earthquake {};
+    };
+
 	class explosion_client {
 		file = fx\explosion\client;
 

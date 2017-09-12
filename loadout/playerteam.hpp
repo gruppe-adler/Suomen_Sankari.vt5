@@ -4,7 +4,7 @@ perPlayerDelay = 0;
 baseDelay = 0;
 handleRadios = 1;
 
-class AllUnits {
+class AllPlayers {
 		binoculars = "Binocular";
 		map = "ItemMap";
 		compass = "ItemCompass";
@@ -125,25 +125,29 @@ class AllUnits {
 		class ville {
 			uniform = "rds_uniform_Woodlander1";
 			headgear = "H_Watchcap_blk";
-			goggles = "L_Shemagh_Gry";
+			goggles = "";
+			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class marco {
 			uniform = "rds_uniform_Woodlander2";
 			headgear = "H_Beret_blk";
-			goggles = "L_Shemagh_OD";
+			goggles = "";
+			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class esa {
 			uniform = "rds_uniform_Woodlander3";
 			headgear = "rds_worker_cap3";
-			goggles = "L_Shemagh_Red";
+			goggles = "";
+			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class emppu {
 			uniform = "rds_uniform_Woodlander4";
 			headgear = "rhs_beanie_green";
 			goggles = "";
+			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 

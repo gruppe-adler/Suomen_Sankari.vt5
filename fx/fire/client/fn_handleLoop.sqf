@@ -2,8 +2,7 @@ params ["_target", "_radius", "_particles", "_light", "_persistent"];
 
 private ["_isHumanOnFire"];
 
-_isHumanOnFire = _target isKindOf "Man";
-
+_isHumanOnFire = _target isKindOf "Man" && !(_target getVariable ["RZ_TargetVehType","none"] isEqualTo "none");
 
 // make sounds
 [{

@@ -13,14 +13,14 @@
 	ARRAY - spawned particle and sound source
 */
 
-private ["_pos", "_interval", "_size", "_source", "_sound"];
+private ["_pos", "_source", "_sounds"];
+params ["_target", ["_interval",0.1], ["_size",1], ["_scale",0.75]];
 
-_pos = _this select 0;
-_interval = if (count _this > 1) then {_this select 1} else {-1};
-_size = if (count _this > 2) then {_this select 2} else {-1};
-
-if (_interval <= 0) then {_interval = 0.1;};
-if (_size <= 0) then {_size = 1;};
+if (typeName _target == "OBJECT") then {
+	_pos = getPos _target;
+} else {
+	_pos = _target;
+};
 
 // FIXED PARAMS
 _source = "#particlesource" createVehicleLocal _pos;
@@ -32,7 +32,7 @@ _source setParticleParams [
 /*Position*/		[0, 0, 0],
 /*MoveVelocity*/	[0, 0, 0.5],
 /*Simulation*/		0, 1.40, 1, 0, //rotationVel, weight, volume, rubbing
-/*Scale*/		[0.75, 0.75, 0.75, 0],
+/*Scale*/		[_scale, _scale, _scale, 0],
 /*Color*/		[[1, 1, 1, 1],[1, 1, 1, 1]],
 /*AnimSpeed*/		[1.5,0.5],
 /*randDirPeriod*/	0.01,
@@ -41,6 +41,10 @@ _source setParticleParams [
 /*DestroyScript*/ 	"",
 /*Follow*/ 		""
 ];
+
+if (typeName _target == "OBJECT" && {_target isKindOf "Man"}) then {
+	_source attachTo [_target, [0,0,0],"Pelvis"];
+};
 
 // RANDOM / TOLERANCE PARAMS
 _source setParticleRandom [
@@ -56,7 +60,26 @@ _source setParticleRandom [
 ];
 
 _source setDropInterval _interval;
-_sound = createSoundSource["Sound_Flies",_pos,[],0];
+
+_sounds = [
+	"fly_1",
+	"fly_2",
+	"fly_3",
+	"fly_4"
+];
+
+// playSound3D ["A3\Sounds_F\environment\animals\insect\fly_3.wss", player];
+if (typeName _target == "OBJECT") then {
+		[{
+			params ["_args", "_handle"];
+			_args params ["_source", "_target", "_sounds"];
+
+			if (random 1 > 0.8) then {
+				_target say3D (selectRandom _sounds);
+			};
+		}, 2, [_source, _target,_sounds]] call CBA_fnc_addPerFrameHandler;
+};
+// _sound = createSoundSource["Sound_Flies",_pos,[],0];
 // _sound = objnull;
 
-[_source,_sound]
+_source
