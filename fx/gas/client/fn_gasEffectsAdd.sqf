@@ -7,6 +7,14 @@ _coughs = [
 	"cough4"
 ];
 
+_gas_breathing = [
+	"gas_breathing1",
+	"gas_breathing2",
+	"gas_breathing3",
+	"gas_breathing4"
+];
+
+
 _protectingGoggles = [
 	"Mask_M40",
 	"Mask_M40_OD",
@@ -16,18 +24,18 @@ _protectingGoggles = [
 // delete if necessary and flicker light
 [{
     params ["_args", "_handle"];
-    _args params ["_coughs", "_protectingGoggles", "_pos", "_distance", "_condition"];
+    _args params ["_coughs", "_gas_breathing", "_protectingGoggles", "_pos", "_distance", "_condition"];
     
-    if (NUKE_DETONATED) exitWith {
-    	[leakpos, 5000, {MISSION_COMPLETED}] call suomen_fx_fnc_gasEffectsAdd;
+    if (NUKE_DETONATED) then {
+    	_distance = 5000;
     };
 
-    if (!alive player || _condition) exitWith { 
+    if (!alive player || MISSION_COMPLETED) exitWith { 
     	[_handle] call CBA_fnc_removePerFrameHandler;
     	call suomen_fx_fnc_gasEffectsReset;
     };
 
-   	call suomen_fx_fnc_gasEffectsReset;
+   	// call suomen_fx_fnc_gasEffectsReset;
 
 	if (player getvariable "isSpectator" == "true") exitWith {};
 
@@ -38,24 +46,22 @@ _protectingGoggles = [
 
 			if (_breathing > 10) then {
 				_breathing = 0;
-				playsound ["A3\sounds_f\characters\human-sfx\other\diver-breath-1.wss", player,false,getposASL player, 0.8,1,15];
+				playsound (selectRandom gas_breathing);
 			} else {
-				_breathing + _breathing + 1;
+				_breathing = _breathing + 1;
 				 player setVariable ["GRAD_fx_breathingCounter",_breathing];
 			};
 
 
-			if (!(player getVariable ["player_has_gasmask",true])) then {
+			if (!(player getVariable ["player_has_gasmask",false])) then {
 				cutRsc ["RscGasmaskPicture","PLAIN"];
 				player setVariable ["player_has_gasmask",true];
 				GASMASK_FOUND = true; 
-				publicVariable "GASMASK_FOUND";
-			} else {
-				cutRsc ["Default", "PLAIN"];
-				player setVariable ["player_has_gasmask", false];
+				publicVariableServer "GASMASK_FOUND";
 			};
 
 	} else {
+			cutRsc ["Default", "PLAIN"];
 
 			if (player distance _pos < _distance) then {
 				GAS_EFFECTED = GAS_EFFECTED + 1;
@@ -92,4 +98,4 @@ _protectingGoggles = [
 			};
 	};
 
-},1,[_coughs, _protectingGoggles, _pos, _distance, _condition]] call CBA_fnc_addPerFrameHandler;
+},1,[_coughs, _gas_breathing, _protectingGoggles, _pos, _distance, _condition]] call CBA_fnc_addPerFrameHandler;

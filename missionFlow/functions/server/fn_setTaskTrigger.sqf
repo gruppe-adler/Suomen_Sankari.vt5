@@ -244,16 +244,6 @@ sleep 20;
         ["tsk_evacuate","SUCCEEDED",true] call BIS_fnc_taskSetState;
 
         [] remoteExec ["suomen_mission_fnc_endMission", allPlayers, true];
-        
-        [   getMarkerPos "mrk_tupolew_start",
-            getMarkerPos "mrk_tupolew_boom" ,
-            getMarkerPos "mrk_tupolew_end",
-            25,"FULL","B_Plane_Fighter_01_F",WEST] call suomen_spawner_fnc_createJetFlyBy;
-
-        [   getMarkerPos "mrk_mig29_start", 
-            getMarkerPos "mrk_mig29_boom" ,
-            getMarkerPos "mrk_mig29_end",
-            25,"FULL","B_Plane_Fighter_01_F",WEST] call suomen_spawner_fnc_createJetFlyBy;
 
         [_handle] call CBA_fnc_removePerFrameHandler;
 

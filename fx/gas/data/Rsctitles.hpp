@@ -13,8 +13,8 @@ class RscTitles{
         idd = -1;
         onLoad = "uiNamespace setVariable ['Gasmask_Display', _this select 0]";
         onUnload = "uiNamespace setVariable ['Gasmask_Display', displayNull]";
-        fadeIn=0.5;
-        fadeOut=0.5;
+        fadeIn=0;
+        fadeOut=0;
         movingEnable = false;
         duration = 10e10;
         name = "RscGasmaskEffect";
@@ -27,7 +27,7 @@ class RscTitles{
         class controls{
             class gogglesImage: RscPicture{
                 idc = 11111;
-                text = "fx\gas\data\gasmask_texture2.paa";
+                text = "fx\gas\data\gasmask_texture1.paa";
             };
         };
     };

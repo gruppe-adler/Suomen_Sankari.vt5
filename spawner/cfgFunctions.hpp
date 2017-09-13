@@ -7,6 +7,7 @@ class suomen_spawner {
             class createGasStationAction {};
             class createGasStationDisembark {};
             class createGasStationDriveBy {};
+            class createGMan {};
             class createHelicopter {};
             class createJetFlyBy {};
             class createLightHouseFeed {};

@@ -55,3 +55,65 @@ class fly_4 {
     sound[] = {"A3\Sounds_F\environment\animals\insect\fly_4.wss", 1, 1, 2};
     titles[] = {0, ""};
 };
+
+class gas_breathing1 {
+    name = "gas_breathing1";
+    sound[] = {"A3\Sounds_F\characters\human-sfx\other\diver-breath-1", 1, 1, 2};
+    titles[] = {0, ""};
+};
+
+class gas_breathing2 {
+    name = "gas_breathing2";
+    sound[] = {"A3\Sounds_F\characters\human-sfx\other\diver-breath-2", 1, 1, 2};
+    titles[] = {0, ""};
+};
+
+class gas_breathing3 {
+    name = "gas_breathing3";
+    sound[] = {"A3\Sounds_F\characters\human-sfx\other\diver-breath-3", 1, 1, 2};
+    titles[] = {0, ""};
+};
+
+class gas_breathing4 {
+    name = "gas_breathing4";
+    sound[] = {"A3\Sounds_F\characters\human-sfx\other\diver-breath-4", 1, 1, 2};
+    titles[] = {0, ""};
+};
+
+// Definition for cough effect
+class cough1 {
+    name = "cough1";
+    sound[] = {
+        "sounds\cough1.ogg",
+        4,
+        1.0
+    };
+    titles[] = {};
+};
+class cough2 {
+    name = "cough2";
+    sound[] = {
+        "sounds\cough2.ogg",
+        4,
+        1.0
+    };
+    titles[] = {};
+};
+class cough3 {
+    name = "cough3";
+    sound[] = {
+        "sounds\cough3.ogg",
+        4,
+        1.0
+    };
+    titles[] = {};
+};
+class cough4 {
+    name = "cough4";
+    sound[] = {
+        "sounds\cough4.ogg",
+        4,
+        1.0
+    };
+    titles[] = {};
+};

@@ -8,8 +8,6 @@ AI_KILLED = AI_KILLED + 2; publicVariable "AI_KILLED";
 	rus_btr,
 	usmc_emptytruck1,
 	usmc_emptytruck2,
-	usmc_emptytruck3,
-	usmc_emptytruck4,
 	rus_btr,
 	rus_patrol_gaz,
 	repair_truck
@@ -17,8 +15,6 @@ AI_KILLED = AI_KILLED + 2; publicVariable "AI_KILLED";
 
 usmc_emptytruck1 setPos (getMarkerPos "mrk_usmc_emptytruck1");
 usmc_emptytruck2 setPos (getMarkerPos "mrk_usmc_emptytruck2");
-usmc_emptytruck3 setPos (getMarkerPos "mrk_usmc_emptytruck3");
-usmc_emptytruck4 setPos (getMarkerPos "mrk_usmc_emptytruck4");
 
 
 { deleteVehicle _x } forEach units (leader rus_group_1);

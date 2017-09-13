@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////
 
 
+[4] call suomen_fx_fnc_earthquake;
 
 _smoke = "#particlesource" createVehicleLocal getpos nukepos;
 _smoke setParticleParams [["A3\Data_F\ParticleEffects\Universal\universal.p3d", 16, 7, 48, 1], "", "Billboard", 1, 25, [0, 0, 0],
