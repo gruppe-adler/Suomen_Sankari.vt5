@@ -40,7 +40,7 @@ _chemlight = "ACE_G_Chemlight_HiWhite" createVehicle [0,0,0];
 _chemlight attachTo [_suitcase, [0,0,0]];
 
 
-
+// todo make particles local
 [{
 	params ["_args", "_handle"];
 	 _args params ["_trawler", "_scooter", "_gman", "_marker", "_targetMarker", "_source01"];

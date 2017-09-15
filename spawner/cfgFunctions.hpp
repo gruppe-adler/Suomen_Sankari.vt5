@@ -7,6 +7,7 @@ class suomen_spawner {
             class createGasStationAction {};
             class createGasStationDisembark {};
             class createGasStationDriveBy {};
+            class createGoatCarrier {};
             class createGMan {};
             class createHelicopter {};
             class createJetFlyBy {};
@@ -23,6 +24,16 @@ class suomen_spawner {
             class getAmericanLoadout {};
             class spawnAmericanZombieCrowd {};
             class spawnAmericanZombiesAlongRoads {};
+    };
+
+    class borderCrossing {
+            file = spawner\server\borderCrossing;
+
+            class border_checkVehicle {};
+            class border_createBorderCrossing {};
+            class border_directVehicle {};
+            class border_getBorderCrossingVehicle {};
+            class border_openBarGate {};
     };
 
     class civilian {
@@ -42,7 +53,9 @@ class suomen_spawner {
             class enemies_attackHumanOriginal {};
             class enemies_engageTarget {};
             class enemies_engageTargetOriginal {};
-            class enemies_feedOnTarget {};
+            class enemies_feedOnTargetAny {};
+            class enemies_feedOnTargetOriginal {};
+            class enemies_findTargetLoopOriginal {};
             class enemies_overwriteRZfunction {
                 postInit = 1;
             };

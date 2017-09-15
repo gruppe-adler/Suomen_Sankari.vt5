@@ -30,7 +30,7 @@ if (_isBombie) then {
 
 			_types = [
 				"GRAD_SoldierZed_rhs_uniform_FROG01_wd_walker",
-				"GRAD_SoldierZed_rhs_uniform_FROG01_wd",
+				"GRAD_SoldierZed_rhs_uniform_FROG01_wd"
 			];
 
 			_unit = _newGroup createUnit [selectRandom _types, _pos, [], 0, "NONE"];
@@ -45,6 +45,12 @@ if (_isBombie) then {
 			};
 		};
 		
+	} forEach units _grp;
+} else {
+	{
+		if (random 1 > 0.5) then {
+			_x setDamage 1;
+		};
 	} forEach units _grp;
 };
 

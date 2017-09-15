@@ -12,6 +12,18 @@ RZ_fnc_zombie_engageTarget =
 
 	};
 
+RZ_fnc_zombie_findTargetLoop = {
+	_unit = _this;
+
+	_overwrite = _unit getVariable ["suomen_overwriteRZ", false];
+
+	if (!_overwrite) then {
+		[_unit] call suomen_spawner_fnc_enemies_findTargetLoopOriginal;
+	};
+
+	sleep 10;
+};
+
 RZ_fnc_zombie_attackHuman =
 	{
 		params ["_unit","_target"];
@@ -29,5 +41,12 @@ RZ_fnc_zombie_attackHuman =
 RZ_fnc_zombie_feedOnTarget = {
 	params ["_unit","_target"];
 
-	[_unit, _target] call suomen_spawner_fnc_enemies_feedOnTarget;
+	_overwrite = _unit getVariable ["suomen_overwriteRZ", false];
+
+	if (_overwrite) then {
+		[_unit, _target] call suomen_spawner_fnc_enemies_feedOnTargetAny;
+	} else {
+		[_unit, _target] call suomen_spawner_fnc_enemies_feedOnTargetOriginal;
+	};
+	
 };

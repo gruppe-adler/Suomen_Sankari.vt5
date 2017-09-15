@@ -9,14 +9,117 @@
  cursorObject fire (secondaryWeapon cursorObject);
  */
 
-_positions =
-[
-	[getMarkerPos "mrk_gasstation_spawn",getMarkerPos "mrk_gasstation_staging", true],
-	[getMarkerPos "mrk_gasstation_spawn3",getMarkerPos "mrk_gasstation_staging3", true],
-	[getMarkerPos "mrk_gasstation_spawn2",getMarkerPos "mrk_gasstation_staging2", false]
+_pathRight = [
+	getPosATL pos_gasstation_route_rechts_1,
+	getPosATL pos_gasstation_route_rechts_2,
+	getPosATL pos_gasstation_route_rechts_3,
+	getPosATL pos_gasstation_route_rechts_4,
+	getPosATL pos_gasstation_route_rechts_5,
+	getPosATL pos_gasstation_route_rechts_6,
+	getPosATL pos_gasstation_route_rechts_7,
+	getPosATL pos_gasstation_route_rechts_8,
+	getPosATL pos_gasstation_route_rechts_9,
+	getPosATL pos_gasstation_route_rechts_10,
+	getPosATL pos_gasstation_route_rechts_11,
+	getPosATL pos_gasstation_route_rechts_12,
+	getPosATL pos_gasstation_route_rechts_13,
+	getPosATL pos_gasstation_route_rechts_14,
+	getPosATL pos_gasstation_route_rechts_15,
+	getPosATL pos_gasstation_route_rechts_16,
+	getPosATL pos_gasstation_route_rechts_17,
+	getPosATL pos_gasstation_route_rechts_18,
+	getPosATL pos_gasstation_route_rechts_19,
+	getPosATL pos_gasstation_route_rechts_20,
+	getPosATL pos_gasstation_route_rechts_21,
+	getPosATL pos_gasstation_route_rechts_22,
+	getPosATL pos_gasstation_route_rechts_23,
+	getPosATL pos_gasstation_route_rechts_24,
+	getPosATL pos_gasstation_route_rechts_25,
+	getPosATL pos_gasstation_route_rechts_26
 ];
 
+_pathCenter = [
+	getPosATL pos_gasstation_route_mitte_1,
+	getPosATL pos_gasstation_route_mitte_2,
+	getPosATL pos_gasstation_route_mitte_3,
+	getPosATL pos_gasstation_route_mitte_4,
+	getPosATL pos_gasstation_route_mitte_5,
+	getPosATL pos_gasstation_route_mitte_6,
+	getPosATL pos_gasstation_route_mitte_7,
+	getPosATL pos_gasstation_route_mitte_8,
+	getPosATL pos_gasstation_route_mitte_9,
+	getPosATL pos_gasstation_route_mitte_10,
+	getPosATL pos_gasstation_route_mitte_11,
+	getPosATL pos_gasstation_route_mitte_12,
+	getPosATL pos_gasstation_route_mitte_13,
+	getPosATL pos_gasstation_route_mitte_14,
+	getPosATL pos_gasstation_route_mitte_15,
+	getPosATL pos_gasstation_route_mitte_16,
+	getPosATL pos_gasstation_route_mitte_17,
+	getPosATL pos_gasstation_route_mitte_18,
+	getPosATL pos_gasstation_route_mitte_19,
+	getPosATL pos_gasstation_route_mitte_20,
+	getPosATL pos_gasstation_route_mitte_21,
+	getPosATL pos_gasstation_route_mitte_22,
+	getPosATL pos_gasstation_route_mitte_23,
+	getPosATL pos_gasstation_route_mitte_24,
+	getPosATL pos_gasstation_route_mitte_25,
+	getPosATL pos_gasstation_route_mitte_26
+];
+
+_pathLeft = [
+	getPosATL pos_gasstation_route_links_1,
+	getPosATL pos_gasstation_route_links_2,
+	getPosATL pos_gasstation_route_links_3,
+	getPosATL pos_gasstation_route_links_4,
+	getPosATL pos_gasstation_route_links_5,
+	getPosATL pos_gasstation_route_links_6,
+	getPosATL pos_gasstation_route_links_7,
+	getPosATL pos_gasstation_route_links_8,
+	getPosATL pos_gasstation_route_links_9,
+	getPosATL pos_gasstation_route_links_10,
+	getPosATL pos_gasstation_route_links_11,
+	getPosATL pos_gasstation_route_links_12,
+	getPosATL pos_gasstation_route_links_13,
+	getPosATL pos_gasstation_route_links_14,
+	getPosATL pos_gasstation_route_links_15,
+	getPosATL pos_gasstation_route_links_16,
+	getPosATL pos_gasstation_route_links_17,
+	getPosATL pos_gasstation_route_links_18,
+	getPosATL pos_gasstation_route_links_19,
+	getPosATL pos_gasstation_route_links_20,
+	getPosATL pos_gasstation_route_links_21,
+	getPosATL pos_gasstation_route_links_22,
+	getPosATL pos_gasstation_route_links_23,
+	getPosATL pos_gasstation_route_links_24,
+	getPosATL pos_gasstation_route_links_25,
+	getPosATL pos_gasstation_route_links_26
+];
+// diag_log format ["%1 ----- %2 ----- %3", _pathLeft, _pathCenter, _pathRight];
+
+_positions =
+[
+	[getMarkerPos "mrk_gasstation_spawnLeft", _pathLeft, true],
+	[getMarkerPos "mrk_gasstation_spawnCenter", _pathCenter, true],
+	[getMarkerPos "mrk_gasstation_spawnRight", _pathRight, false]
+];
+
+_buildings = nearestTerrainObjects [(getMarkerPos "mrk_gasstation"), ["HOUSE", "BUILDING", "RUIN"], 200];
+
+{
+  if (isMultiplayer) then {
+	_x allowDamage false;
+	_x enableSimulationGlobal false;
+  } else {
+	_x allowDamage false;
+	_x enableSimulation false;
+  };
+} forEach _buildings;
+
 _group = createGroup [independent,true];
+
+_chemlight = "ACE_G_Chemlight_HiWhite" createVehicle (getMarkerPos "mrk_gasstation_chemlight"); 
+
 _gasattendant = _group createUnit ["GRAD_CivilianZed_rds_schoolteacher_slow", getMarkerPos "mrk_gasstation_waerter", [], 0, "NONE"];
 _gasattendant allowDamage false;
 _gasattendant setVariable ["suomen_overwriteRZ", true]; // not allowed to target anyone
@@ -50,7 +153,9 @@ _gasattendant linkItem "murshun_cigs_cig1";
 	GASSTATION_ACTION
 },
 {
-	params ["_gasattendant"];
+	params ["_gasattendant", "_chemlight", "_positions"];
+
+	deleteVehicle _chemlight;
 
 	[_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
 	_gasattendant doMove (getMarkerPos "mrk_gasstation");
@@ -89,9 +194,13 @@ _gasattendant linkItem "murshun_cigs_cig1";
 
 
 	{
+		private ["_path"];
+
 		_spawnPos = (_x select 0);
-		_stagingPos = (_x select 1);
+		_path = (_x select 1);
 		_isBombie = (_x select 2);
+
+		diag_log format ["%1", _path];
 		
 
 		// create trucks
@@ -155,15 +264,15 @@ _gasattendant linkItem "murshun_cigs_cig1";
 			doStop (driver (_this select 0));
 			(group (driver (_this select 0))) leaveVehicle (_this select 0);
 			
-		}, [_truck, _stagingPos]] call CBA_fnc_waitUntilAndExecute;
+		}, [_truck, _path select (count _path - 1)]] call CBA_fnc_waitUntilAndExecute;
 
 		_truck addEventHandler ["GetOut", {
 			[_this select 0, (_this select 0) getVariable ["suomen_isBombie", true]] call suomen_spawner_fnc_createGasStationDisembark;
 		}];
 
-		_truck doMove _stagingPos;
+		_truck setDriveOnPath _path;
 
-		sleep 2;
+		// sleep 1;
 	} forEach _positions;
 
-}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
+}, [_gasattendant, _chemlight, _positions]] call CBA_fnc_waitUntilAndExecute;
