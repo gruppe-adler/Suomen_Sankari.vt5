@@ -21,6 +21,7 @@ class suomen_spawner {
     class american {
             file = spawner\server\american;
 
+            class createChaser {};
             class getAmericanLoadout {};
             class spawnAmericanZombieCrowd {};
             class spawnAmericanZombiesAlongRoads {};

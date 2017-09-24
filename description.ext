@@ -469,7 +469,7 @@ class CfgSounds {
         name = "organ";
         sound[] = {
             sounds\organ.ogg,
-            2.5,
+            1,
             1.0
         };
         titles[] = {};

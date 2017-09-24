@@ -153,7 +153,7 @@ class AllPlayers {
 			goggles = "L_Shemagh_OD";
 		};
 
-		class sami {
+		class samu {
 			uniform = "rhs_uniform_gorka_r_g";
 	        headgear = "H_Bandanna_sgg";
 			goggles = "TRYK_Beard_BK";
@@ -242,21 +242,25 @@ class AllPlayers {
 		class sampo {
 			uniform = "rds_uniform_Worker1";
 			headgear = "H_Bandanna_gry";
+			addItemsToUniform[] = {"murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class tuomas {
 			uniform = "rds_uniform_Worker2";
 			headgear = "rhs_Booniehat_m81";
+			addItemsToUniform[] = {"murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class ilpo {
 			uniform = "rds_uniform_Worker3";
 			headgear = "H_Booniehat_khk";
+			addItemsToUniform[] = {"murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		class ossi {
 			uniform = "rds_uniform_Worker4";
 			headgear = "rds_Woodlander_cap4";
+			addItemsToUniform[] = {"murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		};
 
 		
@@ -280,6 +284,7 @@ class AllPlayers {
 			uniform = "U_B_GEN_Soldier_F";
 			headgear = "H_Cap_blu";
 			goggles = "";
+			 addItemsToUniform[] = {"murshun_cigs_matches", "murshun_cigs_cigpack"};
 		};
 
 		class emil {
