@@ -106,6 +106,8 @@ _positions =
 
 _buildings = nearestTerrainObjects [(getMarkerPos "mrk_gasstation"), ["HOUSE", "BUILDING", "RUIN"], 200];
 
+GASATTENDANT_MOVE = false;
+
 {
   if (isMultiplayer) then {
 	_x allowDamage false;
@@ -130,36 +132,31 @@ _gasattendant linkItem "murshun_cigs_cig1";
 [_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
 
 [{
-	[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-}, [_gasattendant], 5] call CBA_fnc_waitAndExecute;
-
-[{
-	[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-}, [_gasattendant], 10] call CBA_fnc_waitAndExecute;
-
-[{
-	[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-}, [_gasattendant], 15] call CBA_fnc_waitAndExecute;
-
-[{
-	[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-}, [_gasattendant], 20] call CBA_fnc_waitAndExecute;
-
-[{
-	[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-}, [_gasattendant], 25] call CBA_fnc_waitAndExecute;
-
-[{
 	GASSTATION_ACTION
 },
 {
 	params ["_gasattendant", "_chemlight", "_positions"];
 
-	deleteVehicle _chemlight;
 
-	[_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
-	_gasattendant doMove (getMarkerPos "mrk_gasstation");
+	[{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+	}, [_gasattendant], 5] call CBA_fnc_waitAndExecute;
 
+	[{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+	}, [_gasattendant], 10] call CBA_fnc_waitAndExecute;
+
+	[{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+	}, [_gasattendant], 15] call CBA_fnc_waitAndExecute;
+
+	[{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+	}, [_gasattendant], 20] call CBA_fnc_waitAndExecute;
+
+	[{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+	}, [_gasattendant], 25] call CBA_fnc_waitAndExecute;
 
 	[{
 		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
@@ -222,7 +219,7 @@ _gasattendant linkItem "murshun_cigs_cig1";
 		];
 
 		// create cargo
-		for "_i" from 0 to 10 do 
+		for "_i" from 0 to ([4,1] select _isBombie) do 
 		{
 			_unit = _crewGroup createUnit [selectRandom _types, _spawnPos, [], 0, "NONE"];
 			_unit enableDynamicSimulation false;
@@ -254,6 +251,8 @@ _gasattendant linkItem "murshun_cigs_cig1";
 			} else {
 				_x assignAsDriver _truck;
 				_x moveInDriver _truck;
+				_x disableAI "AUTOTARGET";
+				_x disableAI "TARGET";
 			};
 		} forEach units _crewGroup;
 
@@ -261,18 +260,33 @@ _gasattendant linkItem "murshun_cigs_cig1";
 			(_this select 0) distance (_this select 1) < 5
 		},
 		{
+			GASATTENDANT_MOVE = true;
+			(_this select 0) removeAllEventHandlers "GetOut";
 			doStop (driver (_this select 0));
-			(group (driver (_this select 0))) leaveVehicle (_this select 0);
+			[_this select 0, (_this select 0) getVariable ["suomen_isBombie", true]] spawn suomen_spawner_fnc_createGasStationDisembark;
 			
 		}, [_truck, _path select (count _path - 1)]] call CBA_fnc_waitUntilAndExecute;
 
 		_truck addEventHandler ["GetOut", {
-			[_this select 0, (_this select 0) getVariable ["suomen_isBombie", true]] call suomen_spawner_fnc_createGasStationDisembark;
+			(_this select 0) removeAllEventHandlers "GetOut";
+			[_this select 0, (_this select 0) getVariable ["suomen_isBombie", true]] spawn suomen_spawner_fnc_createGasStationDisembark;
+
 		}];
 
 		_truck setDriveOnPath _path;
 
 		// sleep 1;
 	} forEach _positions;
+
+	deleteVehicle _chemlight;
+
+	[{
+		GASATTENDANT_MOVE
+	},
+	{
+		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+		(_this select 0) doMove (getMarkerPos "mrk_gasstation");
+	}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
+	
 
 }, [_gasattendant, _chemlight, _positions]] call CBA_fnc_waitUntilAndExecute;

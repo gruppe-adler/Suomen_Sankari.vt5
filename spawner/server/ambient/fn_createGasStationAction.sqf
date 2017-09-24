@@ -32,20 +32,21 @@ _fences = nearestObjects [_pos, [
 } forEach _fences;
 
 
-
+/*
 _vehicles = nearestObjects [_pos, ["Car"], 35];
 
 // hintsilent format ["vehicles %1", _vehicles];
-
 {
-	_range = 50 + random 5;
-	_speed = 5 + random 5;
+	_range = 35 + random 5;
+	_speed = 2 + random 2;
 	_dir = ([_x, getpos nukepos] call BIS_fnc_relativeDirTo) - 180;
 	[_x, [_speed * (sin _dir), _speed * (cos _dir), 5 * (_range / _speed)]] remoteExec ["setVelocity", _x];
 	_x setDamage 1;
 } forEach _vehicles;
+*/
 
 // incinerate near units
+/*
 _nearestunits = nearestObjects [_pos,["Man","Car","Tank"],40];
 
 {
@@ -54,3 +55,4 @@ _nearestunits = nearestObjects [_pos,["Man","Car","Tank"],40];
      	[_unit,0,false] call suomen_fx_fnc_createFire;
      };
 } foreach _nearestunits;
+*/

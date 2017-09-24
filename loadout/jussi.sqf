@@ -34,8 +34,6 @@ _unit linkItem "ItemWatch";
 //_unit linkItem "tf_anprc152_1";
 
 comment "Set identity";
-_unit setFace "WhiteHead_10";
 _unit setSpeaker "ACE_NoVoice";
-
-
-[[_unit,"infected2"], "setCustomFace"] call BIS_fnc_MP;
+_unit setIdentity "Jussi";
+// DONT SET IDENTITY, it CRASHES

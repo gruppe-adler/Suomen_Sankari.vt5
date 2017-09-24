@@ -1,3 +1,12 @@
+/*
+	[
+		"GRAD_CivilianZed_rds_uniform_citizen1_walker", 
+		"Rabbit_F",
+		"mrk_carrier_spawn",
+		"mrk_carrier_target"
+	] call suomen_spawner_fnc_createGoatCarrier;
+*/
+
 params ["_type", "_animal", "_spawnMarker", "_targetMarker"];
 private ["_attachPosition", "_yaw", "_pitch", "_roll"];
 

@@ -32,6 +32,15 @@ class Header
 
 class CfgIdentities {
 
+    class jussi {
+        name = "Jussi";
+        nameSound = ""; // leave it empty, or use valid codes
+        face = "RyanZombieFace1"; // use valid codes
+        glasses = "None"; // use valid codes
+        speaker = "Male05ENG"; // use valid codes
+        pitch = 1.0; // free to change
+    };
+
     class santeri {
         name = "Santeri";
         nameSound = ""; // leave it empty, or use valid codes

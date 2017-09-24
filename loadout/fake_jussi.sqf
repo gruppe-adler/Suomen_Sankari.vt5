@@ -21,7 +21,6 @@ _unit forceAddUniform "LOP_U_ChDKZ_Fatigue_Bardak";
 //_unit addItemToUniform "rhs_30Rnd_762x39mm";
 _unit addBackpack "rhs_assault_umbts_engineer_empty";
 _unit addHeadgear "LOP_H_ChDKZ_Beret";
-_unit addGoggles "G_Spectacles_Tinted";
 
 comment "Add weapons";
 //_unit addWeapon "rhs_weap_akm";
@@ -33,8 +32,6 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 //_unit linkItem "tf_anprc152_1";
 
-comment "Set identity";
-_unit setFace "WhiteHead_10";
+comment "Set identity"; 
 _unit setSpeaker "ACE_NoVoice";
-
-[[_unit,"infected2"], "setCustomFace"] call BIS_fnc_MP;
+_unit setIdentity "Jussi";

@@ -34,25 +34,25 @@ class fat_explosion {
 
 class fly_1 {
     name = "fly_1";
-    sound[] = {"A3\Sounds_F\environment\animals\insect\fly_1", 1, 1, 2};
+    sound[] = {"\fx\flies\sounds\fly_1.ogg", 1, 1, 2};
     titles[] = {0, ""};
 };
 
 class fly_2 {
     name = "fly_2";
-    sound[] = {"A3\Sounds_F\environment\animals\insect\fly_2", 1, 1, 2};
+    sound[] = {"\fx\flies\sounds\fly_2.ogg", 1, 1, 2};
     titles[] = {0, ""};
 };
 
 class fly_3 {
     name = "fly_3";
-    sound[] = {"A3\Sounds_F\environment\animals\insect\fly_3", 1, 1, 2};
+    sound[] = {"\fx\flies\sounds\fly_3.ogg", 1, 1, 2};
     titles[] = {0, ""};
 };
 
 class fly_4 {
     name = "fly_4";
-    sound[] = {"A3\Sounds_F\environment\animals\insect\fly_4", 1, 1, 2};
+    sound[] = {"\fx\flies\sounds\fly_4.ogg", 1, 1, 2};
     titles[] = {0, ""};
 };
 

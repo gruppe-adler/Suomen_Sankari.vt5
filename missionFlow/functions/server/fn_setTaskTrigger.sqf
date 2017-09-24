@@ -209,25 +209,12 @@ sleep 20;
 
     if (EXTRACTION_IMMINENT) then {
         [getMarkerPos "mrk_doc"] call suomen_spawner_fnc_createDoc;
+        ["mrk_trawler_spawn", "mrk_trawler_target"] call suomen_spawner_fnc_createGMan;
         MISSION_COMPLETED = true; 
         publicVariable "MISSION_COMPLETED"; 
         60 setFog [0,0,0];
         [getMarkerPos "mrk_lightHouseFeed"] call suomen_spawner_fnc_createLightHouseFeed;
           
-        [_handle] call CBA_fnc_removePerFrameHandler;
-    };
-
-},3,[]] call CBA_fnc_addPerFrameHandler;
-
-
-// RELEASE JUSSI
-[{
-    params ["_args", "_handle"];
-    
-    _jussiCar = (missionNamespace getVariable ["suomen_obj_jussiCar", objNull]);
-
-    if (!isNull _jussiCar && {_jussiCar doorPhase "trunk" == 1}) then {
-        [_this] call suomen_spawner_fnc_releaseJussi;
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 

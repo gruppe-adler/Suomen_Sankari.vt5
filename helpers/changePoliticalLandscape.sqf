@@ -17,6 +17,10 @@ usmc_emptytruck1 setPos (getMarkerPos "mrk_usmc_emptytruck1");
 usmc_emptytruck2 setPos (getMarkerPos "mrk_usmc_emptytruck2");
 
 
+ambient_worker_1 setDamage 1;
+ambient_worker_2 setDamage 1;
+ambient_worker_3 setDamage 1;
+
 { deleteVehicle _x } forEach units (leader rus_group_1);
 { _x linkItem "mask_m50"; } forEach units (leader blufor_lead);
 

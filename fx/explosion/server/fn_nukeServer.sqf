@@ -34,7 +34,6 @@ _orepile2 setDir 80;
 
 
 _jussiCar = [getMarkerPos "mrk_jussi"] call suomen_spawner_fnc_createJussiCar;
-missionNamespace setVariable ["suomen_obj_jussiCar", _jussiCar];
 
 {
 	if (isMultiplayer) then {

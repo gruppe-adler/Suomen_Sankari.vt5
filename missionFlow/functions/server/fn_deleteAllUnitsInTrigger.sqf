@@ -8,4 +8,5 @@ if  ({_x inArea _trigger} count allPlayers > 0) exitWith {
 
 {
 	deleteVehicle _x;
+	sleep 0.1;
 } forEach list _trigger;

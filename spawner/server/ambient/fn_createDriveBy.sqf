@@ -45,10 +45,16 @@ createVehicleCrew _veh;
 
 missionNamespace setVariable ["suomen_obj_ambulance", _veh];
 
+_driver = (driver _veh);
+_driver allowDamage false;
+_driver disableAI "AUTOTARGET";
+_driver disableAI "TARGET";
+
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 
-(driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
+_driver forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
+
 
 _lastPosition = _path select (count _path - 2);
 
@@ -57,7 +63,7 @@ _trg setTriggerArea [8, 8, 0, false];
 _trg setTriggerActivation ["CIV", "PRESENT", true];
 _trg setTriggerStatements [
 "this && missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
-"hint 'ambulance arrived'; call suomen_spawner_fnc_spawnDriveByDocs;", 
+"call suomen_spawner_fnc_spawnDriveByDocs;", 
 ""];
 
 // (driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
