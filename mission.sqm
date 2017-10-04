@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=27;
+		nextID=28;
 	};
 	class Camera
 	{
-		pos[]={3541.7446,21.253115,743.92194};
-		dir[]={-0.75990242,-0.2724511,0.5901885};
-		up[]={-0.2151767,0.96216899,0.16711989};
-		aside[]={0.61339325,-6.8248482e-008,0.78977919};
+		pos[]={3243.1101,74.76741,3462.3411};
+		dir[]={0,-0.70710677,0.70710683};
+		up[]={0,0.70710677,0.70710671};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -942,7 +942,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1780;
+		items=1778;
 		class Item0
 		{
 			dataType="Marker";
@@ -52609,44 +52609,6 @@ class Mission
 			};
 		};
 		class Item1777
-		{
-			dataType="Trigger";
-			position[]={3243.1101,49.767414,3487.3411};
-			angle=1.1403632;
-			class Attributes
-			{
-				condition="call{this}";
-				onActivation="call{[] call suomen_mission_fnc_setEnemiesAlert;}";
-				sizeA=150;
-				sizeB=84.899002;
-				activationType="EAST D";
-				activationBy="ANYPLAYER";
-				isServerOnly=1;
-			};
-			id=3323;
-			type="EmptyDetectorAreaR50";
-			atlOffset=3.6339989;
-		};
-		class Item1778
-		{
-			dataType="Trigger";
-			position[]={4955.106,34.008839,4061.6411};
-			angle=1.1403632;
-			class Attributes
-			{
-				condition="call{this}";
-				onActivation="call{[] call suomen_mission_fnc_setEnemiesAlert;}";
-				sizeA=150;
-				sizeB=84.899002;
-				activationType="EAST D";
-				activationBy="ANYPLAYER";
-				isServerOnly=1;
-			};
-			id=3324;
-			type="EmptyDetectorAreaR50";
-			atlOffset=3.6379986;
-		};
-		class Item1779
 		{
 			dataType="Logic";
 			class PositionInfo

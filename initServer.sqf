@@ -1,6 +1,8 @@
 [[transporter_1, transporter_2, transporter_3]] spawn suomen_mission_fnc_setTaskTrigger;
+/*
 [trg_border_finnish_out, finnish_gate_out, "mrk_guard_1", 213, "finnish"] call
 suomen_spawner_fnc_border_createBorderCrossing;
+*/
 
 [car_police,0.25,false] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
