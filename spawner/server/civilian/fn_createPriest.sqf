@@ -13,6 +13,7 @@ _zombie5 = _grp createUnit ["GRAD_CivilianZed_rds_Functionary1_slow", _pos, [], 
 {
 	_x setVariable ["RZ_isDemon", false];
 	_x doMove (getMarkerPos "mrk_procession_target");
+	_x setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 } forEach [_zombie1, _zombie2, _zombie3, _zombie4, _zombie5];
 
 

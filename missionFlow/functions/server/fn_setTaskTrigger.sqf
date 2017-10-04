@@ -209,7 +209,7 @@ sleep 20;
 
     if (EXTRACTION_IMMINENT) then {
         [getMarkerPos "mrk_doc"] call suomen_spawner_fnc_createDoc;
-        ["mrk_trawler_spawn", "mrk_trawler_target"] call suomen_spawner_fnc_createGMan;
+        ["mrk_trawler_spawn", "mrk_trawler_target"] spawn suomen_spawner_fnc_createGMan;
         MISSION_COMPLETED = true; 
         publicVariable "MISSION_COMPLETED"; 
         60 setFog [0,0,0];

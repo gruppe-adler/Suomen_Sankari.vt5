@@ -15,14 +15,9 @@ _targetUnit = _grpTargetUnit createUnit ["RDS_Worker3", _pos, [], 0, "NONE"];
 _targetUnit setHit["legs",1];
 
 _unit reveal _targetUnit;
+[_unit, _targetUnit] spawn RZ_fnc_zombie_engageTarget;
 
-[{
-	!isNull ((_this select 0) getVariable ["RZ_Target", objNull])
-},	
-{
-	(_this select 1) setDamage 1;
-	createVehicle ["BloodSplatter_01_Large_New_F", position (_this select 1), [], 0, "NONE"];
-	createVehicle ["BloodSpray_01_New_F", position (_this select 1), [], 0, "NONE"];
-	createVehicle ["BloodPool_01_Large_New_F", position (_this select 1), [], 0, "CAN_COLLIDE"];
-	
-}, [_unit, _targetUnit]] call CBA_fnc_waitUntilAndExecute;
+_targetUnit setDamage 1;
+createVehicle ["BloodSplatter_01_Large_New_F",_targetUnit, [], 0, "NONE"];
+createVehicle ["BloodSpray_01_New_F",_targetUnit, [], 0, "NONE"];
+createVehicle ["BloodPool_01_Large_New_F",_targetUnit, [], 0, "CAN_COLLIDE"];

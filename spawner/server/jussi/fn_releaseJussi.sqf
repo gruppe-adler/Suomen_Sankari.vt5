@@ -9,11 +9,12 @@ _jussi = (creategroup independent) createUnit [
 	"GRAD_CivilianZed_rds_uniform_Woodlander4_crawler",
  	[0,0,0], [], 0, "NONE"
  ];
+ _jussi setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 // [_jussi, ""] remoteExec ["switchMove"];
 // [_jussi] execVM "loadout\fake_jussi.sqf";
 // [_jussi, _face] remoteExec ["setFace", allPlayers];
 
-_jussi setPos [_trunkposition select 0, _trunkposition select 1, 0.5];
+_jussi setPos [_trunkposition select 0, _trunkposition select 1, 0.8];
 _jussi attachTo [_vehicle];
 // [_jussi, "AinvPercMstpSnonWnonDnon"] remoteExecCall ["fnc_RyanZombies_PlayMoveNow"];
 

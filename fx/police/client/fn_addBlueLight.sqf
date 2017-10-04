@@ -1,4 +1,4 @@
-private ["_lightOne","_lightBool"];
+private ["_lightOne"];
 
 params ["_vehicle", "_speed", "_isAmbulance", ["_lightColor", [0.1, 0.1, 20]], ["_intensity", 5], ["_sleep", 0.75]];
 
@@ -17,7 +17,7 @@ if (_isAmbulance) then {
     _lightposition = [0.25, 0.7, 0.5];
     _lightColor = [20, 0.1, 0.1];
 } else {
-    _lightposition = [0.0, 0.0, 0.24];
+    _lightposition = [0.0, 0.2, 0.24];
 };
 
 
@@ -37,19 +37,21 @@ _lightOne setLightUseFlare true;
 
 [{
     params ["_args", "_handle"];
-    _args params ["_vehicle", "_lightOne", "_intensity", "_lightBool"];
+    _args params ["_vehicle", "_lightOne", "_intensity"];
     
+    _on = _vehicle getVariable ["suomen_fx_lightBlink", false];
+
     if (!alive _vehicle) exitWith { 
         [_handle] call CBA_fnc_removePerFrameHandler;
         deleteVehicle _lightOne;
     };
 
-    if (_lightBool) then {
-        _lightBool = false;
-         _lightOne setLightBrightness _intensity + 3;
+    if (_on) then {
+        _vehicle setVariable ["suomen_fx_lightBlink", false];
+        _lightOne setLightBrightness _intensity + 1;
     } else {
-        _lightBool = true;
-        _lightOne setLightBrightness _intensity - 3;
+       _vehicle setVariable ["suomen_fx_lightBlink", true];
+       _lightOne setLightBrightness _intensity - 1;
     };
 
-},_sleep,[_vehicle, _lightOne, _intensity, _lightBool]] call CBA_fnc_addPerFrameHandler;
+},_speed,[_vehicle, _lightOne, _intensity]] call CBA_fnc_addPerFrameHandler;

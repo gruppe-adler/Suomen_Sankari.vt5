@@ -21,6 +21,9 @@ _dead setDamage 1;
 _zombie = _grp createUnit ["GRAD_CivilianZed_rds_doctor_walker", _posInside, [], 0, "CAN_COLLIDE"];
 _zombie2 = _grp createUnit ["GRAD_CivilianZed_rds_doctor_walker", _posInside, [], 0, "CAN_COLLIDE"];
 
+_zombie setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
+_zombie2 setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
+
 _zombie2 setDir ((getDir _zombie2) -45);
 
 [_zombie,_dead] spawn RZ_fnc_zombie_feedOnTarget;

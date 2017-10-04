@@ -17,6 +17,8 @@ class suomen_mission {
             class disembarkAndTurn;
             class getPathNE;
             class makeAllRedBlue;
+            class setEnemiesAlert;
+            class setEnemiesDetected;
             class setupGroupIds;
             class setTaskTrigger;
             class turnOver;

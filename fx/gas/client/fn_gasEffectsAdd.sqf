@@ -26,7 +26,7 @@ _protectingGoggles = [
     params ["_args", "_handle"];
     _args params ["_coughs", "_gas_breathing", "_protectingGoggles", "_pos", "_distance", "_condition"];
     
-    if (NUKE_DETONATED) then {
+    if (NUKE_DETONATE) then {
     	_distance = 5000;
     };
 
@@ -40,7 +40,14 @@ _protectingGoggles = [
 	if (player getvariable "isSpectator" == "true") exitWith {};
 
 	// if player wears one of the masks, nothing happens but breathing sound
-	if (goggles player in _protectingGoggles) then {
+	if ((goggles player) in _protectingGoggles) then {
+
+			if (player getVariable ["suomen_fx_isGasEffected", false]) then {
+				player setVariable ["suomen_fx_isGasEffected", false];
+				call suomen_fx_fnc_gasEffectsReset;
+				cutRsc ["RscGasmaskPicture","PLAIN"];
+			};
+			
 		
 			_breathing = player getVariable ["GRAD_fx_breathingCounter",0];
 
@@ -54,7 +61,6 @@ _protectingGoggles = [
 
 
 			if (!(player getVariable ["player_has_gasmask",false])) then {
-				cutRsc ["RscGasmaskPicture","PLAIN"];
 				player setVariable ["player_has_gasmask",true];
 				GASMASK_FOUND = true; 
 				publicVariableServer "GASMASK_FOUND";
@@ -64,8 +70,11 @@ _protectingGoggles = [
 			cutRsc ["Default", "PLAIN"];
 
 			if (player distance _pos < _distance) then {
+
+				player setVariable ["suomen_fx_isGasEffected", true];
+
 				GAS_EFFECTED = GAS_EFFECTED + 1;
-				publicVariable "GAS_EFFECTED";
+				publicVariableServer "GAS_EFFECTED";
 
 				"filmGrain" ppEffectEnable true;
 				"filmGrain" ppEffectAdjust [0.1, -1, 0.1, 0.05, 2, false];  
@@ -95,6 +104,8 @@ _protectingGoggles = [
 					_coughing = _coughing + 1;
 					player setVariable ["GRAD_fx_coughingCounter",_coughing];
 				};
+			} else {
+				call suomen_fx_fnc_gasEffectsReset;
 			};
 	};
 

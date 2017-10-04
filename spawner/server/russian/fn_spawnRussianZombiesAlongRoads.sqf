@@ -6,6 +6,7 @@ for "_i" from 0 to _count do {
 	_zombie = _grp createUnit ["GRAD_SoldierZed_rhs_uniform_emr_patchless_slow", _pos, [], 0, "NONE"];
 	_zombie enableDynamicSimulation true;
 	_zombie setVariable ["RZ_isDemon", false];
+	_zombie setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 	[_zombie] call suomen_spawner_fnc_getRussianLoadout;
 	[_zombie,_zombie findNearestEnemy _zombie] call RZ_fnc_zombie_feedOnTarget;
 

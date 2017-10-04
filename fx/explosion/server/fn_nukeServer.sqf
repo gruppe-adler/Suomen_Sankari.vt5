@@ -33,6 +33,9 @@ _orepile2 = createVehicle ["Land_SY_01_stockpile_02_F", [3263.29,3495.28,0], [],
 _orepile2 setDir 80;
 
 
+createVehicle ["test_EmptyObjectForFireBig", getPos _orepile1, [], 0, "CAN_COLLIDE"];
+createVehicle ["test_EmptyObjectForFireBig", getPos _orepile2, [], 0, "CAN_COLLIDE"];
+
 _jussiCar = [getMarkerPos "mrk_jussi"] call suomen_spawner_fnc_createJussiCar;
 
 {

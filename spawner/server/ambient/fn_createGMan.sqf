@@ -19,9 +19,10 @@ _lamp attachTo [_trawler, [-5,-19.5,-0.13]];
 _suitcase = createVehicle ["Land_Suitcase_F", [0,0,0], [], 0, "NONE"];
 
 _gman = (createGroup civilian) createUnit ["RDS_Functionary1", [0,0,0], [], 0, "NONE"];
-_gman attachTo [_trawler, [-5,-19,-0.13]];
+_gman attachTo [_trawler, [-4.5,-19,-0.13]];
 _gman setDir -180;
 [_gman, "Acts_JetsCrewaidF_idle"] remoteExec ["switchMove", allPlayers];
+_gman disableAI "ALL";
 sleep 2;
 _trawler setVectorUp [0,-0.03,1];
 
@@ -36,7 +37,7 @@ _chemlight attachTo [_suitcase, [0,0,0]];
 	params ["_args", "_handle"];
 	 _args params ["_trawler", "_scooter", "_gman", "_marker", "_targetMarker"];
 
-	if ({_x distance _trawler < 100} count allPlayers > 0) exitWith {
+	if ({_x distance _trawler < 50} count allPlayers > 0) exitWith {
 
 		_scooter forceSpeed 2;
 		_scooter doMove (getMarkerPos _targetMarker);

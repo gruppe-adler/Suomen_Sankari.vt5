@@ -1,22 +1,17 @@
-params ["_unit", "_group", "_onFire"];
+params ["_unit", "_onFire"];
 
-
-_unit = _this select 0;
-
-waitUntil { isTouchingGround _unit };
-sleep 1;
-_pos = position _unit;
-_dir = getDir _unit;
-
-deleteVehicle _unit;
+_newGroup = createGroup independent;
 
 _types = [
 	"GRAD_SoldierZed_rhs_uniform_emr_patchless_slow",
 	"GRAD_SoldierZed_rhs_uniform_emr_patchless_walker"
 ];
 
-_newUnit = _group createUnit [selectRandom _types, _pos, [], 0, "CAN_COLLIDE"];
+_getOutPosition = _truck modelToWorldVisual [0,-1.9,-0.7];
+
+_newUnit = _group createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
 _newUnit setVariable ["RZ_isDemon", false];
+_newUnit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 [_newUnit] call suomen_spawner_fnc_getRussianLoadout;
 _newUnit setDir _dir;
 

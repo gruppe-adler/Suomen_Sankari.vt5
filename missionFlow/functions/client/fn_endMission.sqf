@@ -3,55 +3,27 @@ titleText ["Y O U   M A D E   I T !","PLAIN"];
 titleFadeOut 7;
 sleep 5;
 
+_startpositions = ["mrk_rocket_ce", "mrk_rocket_li", "mrk_rocket_ri", "mrk_rocket_li2", "mrk_rocket_ri2"];
 
 if (isServer) then {
-	[[getMarkerPos "mrk_rocket_ce", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
+	[getMarkerPos (selectRandom _startpositions), 'normal','red'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+	sleep 0.5;
+	[getMarkerPos (selectRandom _startpositions), 'normal','red'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+
 	sleep 2;
-	[[getMarkerPos "mrk_rocket_li", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
+	[getMarkerPos (selectRandom _startpositions), 'normal','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+	sleep 0.5;
+	[getMarkerPos (selectRandom _startpositions), 'normal','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+
 	sleep 2;
-	[[getMarkerPos "mrk_rocket_la", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 10;
-	[[getMarkerPos "mrk_rocket_ce2", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_li2", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri2", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_la", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 10;
-	[[getMarkerPos "mrk_rocket_ce", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_li", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_la", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 10;
-	[[getMarkerPos "mrk_rocket_ce2", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_li2", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri2", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_la2", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra2", 'random','random'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 10;
-	[[getMarkerPos "mrk_rocket_ce", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP;  
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_li", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_la", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra", 'normal','white'] ,"callFireworks",true,true] spawn BIS_fnc_MP;
-	sleep 10;
-	[[getMarkerPos "mrk_rocket_ce2", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_li2", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ri2", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	sleep 2;
-	[[getMarkerPos "mrk_rocket_la", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
-	[[getMarkerPos "mrk_rocket_ra", 'fizzer','red'] ,"callFireworks",true,true] spawn BIS_fnc_MP; 
+	[getMarkerPos (selectRandom _startpositions), 'fizzer','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+	sleep 0.5;
+	[getMarkerPos (selectRandom _startpositions), 'fizzer','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+
+	sleep 10;	
+	[getMarkerPos (selectRandom _startpositions), 'rain','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
+	sleep 0.5;
+	[getMarkerPos (selectRandom _startpositions), 'rain','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
 } else {
 	sleep 28;
 	titleText ["C E L E B R A T I N G   O N E   Y E A R   G R U P P E   A D L E R","PLAIN"]; 
@@ -70,9 +42,9 @@ _credits = [
 
  [ "M I S S I O N   B Y", ["nomisum"] ],
 
- [ "T E S T I N G", ["Fusselwurm","t2_name2","t2_name3"] ],
+ [ "T E S T I N G", ["Fusselwurm"] ],
 
- [ "T H A N K S", ["Gruppe Adler","ACE3 Team","Red Hammer Studios", "Felix Linker (FUPS)", "BIS - you rock"] ],
+ [ "T H A N K S", ["Gruppe Adler","ACE3","Red Hammer Studios", "Ryan Dombrowsky (Ryanzombies)", "Reyhard (RDS)", "Bohemia Interactive"] ],
 
  [ "D I S C L A I M E R", ["All events and persons in this mission were fictional."] ]
 
@@ -149,7 +121,7 @@ _duration = _delay / 1.5;
 		_posTmp = [_posX, _posY + _modifier,_posW,_posH];
 		_ctrlText ctrlsetposition _posTmp;
 		_ctrlText ctrlcommit 0;
-		sleep 0.02;
+		uisleep 0.02;
 	};
 
 	_time = time + _delay;
@@ -160,7 +132,7 @@ _duration = _delay / 1.5;
 		_posTmp = [_posX, _posY + _modifier,_posW,_posH];
 		_ctrlText ctrlsetposition _posTmp;
 		_ctrlText ctrlcommit 0;
-		sleep 0.02;
+		uisleep 0.02;
 	};
 
 	waituntil {time > _time};

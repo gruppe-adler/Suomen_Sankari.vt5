@@ -42,7 +42,7 @@ _targetPos = getMarkerPos _targetMarker;
 
 _grpUnit = createGroup independent;
 _unit = _grpUnit createUnit [_type, _pos, [], 0, "NONE"];
-
+_unit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 _unit enableDynamicSimulation true;
 _unit setVariable ["RZ_isDemon", false];
 _unit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];

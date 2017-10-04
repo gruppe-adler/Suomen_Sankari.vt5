@@ -130,6 +130,7 @@ _gasattendant setVariable ["suomen_ignoreTargets", true];
 _gasattendant linkItem "murshun_cigs_cig1";
 [_gasattendant] remoteExec ["murshun_cigs_fnc_start_cig", _gasattendant];
 [_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
+_gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 
 [{
 	GASSTATION_ACTION
@@ -197,11 +198,11 @@ _gasattendant linkItem "murshun_cigs_cig1";
 		_path = (_x select 1);
 		_isBombie = (_x select 2);
 
-		diag_log format ["%1", _path];
+		diag_log format ["path is %1", _path];
 		
 
 		// create trucks
-		_truck = createVehicle ["rhsusf_M1083A1P2_B_wd_fmtv_usarmy", _spawnPos, [], 0, "NONE"];
+		_truck = createVehicle ["rhsusf_M1083A1P2_B_WD_fmtv_usarmy", _spawnPos, [], 0, "NONE"];
 		_truck setDir 40;
 		_truck setPilotLight true;
 		_truck setVariable ["suomen_isBombie", _isBombie];

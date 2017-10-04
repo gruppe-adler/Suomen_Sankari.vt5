@@ -22,17 +22,19 @@ if (_isBombie) then {
 	_newGroup = createGroup independent;
 	[_truck] joinSilent _newGroup;
 	_getOutPosition = _truck modelToWorldVisual [0,-2,-0.5];
-	for "_i" from 0 to 12 do 
+	for "_i" from 0 to 16 do 
 	{
 		_types = [
 				"GRAD_SoldierZed_rhs_uniform_FROG01_wd_walker",
-				"GRAD_SoldierZed_rhs_uniform_FROG01_wd"
+				"GRAD_SoldierZed_rhs_uniform_FROG01_wd",
+				"GRAD_SoldierZed_rhs_uniform_FROG01_fast"
 			];
 
 		_unit = _newGroup createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
 		[_unit,""] remoteExec ["switchMove",0];
 		_unit enableDynamicSimulation false;
 		_unit setVariable ["RZ_isDemon", false];
+		_unit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		sleep 0.1;
 	};
 } else {

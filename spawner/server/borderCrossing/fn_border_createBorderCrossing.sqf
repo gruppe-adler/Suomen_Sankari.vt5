@@ -25,7 +25,7 @@ _guard setDir _dir;
 	 _args params ["_trigger", "_guard", "_gate"];
 
 	 if (count list _trigger > 0 && !(_guard getVariable ["suomen_guard_busy", true])) then {
-	 	hintsilent format ["someone in trigger"];
+	 	// hintsilent format ["someone in trigger"];
 	 	_guard setVariable ["suomen_guard_busy", true];
 
 
@@ -40,7 +40,7 @@ _guard setDir _dir;
 		};
 	};
 
-	if (NUKE_DETONATED) then {
+	if (NUKE_DETONATE) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 
