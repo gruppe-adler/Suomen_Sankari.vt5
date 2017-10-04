@@ -181,7 +181,7 @@ class AllPlayers {
 
 		
 		
-		/* coolios */
+		/* azubis */
 		class ville {
 			uniform = "rds_uniform_Woodlander1";
 			headgear = "H_Watchcap_blk";
@@ -211,30 +211,37 @@ class AllPlayers {
 		};
 
 
-		/* azubis */
+		/* nerds */
 		class kimmo {
 			uniform = "U_C_Mechanic_01_F";
 			headgear = "H_Booniehat_khk";
 			radio = "tf_rf7800str";
+			goggles = "G_EyeProtectors_F";
+			gps = "ItemGPS";
 		};
 
 		class janne {
 			uniform = "U_BG_Guerrilla_6_1";
 			headgear = "rds_Villager_cap4";
-			goggles = "";
+			goggles = "immersion_pops_pop0";
 			radio = "tf_rf7800str";
+			gps = "ItemGPS";
 		};
 
 		class eino {
 			uniform = "U_BG_Guerilla2_2";
 			headgear = "rds_worker_cap3";
+			goggles = "rhs_ess_black";
 			radio = "tf_rf7800str";
+			gps = "ItemGPS";
 		};
 		
 		class hemmo {
 			uniform = "U_BG_Guerilla3_1";
 			headgear = "rds_worker_cap3";
 			radio = "tf_rf7800str";
+			goggles = "G_Sport_Greenblack";
+			gps = "ItemGPS";
 		};
 		
 
