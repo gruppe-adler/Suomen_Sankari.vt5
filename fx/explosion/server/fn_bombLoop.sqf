@@ -20,8 +20,7 @@ hideObject (nearestObject [(getPos leakaction), "Land_barracks_ruins_F"]);
 [{EXPLOSIVE_PLANTED},{call suomen_fx_fnc_explosivePlanted;}] call CBA_fnc_waitUntilAndExecute;
 
 [{BLOW_UP},{
-	
-	[15, [1, 0.05,0]] remoteExec ["suomen_fx_fnc_setFog", allPlayers];
+	20 setFog [1, 0.05,0];
 	NUKE_DETONATE = true; 
 	publicVariable "NUKE_DETONATE";
 	[] execVM "helpers\changePoliticalLandscape.sqf";

@@ -11,6 +11,7 @@ class cfgFunctions {
     #include "spawner\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "GRAD_fireworks\cfgFunctions.hpp"
+    #include "helpers\cfgFunctions.hpp"
 };
 
 #include "loadout\playerteam.hpp"

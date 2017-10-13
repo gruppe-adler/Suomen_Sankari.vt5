@@ -1,4 +1,4 @@
-params ["_unit", "_onFire"];
+params ["_truck", "_onFire"];
 
 _newGroup = createGroup independent;
 

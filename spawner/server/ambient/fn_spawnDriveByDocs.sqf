@@ -1,4 +1,5 @@
-_veh = missionNamespace getVariable ['suomen_obj_ambulance', objNull];
+params ["_veh"];
+
 (driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
 (driver _veh) setDamage 1; // kill driver to hold veh
 

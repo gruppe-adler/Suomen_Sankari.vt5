@@ -24,7 +24,7 @@ publicVariable "tf_same_sw_frequencies_for_side";
 
 player setVariable ["isSpectator", "false", false];
 
-
+call suomen_fx_fnc_addInteractionBomb;
 
 if (isMultiplayer) then {
 	titleCut ["", "BLACK FADED", 999];

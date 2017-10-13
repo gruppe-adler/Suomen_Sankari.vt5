@@ -12,6 +12,7 @@ class suomen_spawner {
             class createHelicopter {};
             class createJetFlyBy {};
             class createLightHouseFeed {};
+            class createPoliceDriveBy {};
             class createRepairVan {};
             class handleRepairVan {};
             class spawnDriveByDocs {};

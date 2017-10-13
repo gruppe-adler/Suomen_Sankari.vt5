@@ -13,10 +13,13 @@ _veh setDir 220;
 
 createVehicleCrew _veh;
 _group = group (driver _veh);
+(driver _veh) linkItem "Mask_M50";
+
 _veh setPilotLight true;
 missionNamespace setVariable ["suomen_obj_repairVan", _veh];
 
 _path = [
+/*
 getMarkerPos "mrk_repairVan_1",
 getMarkerPos "mrk_repairVan_2",
 getMarkerPos "mrk_repairVan_3",
@@ -29,6 +32,7 @@ getMarkerPos "mrk_repairVan_9",
 getMarkerPos "mrk_repairVan_10",
 getMarkerPos "mrk_repairVan_11",
 getMarkerPos "mrk_repairVan_12",
+*/
 getMarkerPos "mrk_repairVan_13",
 getMarkerPos "mrk_repairVan_14",
 getMarkerPos "mrk_repairVan_15",
@@ -45,7 +49,7 @@ _trg setTriggerArea [8, 8, 0, false];
 _trg setTriggerActivation ["CIV", "PRESENT", true];
 _trg setTriggerStatements [
 "this && missionNamespace getVariable ['suomen_obj_repairVan', objNull] in thislist", 
-"call suomen_ambient_fnc_handleRepairVan;", 
+"call suomen_spawner_fnc_handleRepairVan;", 
 ""];
 
 _veh setDriveOnPath _path;

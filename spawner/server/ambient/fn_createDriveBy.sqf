@@ -45,19 +45,38 @@ createVehicleCrew _veh;
 
 missionNamespace setVariable ["suomen_obj_ambulance", _veh];
 
+[_veh] call suomen_helpers_fnc_clearCargo;
+
+{
+	_veh addItemCargoGlobal [_x select 0, _x select 1];
+} forEach [
+	["GRAD_ALK",2],
+	["ACE_elasticBandage",20],
+	["ACE_quikclot",20],
+	["ACE_bloodIV",10],
+	["ACE_epinephrine",20],
+	["ACE_morphine",20],
+	["ACE_packingBandage",20],
+	["ACE_plasmaIV",10],
+	["ACE_salineIV",10]
+];
+
+
 _driver = (driver _veh);
 _driver allowDamage false;
 _driver disableAI "AUTOTARGET";
 _driver disableAI "TARGET";
+_driver disableAI "FSM";
 
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 
 _driver forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
-
+_veh forceSpeed 100;
 
 _lastPosition = _path select (count _path - 2);
 
+/*
 _trg = createTrigger ["EmptyDetector", _lastPosition];
 _trg setTriggerArea [8, 8, 0, false];
 _trg setTriggerActivation ["CIV", "PRESENT", true];
@@ -65,5 +84,25 @@ _trg setTriggerStatements [
 "this && missionNamespace getVariable ['suomen_obj_ambulance', objNull] in thislist", 
 "call suomen_spawner_fnc_spawnDriveByDocs;", 
 ""];
+*/
+
+_handle = [{
+	params ["_args", "_handle"];
+	_args params ["_veh", "_lastPosition"];
+
+	/*
+	if (!(alive (driver _veh))) exitWith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		[_veh] call suomen_mission_fnc_disembarkAndTurn;
+	};
+	*/
+
+	if (_veh distance _lastPosition < 15 || !alive _veh || !canMove _veh) then {
+		doStop _veh;
+		(driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
+		[_veh] call suomen_spawner_fnc_spawnDriveByDocs;
+		[_handle] call CBA_fnc_removePerFrameHandler;
+	};
+}, 1, [_veh, _lastPosition]] call CBA_fnc_addPerFrameHandler;
 
 // (driver ambulance) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];

@@ -4,7 +4,7 @@ perPlayerDelay = 0;
 baseDelay = 0;
 handleRadios = 1;
 
-class AllPlayers {
+class O_Survivor_F {
 		binoculars = "Binocular";
 		map = "ItemMap";
 		compass = "ItemCompass";
