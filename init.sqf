@@ -1,3 +1,5 @@
+DEBUG = false;
+
 call suomen_mission_fnc_setupGroupIds;
 
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
@@ -31,17 +33,18 @@ player setVariable ["isSpectator", "false", false];
 
 call suomen_fx_fnc_addInteractionBomb;
 
-if (isMultiplayer) then {
-	titleCut ["", "BLACK FADED", 999];
+if (!DEBUG) then {
+	cutText ["<t size='3' color='#FFFFFF'>S U O M E N   S A N K A R I</t>", "BLACK FADED",0,true,true];
+	player enableSimulation false; // Player is not allowed to move while he can't see anything
 	[] Spawn {
 		waitUntil{!(isNil "BIS_fnc_init")};
-		["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 7</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
 
 		sleep 7;
-		titleText ["Somewhere near the finnish-russian border.","PLAIN"];
-		titleFadeOut 7;
-		titleCut ["", "BLACK IN"];
-		sleep 7;
+		titleText ["", "BLACK FADED", 2]; // Black screen
+		sleep 5; // Waits 5 seonds
+		titleText ["", "BLACK IN", 5]; // Black screen dissapears
+		player enableSimulation true; // Allows the player to move again
+		["Somewhere","near the finnish-", "russian border"] call BIS_fnc_infoText; // Shows your message
 	};
 };
 //
@@ -51,7 +54,7 @@ enableRadio false; //disable radio messages to be heard and shown in the left lo
 enableSentences false; // disable AI chat
 setViewDistance 2000;
 
-DEBUG = true;
+
 
 GAS_EFFECTED = 0;
 NUKE_DETONATE = false;

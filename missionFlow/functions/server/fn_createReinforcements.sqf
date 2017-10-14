@@ -9,19 +9,10 @@ _crewGroup = createGroup civilian;
 createVehicleCrew _truck;
 [_truck] joinSilent _crewGroup;
 crew _truck joinSilent _crewGroup;
+
 {
 	_x enableDynamicSimulation false;
 } forEach crew _truck;
-
-
-
-// add units to vehicle
-{
-	if (!(driver _truck isEqualTo _x)) then {
-		_x assignAsCargo _truck;
-		_x moveInCargo _truck; 
-	};
-} forEach units _crewGroup;
 
 
 // set driving path
@@ -57,7 +48,6 @@ _handle = [{
 	};
 }, 1, [_truck, _lastPosition]] call CBA_fnc_addPerFrameHandler;
 
-_truck setDriveOnPath _waypoints;
 /*
 _wp =_crewGroup addWaypoint [_lastPosition, 0];
 _wp setWaypointType "GETOUT";
@@ -72,3 +62,5 @@ _truck addEventHandler ["Hit", {
 		[(_this select 0)] call suomen_mission_fnc_disembarkAndTurn;
 	};
 }];
+
+_truck setDriveOnPath _waypoints;
