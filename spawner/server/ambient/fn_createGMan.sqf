@@ -19,6 +19,9 @@ _lamp attachTo [_trawler, [-5,-19.5,-0.13]];
 _suitcase = createVehicle ["Land_Suitcase_F", [0,0,0], [], 0, "NONE"];
 
 _gman = (createGroup civilian) createUnit ["RDS_Functionary1", [0,0,0], [], 0, "NONE"];
+_gman setCaptive true;
+_gman setCombatMode "BLUE";
+
 _gman attachTo [_trawler, [-4.5,-19,-0.13]];
 _gman setDir -180;
 [_gman, "Acts_JetsCrewaidF_idle"] remoteExec ["switchMove", allPlayers];
@@ -37,7 +40,12 @@ _chemlight attachTo [_suitcase, [0,0,0]];
 	params ["_args", "_handle"];
 	 _args params ["_trawler", "_scooter", "_gman", "_marker", "_targetMarker"];
 
+	
+
 	if ({_x distance _trawler < 50} count allPlayers > 0) exitWith {
+
+		[] remoteExec ["suomen_mission_fnc_endMission", allPlayers, true];
+		[_trawler] call suomen_mission_fnc_endMissionServer;
 
 		_scooter forceSpeed 2;
 		_scooter doMove (getMarkerPos _targetMarker);

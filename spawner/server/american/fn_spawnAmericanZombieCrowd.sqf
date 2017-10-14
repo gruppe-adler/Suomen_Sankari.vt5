@@ -3,7 +3,8 @@ params ["_count", "_marker", ["_targetPosition","mrk_spawn_crowd3"]];
 _types = [
 "GRAD_SoldierZed_rhs_uniform_FROG01_wd_slow",
 "GRAD_SoldierZed_rhs_uniform_FROG01_wd_medium",
-"GRAD_SoldierZed_rhs_uniform_FROG01_wd_walker"
+"GRAD_SoldierZed_rhs_uniform_FROG01_wd_walker",
+"GRAD_SoldierZed_rhs_uniform_FROG01_wd"
 ];
 
 for "_i" from 0 to _count do {

@@ -3,34 +3,9 @@ titleText ["Y O U   M A D E   I T !","PLAIN"];
 titleFadeOut 7;
 sleep 5;
 
-_startpositions = ["mrk_rocket_ce", "mrk_rocket_li", "mrk_rocket_ri", "mrk_rocket_li2", "mrk_rocket_ri2"];
-
-if (isServer) then {
-	[getMarkerPos (selectRandom _startpositions), 'normal','red'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-	sleep 0.5;
-	[getMarkerPos (selectRandom _startpositions), 'normal','red'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-
-	sleep 2;
-	[getMarkerPos (selectRandom _startpositions), 'normal','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-	sleep 0.5;
-	[getMarkerPos (selectRandom _startpositions), 'normal','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-
-	sleep 2;
-	[getMarkerPos (selectRandom _startpositions), 'fizzer','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-	sleep 0.5;
-	[getMarkerPos (selectRandom _startpositions), 'fizzer','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-
-	sleep 10;	
-	[getMarkerPos (selectRandom _startpositions), 'rain','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-	sleep 0.5;
-	[getMarkerPos (selectRandom _startpositions), 'rain','white'] remoteExec ["GRAD_fireworks_fnc_prepareFireworks", 2];
-} else {
-	sleep 28;
-	titleText ["C E L E B R A T I N G   O N E   Y E A R   G R U P P E   A D L E R","PLAIN"]; 
-	titleFadeOut 7;
-	sleep 46;
-};
-
+titleText ["T O   B E   C O N T I N U E D","PLAIN"]; 
+titleFadeOut 7;
+sleep 4;
 /*
 sleep 10;
 titleText ["M I S S I O N   A C C O M P L I S H E D","PLAIN"]; 
@@ -40,13 +15,13 @@ sleep 10;
 
 _credits = [
 
- [ "M I S S I O N   B Y", ["nomisum"] ],
+ [ "M I S S I O N", ["nomisum"] ],
 
  [ "T E S T I N G", ["Fusselwurm"] ],
 
  [ "T H A N K S", ["Gruppe Adler","ACE3","Red Hammer Studios", "Ryan Dombrowsky (Ryanzombies)", "Reyhard (RDS)", "Bohemia Interactive"] ],
 
- [ "D I S C L A I M E R", ["All events and persons in this mission were fictional."] ]
+ [ "", ["All events and persons in this mission were fictional."] ]
 
  ];
 
@@ -139,4 +114,4 @@ _duration = _delay / 1.5;
 
 } foreach _credits;
 
-"end1" call BIS_fnc_endMission;
+["end1",true,10,false,true] call BIS_fnc_endMission;

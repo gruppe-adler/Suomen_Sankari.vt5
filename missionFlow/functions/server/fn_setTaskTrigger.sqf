@@ -133,8 +133,8 @@ sleep 20;
         [   east,
             ["tsk_extract"],
             [
-                "Wow, that explosion! Retreat back to your hideout.",
-                "Wow, that explosion! Retreat back to your hideout.",
+                "Retreat back to your hideout.",
+                "Retreat back to your hideout.",
                 ""
             ],
             "",
@@ -229,8 +229,6 @@ sleep 20;
 
     if (END_MISSION) then {
         ["tsk_evacuate","SUCCEEDED",true] call BIS_fnc_taskSetState;
-
-        [] remoteExec ["suomen_mission_fnc_endMission", allPlayers, true];
 
         [_handle] call CBA_fnc_removePerFrameHandler;
 

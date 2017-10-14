@@ -15,6 +15,7 @@ class suomen_mission {
             class createReinforcementsNE;
             class deleteAllUnitsInTrigger;
             class disembarkAndTurn;
+            class endMissionServer;
             class getPathNE;
             class makeAllRedBlue;
             class setEnemiesAlert;

@@ -35,7 +35,7 @@ if (isMultiplayer) then {
 	titleCut ["", "BLACK FADED", 999];
 	[] Spawn {
 		waitUntil{!(isNil "BIS_fnc_init")};
-		["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 5</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
+		["<br /><br /><img size= '4' shadow='false' image='pic\gruppe-adler.paa'/><br/><br/><br/><t size='1' color='#FFFFFF'>S U O M E N   S A N K A R I</t><br/><br/><br/><t size='0.4' color='#FFFFFF'>G R U P P E   A D L E R   2 0 1 7</t>",0,0,5,2] spawn BIS_fnc_dynamicText;
 
 		sleep 7;
 		titleText ["Somewhere near the finnish-russian border.","PLAIN"];
