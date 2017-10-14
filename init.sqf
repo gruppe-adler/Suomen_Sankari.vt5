@@ -2,6 +2,11 @@ call suomen_mission_fnc_setupGroupIds;
 
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 
+// reduce problems with blue on blue
+player addEventHandler ["handleRating", {
+	0
+}];
+
 // tfar shit
 TF_give_microdagr_to_soldier = false;
 publicVariable "TF_give_microdagr_to_soldier";
@@ -75,3 +80,4 @@ ryanzombiesglow = true;
 // ryanzombiesstartinganim = 0;
 Ryanzombiesfeed = 1;
 ryanzombiescivilianattacks = true;
+grad_enemies_disableaggressive = 1;

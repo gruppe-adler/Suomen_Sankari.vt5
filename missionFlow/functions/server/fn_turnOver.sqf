@@ -9,13 +9,16 @@ _types = [
 
 _getOutPosition = _truck modelToWorldVisual [0,-1.9,-0.7];
 
-_newUnit = _group createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
+_newUnit = _newGroup createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
 _newUnit setVariable ["RZ_isDemon", false];
 _newUnit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 [_newUnit] call suomen_spawner_fnc_getRussianLoadout;
 _newUnit setDir _dir;
 
-[_newUnit,selectRandom allPlayers] call RZ_fnc_zombie_engageTarget; 
+_randomPlayer = selectRandom (allPlayers);
+if (side _randomPlayer == east) then {
+	[_newUnit] call RZ_fnc_zombie_engageTarget; 
+};
 
 if (_onFire) then {
 	[_newUnit, 0, true] call suomen_fx_fnc_createFire;

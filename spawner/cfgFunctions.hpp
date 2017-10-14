@@ -10,6 +10,7 @@ class suomen_spawner {
             class createGoatCarrier {};
             class createGMan {};
             class createHelicopter {};
+            class createHeliFastrope {};
             class createJetFlyBy {};
             class createLightHouseFeed {};
             class createPoliceDriveBy {};

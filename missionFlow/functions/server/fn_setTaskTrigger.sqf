@@ -68,7 +68,7 @@ sleep 20;
 
     // hintSilent format ["%1", _playersInVehicles];
 
-    if (_playersInVehicles == count allPlayers) then {
+    if (_playersInVehicles == east countSide allPlayers) then {
     	["tsk_ikarus","SUCCEEDED",true] call BIS_fnc_taskSetState;
 
     	[

@@ -13,6 +13,8 @@ _fake_jussi disableAI "FSM";
 _fake_jussi disableAI "AUTOTARGET";
 _fake_jussi disableAI "TARGET";
 
+_fake_jussi setIdentity "jussi";
+
 // TODO test
 _fake_jussi addEventHandler ["Hit", {
 	(_this select 0) removeAllEventHandlers "Hit";
