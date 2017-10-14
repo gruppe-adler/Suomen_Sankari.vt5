@@ -21,6 +21,7 @@ hideObject (nearestObject [(getPos leakaction), "Land_barracks_ruins_F"]);
 
 [{BLOW_UP},{
 	20 setFog [1, 0.05,0];
+	[20, 750] remoteExec ["suomen_fx_fnc_setViewDistance", allPlayers];
 	NUKE_DETONATE = true; 
 	publicVariable "NUKE_DETONATE";
 	[] execVM "helpers\changePoliticalLandscape.sqf";

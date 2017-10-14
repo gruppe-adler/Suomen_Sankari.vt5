@@ -11,6 +11,11 @@ class suomen_mission {
             file = missionFlow\functions\server;
 
             class changeSides;
+            class createChaser;
+            class createFastrope;
+            class createFight;
+            class createGasstation;
+            class createPriest;
             class createReinforcements;
             class createReinforcementsNE;
             class deleteAllUnitsInTrigger;

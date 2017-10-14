@@ -1,8 +1,8 @@
-
 {
 	_x setIdentity (str _x);
 
 } forEach playableUnits + switchableUnits;
+
 
 _markerText = "";
 { 

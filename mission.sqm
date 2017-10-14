@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=3394;
+		nextID=3395;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=34;
+		nextID=36;
 	};
 	class Camera
 	{
-		pos[]={3177.687,117.62107,2525.5083};
-		dir[]={-0.57765436,-0.7008822,-0.41843161};
-		up[]={-0.5676142,0.71327615,-0.41115835};
-		aside[]={-0.58662969,6.6240318e-008,0.80985737};
+		pos[]={3776.5225,35.820553,2282.6851};
+		dir[]={-0.13107008,-0.52382648,0.8416869};
+		up[]={-0.080601506,0.85182136,0.51759309};
+		aside[]={0.9880954,-3.22907e-007,0.15386866};
 	};
 };
 binarizationWanted=0;
@@ -941,7 +941,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1785;
+		items=1786;
 		class Item0
 		{
 			dataType="Marker";
@@ -1557,7 +1557,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3937.7539,-0.24400043,-108.47};
-			angle=6.1395078;
+			angle=6.1395068;
 			class Attributes
 			{
 				name="trg_end_mission";
@@ -1584,7 +1584,7 @@ class Mission
 			{
 				text="fight";
 				condition="call{(NUKE_DETONATE) && this}";
-				onActivation="call{FIGHT = true; publicVariable ""FIGHT""; [20, ""mrk_spawn_crowd""] spawn suomen_spawner_fnc_spawnAmericanZombieCrowd; [10, ""mrk_spawn_crowd2""] spawn suomen_spawner_fnc_spawnAmericanZombieCrowd; [10, ""mrk_spawn_crowd3""] spawn suomen_spawner_fnc_spawnAmericanZombieCrowd;}";
+				onActivation="call{FIGHT = true; publicVariable ""FIGHT""; call suomen_mission_fnc_createFight;}";
 				sizeA=2500;
 				interuptable=1;
 				activationBy="ANYPLAYER";
@@ -1602,7 +1602,7 @@ class Mission
 			{
 				text="trg_priest + civ crowd";
 				condition="call{(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}";
-				onActivation="call{[getMarkerPos ""mrk_priest""] call suomen_spawner_fnc_createPriest; [40] spawn suomen_spawner_fnc_createCivilianCrowd; [trg_areaCleaner_3] spawn suomen_mission_fnc_deleteAllUnitsInTrigger; [""GRAD_CivilianZed_rds_uniform_citizen1_walker"", ""Rabbit_F"", ""mrk_carrier_spawn"", ""mrk_carrier_target""] call suomen_spawner_fnc_createGoatCarrier; [""GRAD_CivilianZed_rds_uniform_citizen2_slow"", ""Cock_random_F"", ""mrk_carrier_spawn"", ""mrk_carrier_target""] call suomen_spawner_fnc_createGoatCarrier;}";
+				onActivation="call{[] call suomen_missions_createPriest;}";
 				sizeA=150;
 				sizeB=150;
 				interuptable=1;
@@ -38470,7 +38470,7 @@ class Mission
 			{
 				text="DriveBy + trg_areaCleaner_1_exec";
 				condition="call{(NUKE_DETONATE) && this}";
-				onActivation="call{[] call suomen_spawner_fnc_createDriveBy; [trg_areaCleaner_1] spawn suomen_mission_fnc_deleteAllUnitsInTrigger; [getMarkerPos ""mrk_chaser_spawn"", 272, getMarkerPos ""mrk_chaser_target"",1] call " \n " suomen_spawner_fnc_createChaser; [getMarkerPos ""mrk_chaser_spawn2"", 272, getMarkerPos ""mrk_chaser_target"",2] call " \n " suomen_spawner_fnc_createChaser;}";
+				onActivation="call{[] call suomen_mission_fnc_createChaser;}";
 				sizeA=250;
 				sizeB=25;
 				interuptable=1;
@@ -45184,7 +45184,7 @@ class Mission
 			{
 				text="createGasStationDriveBy";
 				condition="call{(NUKE_DETONATE) && this}";
-				onActivation="call{[] spawn suomen_spawner_fnc_createGasStationDriveBy;}";
+				onActivation="call{[] call suomen_mission_fnc_createGasstation;}";
 				sizeA=250;
 				sizeB=25;
 				interuptable=1;
@@ -45307,13 +45307,13 @@ class Mission
 		class Item1568
 		{
 			dataType="Trigger";
-			position[]={2829.825,10.545984,2105.5979};
+			position[]={2868.1611,9.1965399,2140.4761};
 			angle=0.78539819;
 			class Attributes
 			{
 				text="GASSTATION_ACTION = true";
 				condition="call{(NUKE_DETONATE) && this}";
-				onActivation="call{GASSTATION_ACTION = true;}";
+				onActivation="call{GASSTATION_ACTION = true; publicVariable ""GASSTATION_ACTION"";}";
 				sizeA=250;
 				sizeB=25;
 				interuptable=1;
@@ -45323,7 +45323,6 @@ class Mission
 			};
 			id=3006;
 			type="EmptyDetector";
-			atlOffset=0.0039997101;
 		};
 		class Item1569
 		{
@@ -45558,7 +45557,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3792.751,6.2305732,242.655};
-			angle=6.1395078;
+			angle=6.1395068;
 			class Attributes
 			{
 				name="trg_flyBy";
@@ -52528,7 +52527,6 @@ class Mission
 			{
 				text="trg_fastrope";
 				condition="call{(NUKE_DETONATE) && {({vehicle _x in thisList} count allPlayers > 0)}}";
-				onActivation="call{[getPos pos_helifastrope_start, pos_helifastrope_rope, getPos pos_helifastrope_target] spawn suomen_spawner_fnc_createHelifastrope;}";
 				sizeA=350;
 				sizeB=150;
 				interuptable=1;
@@ -52608,6 +52606,20 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item1785
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2758.7429,3.4288185,390.95001};
+			};
+			name="suomen_headless";
+			init="call{HEADLESS_CONNECTED = true; publicVariableServer ""HEADLESS_CONNECTED"";}";
+			isPlayable=1;
+			id=3394;
+			type="HeadlessClient_F";
+			atlOffset=-2.3841858e-007;
 		};
 	};
 	class Connections

@@ -67,7 +67,10 @@ _driver allowDamage false;
 _driver disableAI "AUTOTARGET";
 _driver disableAI "TARGET";
 _driver disableAI "FSM";
+_driver setCombatMode "BLUE";
+_driver allowFleeing 0;
 
+_veh setVehicleLock "LOCKED";
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 

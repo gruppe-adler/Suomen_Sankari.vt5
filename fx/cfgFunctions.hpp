@@ -32,7 +32,7 @@ class suomen_fx {
             class addInteractionBomb {};
             class fogMoving {};
             class nukeClient {};
-            class setFog {};
+            class setViewDistance {};
             class steamLeak {};
 
 	};

@@ -14,6 +14,7 @@ class cfgFunctions {
     #include "helpers\cfgFunctions.hpp"
 };
 
+#include "loadout\_defines.hpp"
 #include "loadout\playerteam.hpp"
 
 respawn = 3;

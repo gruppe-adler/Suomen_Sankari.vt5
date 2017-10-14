@@ -4,7 +4,8 @@ perPlayerDelay = 0;
 baseDelay = 0;
 handleRadios = 1;
 
-class O_Survivor_F {
+class Type {
+	class O_Survivor_F {
 		binoculars = "Binocular";
 		map = "ItemMap";
 		compass = "ItemCompass";
@@ -12,13 +13,15 @@ class O_Survivor_F {
 		primaryWeapon = "";
 
 		handgunWeapon = "rhs_weap_makarov_pmm";
-		addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S"};
+		handgunWeaponMagazine = "rhs_mag_9x18_12_57N181S";
+		addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "rhs_mag_9x18_12_57N181S"};
 		nvgoggles = "";
 		gps = "";
 		vest = "";
 	};
+};
 
-	class Name {
+class Name {
 		/* studenten */
 		class santeri {
 			uniform = "rds_uniform_citizen1";

@@ -4,20 +4,6 @@ _truck = createVehicle ["RHS_Ural_VDV_01", _pos, [], 0, "NONE"];
 _truck setDir _dir;
 _truck enableDynamicSimulation false;
 
-_type = [
-	"rhs_vdv_sergeant",
-	"rhs_vdv_machinegunner",
-	"rhs_vdv_medic",
-	"rhs_vdv_at",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman",
-	"rhs_vdv_rifleman"
-];
 
 _crewGroup = createGroup civilian;
 createVehicleCrew _truck;
@@ -27,17 +13,7 @@ crew _truck joinSilent _crewGroup;
 	_x enableDynamicSimulation false;
 } forEach crew _truck;
 
-// create units
-for "_i" from 0 to 10 do 
-{
-	_unit = _crewGroup createUnit [selectRandom _type, _pos, [], 0, "NONE"];
-	_unit enableDynamicSimulation false;
-	removeAllWeapons _unit;
 
-	_face = selectRandom RZ_FaceArray;
-	[_unit, _face] remoteExec ["setFace", allPlayers];
-	[_unit] joinSilent _crewGroup;
-};
 
 // add units to vehicle
 {
@@ -68,10 +44,16 @@ _handle = [{
 	};
 	*/
 
-	if (_truck distance _lastPosition < 5) then {
+	if (_truck distance _lastPosition < 5 || !canMove _truck || !alive _truck) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
-		_truck removeAllEventHandlers "GetOut";
-		[_truck] call suomen_mission_fnc_disembarkAndTurn;
+		_truck removeAllEventHandlers "Hit";
+
+		if (HEADLESS_CONNECTED) then {
+			[_truck] remoteExec ["suomen_mission_fnc_disembarkAndTurn", suomen_headless];
+		} else {
+			[_truck] call suomen_mission_fnc_disembarkAndTurn;
+		};
+		
 	};
 }, 1, [_truck, _lastPosition]] call CBA_fnc_addPerFrameHandler;
 
@@ -81,6 +63,12 @@ _wp =_crewGroup addWaypoint [_lastPosition, 0];
 _wp setWaypointType "GETOUT";
 */
 
-_truck addEventHandler ["GetOut", {
-	[_this select 0] call suomen_mission_fnc_disembarkAndTurn;
+_truck addEventHandler ["Hit", {
+	(_this select 0) removeAllEventHandlers "Hit";
+
+	if (HEADLESS_CONNECTED) then {
+		[(_this select 0)] remoteExec ["suomen_mission_fnc_disembarkAndTurn", suomen_headless];
+	} else {
+		[(_this select 0)] call suomen_mission_fnc_disembarkAndTurn;
+	};
 }];

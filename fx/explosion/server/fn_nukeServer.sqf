@@ -20,7 +20,13 @@ private ["_root"];
 _root = parsingNamespace getVariable "MISSION_ROOT";
 [nukepos, ["fat_explosion", 500]] remoteExec ["say3D", allPlayers];
 playSound3D [_root + "sounds\windsound.ogg", nukepos, false, getPosASL nukepos, 15, 0.5, 500];
-[25] call suomen_spawner_fnc_spawnAmericanZombiesAlongRoads;
+
+if (HEADLESS_CONNECTED) then {
+	[25] remoteExec ["suomen_spawner_fnc_spawnAmericanZombiesAlongRoads", suomen_headless];
+} else {
+	[25] call suomen_spawner_fnc_spawnAmericanZombiesAlongRoads;
+};
+
 
 
 deleteVehicle explosion_target_top;

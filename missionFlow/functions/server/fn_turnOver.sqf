@@ -1,5 +1,7 @@
 params ["_truck", "_onFire"];
 
+waitUntil { speed _truck < 1 };
+
 _newGroup = createGroup independent;
 
 _types = [
@@ -9,17 +11,19 @@ _types = [
 
 _getOutPosition = _truck modelToWorldVisual [0,-1.9,-0.7];
 
-_newUnit = _newGroup createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
-_newUnit setVariable ["RZ_isDemon", false];
-_newUnit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
-[_newUnit] call suomen_spawner_fnc_getRussianLoadout;
-_newUnit setDir _dir;
+for "_i" from 0 to 10 do {
 
-_randomPlayer = selectRandom (allPlayers);
-if (side _randomPlayer == east) then {
-	[_newUnit] call RZ_fnc_zombie_engageTarget; 
-};
+	_newUnit = _newGroup createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
+	_newUnit setPos [getPos _newUnit select 0, getPos _newUnit select 1, 0];
+	_newUnit setVariable ["RZ_isDemon", false];
+	_newUnit setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
+	[_newUnit, ""] remoteExec ["switchMove"];
+	[_newUnit] call suomen_spawner_fnc_getRussianLoadout;
+	_newUnit setDir (floor (random 360));
 
-if (_onFire) then {
-	[_newUnit, 0, true] call suomen_fx_fnc_createFire;
+	_randomPlayer = selectRandom (allPlayers);
+	if (side _randomPlayer == east) then {
+		[_newUnit] call RZ_fnc_zombie_engageTarget; 
+	};
+	sleep 0.1;
 };

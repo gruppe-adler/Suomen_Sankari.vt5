@@ -7,6 +7,7 @@ suomen_spawner_fnc_border_createBorderCrossing;
 [car_police,0.25,false] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 
+HEADLESS_CONNECTED = false;
 
 GAS_EFFECTED = 0;
 publicVariable "GAS_EFFECTED";
