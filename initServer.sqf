@@ -30,6 +30,9 @@ publicVariable "RADIO_PLAYING";
 LIGHT_ON = false;
 publicVariable "LIGHT_ON";
 
+ALL_IN_CARS = false;
+publicVariable "ALL_IN_CARS";
+
 MISSION_FAILED = false;
 
 MISSION_COMPLETED = false;

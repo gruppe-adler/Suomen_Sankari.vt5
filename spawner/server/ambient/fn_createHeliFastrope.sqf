@@ -45,7 +45,7 @@ for "_i" from 0 to 10 do {
  	_unit assignAsCargo _veh;
  	_unit moveInCargo _veh;
  	_unit addPrimaryWeaponItem "acc_flashlight"; 
-   
+   	_unit setUnitPos "UP";
 };
 
 _groupCargo enableGunLights "forceon";
@@ -70,6 +70,8 @@ _veh doMove _targetPos;
 
 _wp =_groupCargo addWaypoint [getPos pos_ropeground_target, 0];
 _wp setWaypointType "MOVE";
+_groupCargo setSpeedMode "FULL";
+_groupCargo setCombatMode "YELLOW";
 
 waitUntil {_veh distance2D _targetPos < 100 || !alive _veh};
 

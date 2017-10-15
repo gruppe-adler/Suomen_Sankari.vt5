@@ -67,8 +67,9 @@ sleep 20;
     } forEach _vehicleArray;
 
     // hintSilent format ["%1", _playersInVehicles];
+    ALL_IN_CARS = _playersInVehicles == east countSide allPlayers;
 
-    if (_playersInVehicles == east countSide allPlayers) then {
+    if (ALL_IN_CARS) then {
     	["tsk_ikarus","SUCCEEDED",true] call BIS_fnc_taskSetState;
 
     	[
@@ -212,7 +213,7 @@ sleep 20;
         ["mrk_trawler_spawn", "mrk_trawler_target"] spawn suomen_spawner_fnc_createGMan;
         MISSION_COMPLETED = true; 
         publicVariable "MISSION_COMPLETED"; 
-        60 setFog [0,0,0];
+        120 setFog [0.2,0.1,0.1];
         [getMarkerPos "mrk_lightHouseFeed"] call suomen_spawner_fnc_createLightHouseFeed;
           
         [_handle] call CBA_fnc_removePerFrameHandler;

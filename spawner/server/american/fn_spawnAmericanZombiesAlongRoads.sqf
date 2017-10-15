@@ -16,6 +16,8 @@ for "_i" from 0 to _count do {
 	_zombie setVariable ["RZ_isDemon", false];
 	[_zombie] call suomen_spawner_fnc_getAmericanLoadout;
 
+	_zombie doMove getMarkerPos "mrk_roads_target";
+	
 	// DEBUG
 	if (DEBUG) then {
 		_alongRoadsA = createMarker [str (getPos _zombie), getPos _zombie]; 

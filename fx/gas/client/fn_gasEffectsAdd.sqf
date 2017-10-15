@@ -41,11 +41,11 @@ _protectingGoggles = [
 
 	// if player wears one of the masks, nothing happens but breathing sound
 	if ((goggles player) in _protectingGoggles) then {
+			cutRsc ["RscGasmaskPicture","PLAIN"];
 
 			if (player getVariable ["suomen_fx_isGasEffected", false]) then {
 				player setVariable ["suomen_fx_isGasEffected", false];
 				call suomen_fx_fnc_gasEffectsReset;
-				cutRsc ["RscGasmaskPicture","PLAIN"];
 			};
 			
 		

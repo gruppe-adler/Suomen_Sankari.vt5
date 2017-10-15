@@ -5,12 +5,6 @@ _grp = group (driver _truck);
 (driver _truck) disableAI "AUTOTARGET";
 (driver _truck) disableAI "TARGET";
 
-_truck setFuel 0; // prevent ai from enter/exit fuckup
-
-_truck addEventHandler ["GetIn", {
-	if (isPlayer (_this select 2)) then { (_this select 0) setFuel 0.5; };
-}];
-
 _grp leaveVehicle _truck;
 
 waitUntil {sleep 0.5; speed _truck < 0.5};

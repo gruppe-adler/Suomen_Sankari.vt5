@@ -8,12 +8,14 @@ class suomen_spawner {
             class createGasStationDisembark {};
             class createGasStationDriveBy {};
             class createGoatCarrier {};
+            class createGoats {};
             class createGMan {};
             class createHelicopter {};
             class createHeliFastrope {};
             class createJetFlyBy {};
             class createLightHouseFeed {};
             class createPoliceDriveBy {};
+            class createTrashEater {};
             class createRepairVan {};
             class handleRepairVan {};
             class spawnDriveByDocs {};

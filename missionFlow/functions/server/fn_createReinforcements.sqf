@@ -37,7 +37,7 @@ _handle = [{
 
 	if (_truck distance _lastPosition < 5 || !canMove _truck || !alive _truck) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
-		_truck removeAllEventHandlers "Hit";
+		_truck removeAllEventHandlers "FiredNear";
 
 		if (HEADLESS_CONNECTED) then {
 			[_truck] remoteExec ["suomen_mission_fnc_disembarkAndTurn", suomen_headless];
@@ -53,8 +53,8 @@ _wp =_crewGroup addWaypoint [_lastPosition, 0];
 _wp setWaypointType "GETOUT";
 */
 
-_truck addEventHandler ["Hit", {
-	(_this select 0) removeAllEventHandlers "Hit";
+_truck addEventHandler ["FiredNear", {
+	(_this select 0) removeAllEventHandlers "FiredNear";
 
 	if (HEADLESS_CONNECTED) then {
 		[(_this select 0)] remoteExec ["suomen_mission_fnc_disembarkAndTurn", suomen_headless];

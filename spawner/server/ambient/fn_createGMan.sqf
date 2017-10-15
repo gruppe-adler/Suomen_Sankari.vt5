@@ -50,7 +50,6 @@ _chemlight attachTo [_suitcase, [0,0,0]];
 		_scooter forceSpeed 2;
 		_scooter doMove (getMarkerPos _targetMarker);
 		
-		[_gman, "Acts_JetsCrewaidF_idle2"] remoteExec ["switchMove", allPlayers]; 
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 

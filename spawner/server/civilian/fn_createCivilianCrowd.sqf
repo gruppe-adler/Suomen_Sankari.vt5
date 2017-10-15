@@ -1,7 +1,7 @@
-params ["_count"];
+params ["_count", "_marker"];
 
 for "_i" from 0 to _count do {
-	_pos = ["mrk_civCrowd"] call SHK_pos;
+	_pos = [_marker] call SHK_pos;
 	_zombie = [_pos] call suomen_spawner_fnc_createRandomCivilian;
 
 	sleep 0.5;

@@ -11,6 +11,7 @@ _sounds = [
 "sounds\bongs4.ogg"
 ];
 
+[_car] execVM "\rds_a2port_civ\scripts\rds_carAlarm.sqf";
 
 // loop bonking
 [{

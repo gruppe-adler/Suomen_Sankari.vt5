@@ -258,7 +258,7 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		} forEach units _crewGroup;
 
 		[{
-			(_this select 0) distance (_this select 1) < 5
+			(_this select 0) distance (_this select 1) < 50
 		},
 		{
 			GASATTENDANT_MOVE = true;

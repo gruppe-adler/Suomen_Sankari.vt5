@@ -1,4 +1,8 @@
 DEBUG = false;
+titleText ["", "BLACK", 999];
+
+call suomen_helpers_fnc_intro;
+call suomen_helpers_fnc_addZeusModules;
 
 call suomen_mission_fnc_setupGroupIds;
 
@@ -9,7 +13,13 @@ player addEventHandler ["handleRating", {
 	0
 }];
 
+TFAR_giveLongRangeRadioToGroupLeaders = false;
+publicVariable "TFAR_giveLongRangeRadioToGroupLeaders";
+
+TFAR_giveMicroDagrToSoldier = false;
+publicVariable "TFAR_giveMicroDagrToSoldier";
 // tfar shit
+/*
 TF_give_microdagr_to_soldier = false;
 publicVariable "TF_give_microdagr_to_soldier";
 
@@ -18,6 +28,7 @@ publicVariable "tf_no_auto_long_range_radio";
 
 tf_same_sw_frequencies_for_side = true; //Selbe Freuquenzen für Fraktion? - ja ^ nein
 publicVariable "tf_same_sw_frequencies_for_side";
+*/
 
 // "Debug tools"//
 
@@ -28,25 +39,14 @@ publicVariable "tf_same_sw_frequencies_for_side";
 "mrk_spawn_crowd" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd2" setMarkerAlphaLocal 0;
 "mrk_spawn_crowd3" setMarkerAlphaLocal 0;
+"mrk_inbetween_1" setMarkerAlphaLocal 0;
+"mrk_inbetween_2" setMarkerAlphaLocal 0;
 
 player setVariable ["isSpectator", "false", false];
 
 call suomen_fx_fnc_addInteractionBomb;
 
-if (!DEBUG) then {
-	cutText ["<t size='3' color='#FFFFFF'>S U O M E N   S A N K A R I</t>", "BLACK FADED",0,true,true];
-	player enableSimulation false; // Player is not allowed to move while he can't see anything
-	[] Spawn {
-		waitUntil{!(isNil "BIS_fnc_init")};
 
-		sleep 7;
-		titleText ["", "BLACK FADED", 2]; // Black screen
-		sleep 5; // Waits 5 seonds
-		titleText ["", "BLACK IN", 5]; // Black screen dissapears
-		player enableSimulation true; // Allows the player to move again
-		["Somewhere","near the finnish-", "russian border"] call BIS_fnc_infoText; // Shows your message
-	};
-};
 //
 //["click", "onMapSingleClick", { player setPos _pos; }] call BIS_fnc_addStackedEventHandler;
 enableRadio false; //disable radio messages to be heard and shown in the left lower corner of the screen

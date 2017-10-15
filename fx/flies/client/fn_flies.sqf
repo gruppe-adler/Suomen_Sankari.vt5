@@ -74,7 +74,7 @@ if (typeName _target == "OBJECT") then {
 			params ["_args", "_handle"];
 			_args params ["_source", "_target", "_sounds"];
 
-			if (random 1 > 0.8) then {
+			if (random 1 > 0.9) then {
 				_target say3D (selectRandom _sounds);
 			};
 		}, 2, [_source, _target,_sounds]] call CBA_fnc_addPerFrameHandler;

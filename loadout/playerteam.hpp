@@ -110,24 +110,60 @@ class Name {
 			uniform = "rds_uniform_Profiteer1";
 	        headgear = "H_Cap_khaki_specops_UK";
 			goggles = "G_Aviator";
+			primaryWeapon = "rhs_weap_M590_5RD";
+			addItemsToUniform[] = {
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck"
+			};
 		};
 
 		class mari {
 			uniform = "rds_uniform_Profiteer2";
 			headgear = "H_Bandanna_gry";
 			goggles = "L_Shemagh_Tan";
+			primaryWeapon = "rhs_weap_M590_5RD";
+			addItemsToUniform[] = {
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck"
+			};
 		};
 
 		class antti {
 			uniform = "rds_uniform_Profiteer3";
 			headgear = "rds_Woodlander_cap1";
 			goggles = "";
+			primaryWeapon = "rhs_weap_M590_8RD";
+			addItemsToUniform[] = {
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck"
+			};
 		};
 
 		class pekka {
 			uniform = "rds_uniform_Profiteer4";
 			headgear = "H_Bandanna_sgg";
 			goggles = "L_Shemagh_OD";
+			primaryWeapon = "rhs_weap_M590_8RD";
+			addItemsToUniform[] = {
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck",
+				"rhsusf_5Rnd_doomsday_Buck"
+			};
 		};
 
 
@@ -279,12 +315,30 @@ class Name {
 		class frederik {
 			uniform = "rds_uniform_Villager1";
 			headgear = "rhs_Booniehat_m81";
+			primaryWeapon = "rhs_weap_kar98k";
+			addItemsToUniform[] = {
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k"
+			};
 		};
 
 		class pasi {
 			uniform = "rds_uniform_Villager2";
 			headgear = "rhs_Booniehat_m81";
 			goggles = "L_Shemagh_Red";
+			primaryWeapon = "rhs_weap_kar98k";
+			addItemsToUniform[] = {
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k",
+				"rhsgref_5Rnd_792x57_kar98k"
+			};
 		};
 
 
