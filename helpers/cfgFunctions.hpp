@@ -1,6 +1,12 @@
 class suomen_helpers {
-   
-    class cargo {
+
+   	 class client {
+        file = helpers\client;
+
+        class cameraOld {};
+    };
+
+    class server {
         file = helpers\server;
 
         class addZeusModules {};

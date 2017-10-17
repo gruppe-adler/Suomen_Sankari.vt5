@@ -44,7 +44,7 @@ _chemlight attachTo [_suitcase, [0,0,0]];
 
 	if ({_x distance _trawler < 50} count allPlayers > 0) exitWith {
 
-		[] remoteExec ["suomen_mission_fnc_endMission", allPlayers, true];
+		[] remoteExec ["suomen_mission_fnc_credits", allPlayers, true];
 		[_trawler] spawn suomen_mission_fnc_endMissionServer;
 
 		_scooter forceSpeed 2;

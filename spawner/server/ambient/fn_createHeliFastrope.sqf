@@ -1,6 +1,6 @@
 /*
 
-	[getPos pos_helifastrope_start, pos_helifastrope_rope, getPos pos_helifastrope_target] call	suomen_spawner_fnc_createHelifastrope;
+	[getPos pos_helifastrope_start, pos_helifastrope_rope, getPos pos_helifastrope_target] spawn suomen_spawner_fnc_createHelifastrope;
 
 */
 
@@ -41,7 +41,7 @@ _groupCargo = createGroup west;
 
 for "_i" from 0 to 10 do {
  	_unit = _groupCargo createUnit ["B_GEN_Commander_F", [0,0,0], [], 0, "CARGO"];
- 	_unit setUnitLoadout [["SMG_05_F","","","",["30Rnd_9x21_Mag_SMG_02",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["rhs_uniform_g3_blk",[["ACE_fieldDressing",1],["ACE_packingBandage",1],["ACE_morphine",1],["ACE_tourniquet",1],["30Rnd_9x21_Mag_SMG_02",1,30],["immersion_pops_poppack",3,1],["murshun_cigs_cigpack",1,20],["murshun_cigs_lighter",1,100]]],["V_Chestrig_blk",[]],["B_ViperLightHarness_blk_F",[]],"rhssaf_helmet_m97_black_nocamo","Mask_M40",["Binocular","","","",[],[],""],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+ 	_unit setUnitLoadout [["SMG_05_F","","","",["30Rnd_9x21_Mag_SMG_02",2],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["rhs_uniform_g3_blk",[["ACE_fieldDressing",1],["ACE_packingBandage",1],["ACE_morphine",1],["ACE_tourniquet",1],["30Rnd_9x21_Mag_SMG_02",1,30],["immersion_pops_poppack",3,1],["murshun_cigs_cigpack",1,20],["murshun_cigs_lighter",1,100]]],["V_Chestrig_blk",[]],["B_ViperLightHarness_blk_F",[]],"rhssaf_helmet_m97_black_nocamo","Mask_M40",["Binocular","","","",[],[],""],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
  	_unit assignAsCargo _veh;
  	_unit moveInCargo _veh;
  	_unit addPrimaryWeaponItem "acc_flashlight"; 

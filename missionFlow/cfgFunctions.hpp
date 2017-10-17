@@ -3,6 +3,7 @@ class suomen_mission {
     class ai_client {
             file = missionFlow\functions\client;
 
+            class credits;
             class debugKnowsAbout;
             class endMission;
     };

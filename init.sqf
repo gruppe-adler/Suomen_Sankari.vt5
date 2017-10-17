@@ -84,3 +84,4 @@ ryanzombiesglow = true;
 Ryanzombiesfeed = 1;
 ryanzombiescivilianattacks = true;
 grad_enemies_disableaggressive = 1;
+Ryanzombieslogicroam = 1;
