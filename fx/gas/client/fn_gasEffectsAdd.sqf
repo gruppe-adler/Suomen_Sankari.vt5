@@ -37,7 +37,7 @@ _protectingGoggles = [
 
    	// call suomen_fx_fnc_gasEffectsReset;
 
-	if (player getvariable "isSpectator" == "true") exitWith {};
+	if (player getvariable ["isSpectator", "false"] == "true") exitWith {};
 
 	// if player wears one of the masks, nothing happens but breathing sound
 	if ((goggles player) in _protectingGoggles) then {

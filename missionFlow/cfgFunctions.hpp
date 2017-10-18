@@ -20,6 +20,7 @@ class suomen_mission {
             class createReinforcements;
             class createReinforcementsNE;
             class deleteAllUnitsInTrigger;
+            class detectHumans;
             class disembarkAndTurn;
             class endMissionServer;
             class getPathNE;

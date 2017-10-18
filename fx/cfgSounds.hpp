@@ -117,3 +117,113 @@ class cough4 {
     };
     titles[] = {};
 };
+
+class rus1 {
+    name = "rus1";
+    sound[] = {
+        "fx\voices\rus\rus_combat190.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus2 {
+    name = "rus2";
+    sound[] = {
+        "fx\voices\rus\rus_combat191.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus3 {
+    name = "rus3";
+    sound[] = {
+        "fx\voices\rus\rus_combat192.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus4 {
+    name = "rus4";
+    sound[] = {
+        "fx\voices\rus\rus_combat193.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus5 {
+    name = "rus5";
+    sound[] = {
+        "fx\voices\rus\rus_combat194.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus6 {
+    name = "rus6";
+    sound[] = {
+        "fx\voices\rus\rus_combat195.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus7 {
+    name = "rus7";
+    sound[] = {
+        "fx\voices\rus\rus_combat196.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus8 {
+    name = "rus8";
+    sound[] = {
+        "fx\voices\rus\rus_combat197.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus9 {
+    name = "rus9";
+    sound[] = {
+        "fx\voices\rus\rus_combat198.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus10 {
+    name = "rus10";
+    sound[] = {
+        "fx\voices\rus\rus_combat199.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};
+
+class rus11 {
+    name = "rus11";
+    sound[] = {
+        "fx\voices\rus\rus_combat200.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};

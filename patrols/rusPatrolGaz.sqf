@@ -4,11 +4,11 @@ rus_patrol_gaz doMove (getPosATL rus_patrol_gaz);
 
 _newTarget = rus_patrol_gaz findNearestEnemy rus_patrol_gaz;
 
-rus_patrol_gaz_inf action ["getOut", rus_patrol_gaz];
+group rus_patrol_gaz_inf leaveVehicle rus_patrol_gaz;
 
 sleep 2;
 
-rus_patrol_gaz_inf doMove (getPos _newTarget);
+rus_patrol_gaz_inf doMove (getMarkerPos "mrk_patrol_gaz");
 
 group rus_patrol_gaz_inf enableGunLights "forceon";
 

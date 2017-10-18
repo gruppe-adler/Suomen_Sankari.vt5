@@ -3,6 +3,8 @@ _zombie setVariable ["RZ_TargetVehType",""];
 if (!isNull _target) then
 {
 	if (_target getVariable ["suomen_smells", false]) exitWith {};
+	if (_target getvariable ["isSpectator", "false"] == "true") exitWith {};
+		
 	if (((getPosATL _target select 2) > 20) AND (_target iskindof "AIR")) exitwith {sleep 2};
 	if (animationState _zombie == "UNCONSCIOUS") exitwith {sleep 2};
 	if (_zombie distance _target > Ryanzombieslimit) exitwith {sleep 2};

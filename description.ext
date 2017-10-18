@@ -24,7 +24,7 @@ respawnTemplates[] = {"ace_spectator"};
 loadScreen = "pic\suomen_sankari.paa";
 author = "nomisum for Gruppe Adler";
 enableDebugConsole = 1;
-onLoadMission = "Suomen Sankari"
+onLoadMission = "Suomen Sankari";
 
 class Header
 {

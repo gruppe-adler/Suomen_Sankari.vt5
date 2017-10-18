@@ -1,18 +1,24 @@
-["Suomen", "All Players in Cars SUCCESS", {
+#define CATEGORY "Suomen"
+
+[CATEGORY,"Client FPS ein/aus",{
+	[] call suomen_helpers_fnc_diagClientModule
+}] call ares_fnc_registerCustomModule;
+
+[CATEGORY, "All Players in Cars SUCCESS", {
 	ALL_IN_CARS = true; publicVariableServer "ALL_IN_CARS";
 }] call Ares_fnc_RegisterCustomModule;
 
 
-["Suomen", "ENEMIES ALERT", {
+[CATEGORY, "ENEMIES ALERT", {
 	[] call suomen_mission_fnc_setEnemiesAlert;
 }] call Ares_fnc_RegisterCustomModule;
 
-["Suomen", "ENEMIES DETECTED", {
+[CATEGORY, "ENEMIES DETECTED", {
 	[] call suomen_mission_fnc_setEnemiesDetected; [] call removeAIEventhandlers;
 }] call Ares_fnc_RegisterCustomModule;
 
 
-["Suomen", "MISSION_COMPLETED", {
+[CATEGORY, "MISSION_COMPLETED", {
 	MISSION_COMPLETED = true; publicVariableServer "MISSION_COMPLETED";
 }] call Ares_fnc_RegisterCustomModule;
 
@@ -20,7 +26,7 @@ CAM_LASTPOS = [0,0];
 CAM_VECTOR_DIR = [0,0,0];
 CAM_VECTOR_UP = [0,0,0];
 
-["Suomen", "CINEMA CAM", {
+[CATEGORY, "CINEMA CAM", {
 	CAM_LASTPOS = getPos curatorCamera;
 	CAM_VECTOR_DIR = vectorDir curatorCamera;
 	CAM_VECTOR_UP = vectorUp curatorCamera;

@@ -4,7 +4,8 @@
 suomen_spawner_fnc_border_createBorderCrossing;
 */
 
-[car_police,0.25,false] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
+[] call suomen_mission_fnc_detectHumans;
+
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 
 HEADLESS_CONNECTED = false;

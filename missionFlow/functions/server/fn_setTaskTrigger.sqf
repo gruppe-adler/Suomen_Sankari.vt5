@@ -209,6 +209,7 @@ sleep 20;
     params ["_args", "_handle"];
 
     if (EXTRACTION_IMMINENT) then {
+        ["EventTrack04_F_EPB"] remoteExec ["playMusic", allPlayers];
         [getMarkerPos "mrk_doc"] call suomen_spawner_fnc_createDoc;
         ["mrk_trawler_spawn", "mrk_trawler_target"] spawn suomen_spawner_fnc_createGMan;
         MISSION_COMPLETED = true; 

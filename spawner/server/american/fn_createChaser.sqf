@@ -65,18 +65,23 @@ crew _truck joinSilent _crewGroup;
 
 // set driving path
 _truck setPilotLight true; 
-
+_truck setVariable ["suomen_targetPosition", _targetPosition];
 
 _crewGroup setSpeedMode "FULL";
 _crewGroup setBehaviour "CARELESS";
 // create trigger for disembark
 _lastPosition = _waypoints select (count _waypoints - _index);
 
+_truck addEventHandler ["FiredNear", {
+	(_this select 0) removeAllEventHandlers "FiredNear";
+	(_this select 0) setVariable ["suomen_gogogo", true];
+}];
+
 _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_truck", "_lastPosition", "_targetPosition"];
 
-	if (_truck distance _lastPosition < 5) then {
+	if (_truck distance _lastPosition < 5 || _truck getVariable ["suomen_gogogo", false]) then {
 		[_handle] call CBA_fnc_removePerFrameHandler;
 		doStop (driver _truck);
 		{_truck deleteVehicleCrew _x} forEach crew _truck;
@@ -86,32 +91,7 @@ _handle = [{
 		"GRAD_SoldierZed_rhs_uniform_FROG01_wd_fast"
 		];
 
-		[_truck, _targetPosition, _types] spawn {
-		params ["_truck", "_targetPosition", "_types"];
-			_truck setPilotLight true;
-			_getOutPosition = _truck modelToWorldVisual [0,-1.9,-0.7];
-
-			for "_i" from 0 to 30 do {
-				_grp = creategroup independent;
-				_zombie = _grp createUnit [selectRandom _types, _getOutPosition, [], 0, "NONE"];
-				_zombie enableDynamicSimulation true;
-				_zombie setVariable ["RZ_isDemon", false];
-				[_zombie] call suomen_spawner_fnc_getAmericanLoadout;
-
-				_zombie doMove _targetPosition;
-
-				sleep 0.5;
-
-				// DEBUG
-				if (DEBUG) then {
-					_alongRoadsA = createMarker [str (getPos _zombie), getPos _zombie]; 
-					_alongRoadsA setMarkerShape "ICON";
-					_alongRoadsA setMarkerType "mil_dot";
-					_alongRoadsA setMarkerColor "ColorBlue";
-					_alongRoadsA setMarkerSizeLocal [0.5, 0.5];
-				};
-			};
-		};
+		[_truck, _targetPosition, _types] spawn suomen_spawner_fnc_dropChaser;
 	};
 }, 1, [_truck, _lastPosition, _targetPosition]] call CBA_fnc_addPerFrameHandler;
 

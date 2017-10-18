@@ -42,8 +42,6 @@ publicVariable "tf_same_sw_frequencies_for_side";
 "mrk_inbetween_1" setMarkerAlphaLocal 0;
 "mrk_inbetween_2" setMarkerAlphaLocal 0;
 
-player setVariable ["isSpectator", "false", false];
-
 call suomen_fx_fnc_addInteractionBomb;
 
 
@@ -60,6 +58,7 @@ GAS_EFFECTED = 0;
 NUKE_DETONATE = false;
 EXPLOSIVE_PLANTED = false;
 ENEMIES_DETECTED = false;
+ENEMIES_ALERT = false;
 FIGHT = false;
 
 AI_KILLED = 0;
