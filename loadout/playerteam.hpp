@@ -112,12 +112,9 @@ class Name {
 			goggles = "G_Aviator";
 			primaryWeapon = "rhs_weap_M590_5RD";
 			addItemsToUniform[] = {
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck"
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck"
 			};
 		};
 
@@ -127,12 +124,9 @@ class Name {
 			goggles = "L_Shemagh_Tan";
 			primaryWeapon = "rhs_weap_M590_5RD";
 			addItemsToUniform[] = {
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck"
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck"
 			};
 		};
 
@@ -142,12 +136,9 @@ class Name {
 			goggles = "";
 			primaryWeapon = "rhs_weap_M590_8RD";
 			addItemsToUniform[] = {
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck"
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck"
 			};
 		};
 
@@ -157,12 +148,9 @@ class Name {
 			goggles = "L_Shemagh_OD";
 			primaryWeapon = "rhs_weap_M590_8RD";
 			addItemsToUniform[] = {
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck",
-				"rhsusf_5Rnd_doomsday_Buck"
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck",
+				"rhsusf_5Rnd_00Buck"
 			};
 		};
 
@@ -172,48 +160,104 @@ class Name {
 			uniform = "rds_uniform_Rocker1";
 	        headgear = "rds_rocker_hair1";
 			goggles = "G_Aviator";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class toini {
 			uniform = "rds_uniform_Rocker2";
 			headgear = "rds_rocker_hair2";
 			goggles = "L_Shemagh_Tan";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class mikael {
 			uniform = "rds_uniform_Rocker3";
 			headgear = "rds_rocker_hair3";
 			goggles = "";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class rasmus {
 			uniform = "rds_uniform_Rocker4";
 			headgear = "rds_rocker_hair1";
 			goggles = "L_Shemagh_OD";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class samu {
 			uniform = "rhs_uniform_gorka_r_g";
 	        headgear = "H_Bandanna_sgg";
 			goggles = "TRYK_Beard_BK";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class ukko {
 			uniform = "rhs_uniform_gorka_r_y";
 			headgear = "L_Shemagh_OD";
 			goggles = "L_Shemagh_Tan";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class jani {
 			uniform = "U_I_C_Soldier_Para_4_F";
 			headgear = "rds_rocker_hair3";
 			goggles = "TRYK_Beard";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 		class herkko {
 			uniform = "U_B_GEN_Commander_F";
 			headgear = "rds_rocker_hair2";
 			goggles = "TRYK_Beard_BW";
+			handgunWeapon = "hgun_Pistol_heavy_02_F";
+			handGunWeaponPointer = "acc_flashlight_pistol";
+			addItemsToUniform[] = {
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder",
+				"6Rnd_45ACP_Cylinder"
+			};
 		};
 
 
@@ -226,6 +270,7 @@ class Name {
 			headgear = "H_Watchcap_blk";
 			goggles = "";
 			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
+			nvgoggles = "SAN_Headlamp_v2";
 		};
 
 		class marco {
@@ -233,6 +278,7 @@ class Name {
 			headgear = "H_Beret_blk";
 			goggles = "";
 			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
+			nvgoggles = "SAN_Headlamp_v2";
 		};
 
 		class esa {
@@ -240,6 +286,7 @@ class Name {
 			headgear = "H_Hat_Safari_olive_F";
 			goggles = "";
 			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
+			nvgoggles = "SAN_Headlamp_v2";
 		};
 
 		class emppu {
@@ -247,6 +294,7 @@ class Name {
 			headgear = "rhs_beanie_green";
 			goggles = "";
 			addItemsToUniform[] = {"rhs_mag_9x18_12_57N181S", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
+			nvgoggles = "SAN_Headlamp_v2";
 		};
 
 
@@ -319,9 +367,6 @@ class Name {
 			addItemsToUniform[] = {
 				"rhsgref_5Rnd_792x57_kar98k",
 				"rhsgref_5Rnd_792x57_kar98k",
-				"rhsgref_5Rnd_792x57_kar98k",
-				"rhsgref_5Rnd_792x57_kar98k",
-				"rhsgref_5Rnd_792x57_kar98k",
 				"rhsgref_5Rnd_792x57_kar98k"
 			};
 		};
@@ -332,9 +377,6 @@ class Name {
 			goggles = "L_Shemagh_Red";
 			primaryWeapon = "rhs_weap_kar98k";
 			addItemsToUniform[] = {
-				"rhsgref_5Rnd_792x57_kar98k",
-				"rhsgref_5Rnd_792x57_kar98k",
-				"rhsgref_5Rnd_792x57_kar98k",
 				"rhsgref_5Rnd_792x57_kar98k",
 				"rhsgref_5Rnd_792x57_kar98k",
 				"rhsgref_5Rnd_792x57_kar98k"

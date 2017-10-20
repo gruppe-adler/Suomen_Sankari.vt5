@@ -72,8 +72,8 @@ _crewGroup setBehaviour "CARELESS";
 // create trigger for disembark
 _lastPosition = _waypoints select (count _waypoints - _index);
 
-_truck addEventHandler ["FiredNear", {
-	(_this select 0) removeAllEventHandlers "FiredNear";
+_truck addEventHandler ["Hit", {
+	(_this select 0) removeAllEventHandlers "Hit";
 	(_this select 0) setVariable ["suomen_gogogo", true];
 }];
 

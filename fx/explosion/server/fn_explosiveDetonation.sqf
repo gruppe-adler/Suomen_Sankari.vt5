@@ -23,3 +23,9 @@ _vehicles = nearestObjects [getPos nukepos, ["Car"], 100];
 	_dir = ([_x, getpos nukepos] call BIS_fnc_relativeDirTo) - 180;
 	[_x, [_speed * (sin _dir), _speed * (cos _dir), 5 * (_range / _speed)]] remoteExec ["setVelocity", _x];
 } forEach _vehicles;
+
+[{
+	["mrk_repairVan_3"] call suomen_spawner_fnc_createPoliceDriveBy;
+	["mrk_repairVan_2"] call suomen_spawner_fnc_createPoliceDriveBy;
+	[getMarkerPos "mrk_repairVan"] call suomen_spawner_fnc_createRepairVan;
+}, [], 3] call CBA_fnc_waitAndExecute;

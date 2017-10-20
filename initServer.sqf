@@ -3,9 +3,7 @@
 [trg_border_finnish_out, finnish_gate_out, "mrk_guard_1", 213, "finnish"] call
 suomen_spawner_fnc_border_createBorderCrossing;
 */
-
-[] call suomen_mission_fnc_detectHumans;
-
+[] remoteExec ["suomen_helpers_fnc_intro", allPlayers, true];
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 
 HEADLESS_CONNECTED = false;
@@ -51,12 +49,12 @@ removeAIEventhandlers = {
 {
 	if (!isPlayer _x) then {
 		_x addEventHandler["killed", {if (isPlayer (_this select 1)) then { 
-			[] call suomen_mission_fnc_setEnemiesDetected; [] call removeAIEventhandlers;
+			[] call removeAIEventhandlers; [] call suomen_mission_fnc_setEnemiesDetected;
 		};}];
 
 		_x addEventHandler["FiredNear", {
 			if (isPlayer (_this select 1)) then { 
-				[] call suomen_mission_fnc_setEnemiesDetected; [] call removeAIEventhandlers;
+				[] call removeAIEventhandlers; [] call suomen_mission_fnc_setEnemiesDetected; 
 		};}];
 	}
 } forEach allUnits;

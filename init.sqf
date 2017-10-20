@@ -1,9 +1,7 @@
 DEBUG = false;
 titleText ["", "BLACK", 999];
 
-call suomen_helpers_fnc_intro;
 call suomen_helpers_fnc_addZeusModules;
-
 call suomen_mission_fnc_setupGroupIds;
 
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";

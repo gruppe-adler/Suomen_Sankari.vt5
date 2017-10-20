@@ -89,6 +89,11 @@ _trg setTriggerStatements [
 ""];
 */
 
+_veh addEventHandler ["Hit", {
+	(_this select 0) removeAllEventHandlers "Hit";
+	(_this select 0) setVariable ["suomen_gogogo", true];
+}];
+
 _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_veh", "_lastPosition"];
@@ -100,10 +105,10 @@ _handle = [{
 	};
 	*/
 
-	if (_veh distance _lastPosition < 15 || !alive _veh || !canMove _veh) then {
+	if (_veh distance _lastPosition < 15 || _veh getVariable ["suomen_gogogo", false]) then {
 		doStop _veh;
 		(driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
-		[_veh] call suomen_spawner_fnc_spawnDriveByDocs;
+		[_veh] spawn suomen_spawner_fnc_spawnDriveByDocs;
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 }, 1, [_veh, _lastPosition]] call CBA_fnc_addPerFrameHandler;

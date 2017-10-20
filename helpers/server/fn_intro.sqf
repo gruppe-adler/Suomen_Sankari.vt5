@@ -1,16 +1,15 @@
 if (!DEBUG) then {
-	0 fadeSound 0;
-	playMusic "AmbientTrack02_F_Orange";
 	[] spawn {
-		
+		0 fadeSound 0;
 		waitUntil{!(isNil "BIS_fnc_init")};
 		waitUntil {!isNull player};
 		titleText ["<t size='3' color='#FFFFFF'>S U O M E N   S A N K A R I</t>", "BLACK FADED",8,true,true];
+		playMusic "AmbientTrack02_F_Orange";
+		10 fadeSound 1;
 		sleep 7;
 		// titleText ["", "BLACK FADED", 2]; // Black screen
 		// sleep 5; // Waits 5 seonds
 		titleText ["", "BLACK IN", 10]; // Black screen dissapears
-		10 fadeSound 1;
 	
 		[ 
 				["SOMEWHERE NEAR","font = 'PuristaSemiBold'"],

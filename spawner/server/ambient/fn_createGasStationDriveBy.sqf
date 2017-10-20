@@ -122,7 +122,7 @@ _group = createGroup [independent,true];
 
 _chemlight = "ACE_G_Chemlight_HiWhite" createVehicle (getMarkerPos "mrk_gasstation_chemlight"); 
 
-_gasattendant = _group createUnit ["GRAD_CivilianZed_rds_schoolteacher_slow", getMarkerPos "mrk_gasstation_waerter", [], 0, "NONE"];
+_gasattendant = _group createUnit ["GRAD_CivilianZed_rds_schoolteacher_walker", getMarkerPos "mrk_gasstation_waerter", [], 0, "NONE"];
 _gasattendant allowDamage false;
 _gasattendant setVariable ["suomen_overwriteRZ", true]; // not allowed to target anyone
 _gasattendant setVariable ["suomen_ignoreTargets", true];
@@ -179,16 +179,7 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
 	}, [_gasattendant], 6] call CBA_fnc_waitAndExecute;
 
-	[{
-		((getPos (_this select 0)) distance (getMarkerPos "mrk_gasstation") < 5)
-	},
-	{
-		params ["_gasattendant"];
-		_gasattendant allowDamage true;
-		[_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
-		call suomen_spawner_fnc_createGasStationAction;
-
-	}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
+	
 
 
 	{
@@ -225,7 +216,8 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 			_unit = _crewGroup createUnit [selectRandom _types, _spawnPos, [], 0, "NONE"];
 			_unit enableDynamicSimulation false;
 			[_unit] joinSilent _crewGroup;
-			
+			_unit enableReload false;
+			[_unit] execVM "loadout\fake_usmc.sqf";
 
 			if (random 1 > 0.7) then {
 				_unit setHitPointDamage ["hitLegs", 1];
@@ -286,7 +278,20 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 	},
 	{
 		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-		(_this select 0) doMove (getMarkerPos "mrk_gasstation");
+		
+			[{
+				params ["_args", "_handle"];
+				_args params ["_gasattendant"];
+
+				if ((getPos _gasattendant) distance (getMarkerPos "mrk_gasstation") < 5) exitWith {
+					[_handle] call CBA_fnc_removePerFrameHandler;
+					_gasattendant allowDamage true;
+					[_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
+					call suomen_spawner_fnc_createGasStationAction;
+				};
+			
+				_gasattendant doMove (getMarkerPos "mrk_gasstation");
+			}, 1, [(_this select 0)]] call CBA_fnc_addPerFrameHandler;
 	}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
 	
 

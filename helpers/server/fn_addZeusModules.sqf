@@ -4,10 +4,19 @@
 	[] call suomen_helpers_fnc_diagClientModule
 }] call ares_fnc_registerCustomModule;
 
+[CATEGORY, "Play Intro Music", {
+	["AmbientTrack02_F_Orange"] remoteExec ["playMusic", allPlayers];
+}] call Ares_fnc_RegisterCustomModule;
+
 [CATEGORY, "All Players in Cars SUCCESS", {
 	ALL_IN_CARS = true; publicVariableServer "ALL_IN_CARS";
 }] call Ares_fnc_RegisterCustomModule;
 
+[CATEGORY, "SPEAK RUSSIAN", {
+	(_this select 1) say3D [selectRandom [
+    	 		"rus1", "rus2", "rus3", "rus4", "rus5", "rus6", "rus7", "rus8", "rus9", "rus10", "rus11"
+    	 	], 100];
+}] call Ares_fnc_RegisterCustomModule;
 
 [CATEGORY, "ENEMIES ALERT", {
 	[] call suomen_mission_fnc_setEnemiesAlert;

@@ -1,4 +1,8 @@
+/*
 
+NOT IN USE - buggy
+
+*/
 
 [{
     params ["_args", "_handle"];
@@ -10,10 +14,9 @@
 	_seenByPatrol = [];
     
     { 
-    diag_log format ["_x = %1", _x];
-    	if ((rus_patrol_camp targetKnowledge _x) select 0) then { 
+       	if ((rus_patrol_camp targetKnowledge _x) select 0) then { 
     		_seenByPatrol = _seenByPatrol + [_x];
-    		diag_log format ["_seenByPatrol = %1", _seenByPatrol];
+    		
     	};
     } forEach allPlayers;
 
@@ -27,16 +30,10 @@
     	 	_randomUnit say3D [selectRandom [
     	 		"rus1", "rus2", "rus3", "rus4", "rus5", "rus6", "rus7", "rus8", "rus9", "rus10", "rus11"
     	 	], 100];
-    	 };
-    	 [{
-    	 	if (alive (_this select 0)) then {
-    	 		(_this select 0) fireAtTarget [(_this select 0) findNearestEnemy (_this select 0)];
-    	 	};
-    	 }, [(selectRandom units group rus_patrol_camp)], 3] call CBA_fnc_waitAndExecute;
-    	
+    	 };    	
     };
 
-    /*
+    
     if (count (rus_patrol_factory1 targetsQuery [objNull, sideUnknown, "O_Survivor_F", position rus_patrol_factory1, 60]) > 0) exitWith {
     	 [] call suomen_mission_fnc_setEnemiesDetected;
     	 [_handle] call CBA_fnc_removePerFrameHandler;
@@ -56,6 +53,6 @@
     	 [] call suomen_mission_fnc_setEnemiesDetected;
     	 [_handle] call CBA_fnc_removePerFrameHandler;
     };
-    */
+    
 
 },3,[]] call CBA_fnc_addPerFrameHandler;

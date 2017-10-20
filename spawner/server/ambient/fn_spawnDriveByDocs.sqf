@@ -1,5 +1,7 @@
 params ["_veh"];
 
+waitUntil { speed _veh < 1 };
+
 (driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
 (driver _veh) setDamage 1; // kill driver to hold veh
 
