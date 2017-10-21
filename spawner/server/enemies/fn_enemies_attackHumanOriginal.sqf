@@ -41,7 +41,7 @@ if ([_zombie,_target] call RZ_fnc_zombie_canAttackHuman) then
 	
 
 	_scream = selectRandom RZ_HumanScreamArray;
-	[_target, _scream] remoteExecCall ["say3d"];
+	[_target, [_scream,100]] remoteExecCall ["say3d"];
 
 	_vel = velocity _target;
 	_dir = direction _zombie;

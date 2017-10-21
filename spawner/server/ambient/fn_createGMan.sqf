@@ -24,7 +24,12 @@ _gman setCombatMode "BLUE";
 
 _gman attachTo [_trawler, [-4.5,-19,-0.13]];
 _gman setDir -180;
-[_gman, "Acts_JetsCrewaidF_idle"] remoteExec ["switchMove", allPlayers];
+_gman playMoveNow "Acts_starterPistol_loop";
+
+_gman addEventHandler ["AnimDone", {
+	(_this select 0) playMoveNow "Acts_starterPistol_loop";
+}];
+
 _gman disableAI "ALL";
 sleep 2;
 _trawler setVectorUp [0,-0.03,1];
@@ -43,6 +48,9 @@ _chemlight attachTo [_suitcase, [0,0,0]];
 	
 
 	if ({_x distance _trawler < 50} count allPlayers > 0) exitWith {
+
+		END_MISSION = true; 
+		["BackgroundTrack03_F_EPC"] remoteExec ["playMusic",allPlayers];
 
 		[] remoteExec ["suomen_mission_fnc_credits", allPlayers, true];
 		[_trawler] spawn suomen_mission_fnc_endMissionServer;

@@ -122,7 +122,7 @@ _group = createGroup [independent,true];
 
 _chemlight = "ACE_G_Chemlight_HiWhite" createVehicle (getMarkerPos "mrk_gasstation_chemlight"); 
 
-_gasattendant = _group createUnit ["GRAD_CivilianZed_rds_schoolteacher_walker", getMarkerPos "mrk_gasstation_waerter", [], 0, "NONE"];
+_gasattendant = _group createUnit ["GRAD_CivilianZed_rds_schoolteacher_medium", getMarkerPos "mrk_gasstation_waerter", [], 0, "NONE"];
 _gasattendant allowDamage false;
 _gasattendant setVariable ["suomen_overwriteRZ", true]; // not allowed to target anyone
 _gasattendant setVariable ["suomen_ignoreTargets", true];
@@ -139,49 +139,6 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 	params ["_gasattendant", "_chemlight", "_positions"];
 
 
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 5] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 10] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 15] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 20] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 25] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 1] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 3] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 4] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 5] call CBA_fnc_waitAndExecute;
-
-	[{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-	}, [_gasattendant], 6] call CBA_fnc_waitAndExecute;
-
-	
-
-
 	{
 		private ["_path"];
 
@@ -189,18 +146,28 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		_path = (_x select 1);
 		_isBombie = (_x select 2);
 
-		diag_log format ["path is %1", _path];
+		// diag_log format ["path is %1", _path];
 		
 
 		// create trucks
 		_truck = createVehicle ["rhsusf_M1083A1P2_B_WD_fmtv_usarmy", _spawnPos, [], 0, "NONE"];
-		_truck setDir 40;
+		clearItemCargoGlobal _truck;
+		clearWeaponCargoGlobal _truck;
+		clearMagazineCargoGlobal _truck;
+		clearBackpackCargoGlobal _truck;
+
+		_truck addWeaponCargoGlobal ["rhs_weap_m16a4_carryhandle",10];
+		_truck addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",40];
+		_truck setDir 33;
 		_truck setPilotLight true;
 		_truck setVariable ["suomen_isBombie", _isBombie];
 		_crewGroup = createGroup [west, true];
 		_crewGroup setBehaviour "CARELESS";
 		_crewGroup setCombatMode "BLUE";
 		_crewGroup setSpeedMode "FULL";
+		_crewGroup allowFleeing 0;
+		_truck forceSpeed 100;
+
 
 
 		_types = [
@@ -211,12 +178,11 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		];
 
 		// create cargo
-		for "_i" from 0 to ([4,1] select _isBombie) do 
+		for "_i" from 0 to ([2,1] select _isBombie) do 
 		{
 			_unit = _crewGroup createUnit [selectRandom _types, _spawnPos, [], 0, "NONE"];
 			_unit enableDynamicSimulation false;
 			[_unit] joinSilent _crewGroup;
-			_unit enableReload false;
 			[_unit] execVM "loadout\fake_usmc.sqf";
 
 			if (random 1 > 0.7) then {
@@ -250,7 +216,7 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		} forEach units _crewGroup;
 
 		[{
-			(_this select 0) distance (_this select 1) < 50
+			(_this select 0) distance (_this select 1) < 25
 		},
 		{
 			GASATTENDANT_MOVE = true;
@@ -291,7 +257,8 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 				};
 			
 				_gasattendant doMove (getMarkerPos "mrk_gasstation");
-			}, 1, [(_this select 0)]] call CBA_fnc_addPerFrameHandler;
+				[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+			}, 2, [(_this select 0)]] call CBA_fnc_addPerFrameHandler;
 	}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
 	
 

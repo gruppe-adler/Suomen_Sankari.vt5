@@ -24,8 +24,8 @@ blufor_buschecker setDamage 1;
 tourist setDamage 1;
 
 { deleteVehicle _x } forEach units (leader rus_group_1);
-{ _x linkItem "mask_m50"; } forEach units (leader blufor_lead);
-{ _x linkItem "mask_m50"; } forEach units (leader blufor_patrol1);
+{ _x linkItem "mask_m50"; _x setHitPointDamage ["hitLegs", 1];} forEach units (leader blufor_lead);
+{ _x setDamage 1; } forEach units (leader blufor_patrol1);
 
 sleep 5;
 

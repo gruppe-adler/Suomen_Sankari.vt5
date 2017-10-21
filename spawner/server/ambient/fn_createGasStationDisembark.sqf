@@ -6,6 +6,7 @@ _grp = group (driver _truck);
 (driver _truck) disableAI "TARGET";
 
 _grp leaveVehicle _truck;
+{ unassignVehicle _x; } forEach crew _truck;
 
 waitUntil {sleep 0.5; speed _truck < 0.5};
 

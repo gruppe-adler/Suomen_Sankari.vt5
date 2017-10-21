@@ -61,13 +61,14 @@ _veh animateDoor ['DoorRB', 1];
 waitUntil {_veh distance2D _ropingPos < 100};
 _veh flyInHeight 7;
 _veh doMove (getPos _ropingPos);
-waitUntil { getPosATL _veh select 2 < 15 };
+waitUntil { getPosATL _veh select 2 < 10 };
 [_veh,false,false] spawn ace_fastroping_fnc_deployAI;
 
 waitUntil {!((_veh getVariable ["ace_fastroping_deployedRopes", []]) isEqualTo [])};
 waitUntil {(_veh getVariable ["ace_fastroping_deployedRopes", []]) isEqualTo []};
+_veh flyInHeight 50;
 _veh doMove _targetPos;
-
+_veh flyInHeight 50;
 _wp =_groupCargo addWaypoint [getPos pos_ropeground_target, 0];
 _wp setWaypointType "MOVE";
 _groupCargo setSpeedMode "FULL";

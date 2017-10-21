@@ -43,7 +43,7 @@ _unit addVest (randVestUSMC call BIS_fnc_selectRandom);
 _unit addHeadgear (randHeadGearUSMC call BIS_fnc_selectRandom);
 _unit addBackpack (randBackPackUSMC call BIS_fnc_selectRandom);
 
-_unit addMagazines ["rhs_mag_30Rnd_556x45_Mk318_Stanag",1]; 
+_unit addMagazines ["rhs_mag_30Rnd_556x45_Mk318_Stanag",2]; 
 _unit addWeapon "rhs_weap_m16a4"; 
  
  

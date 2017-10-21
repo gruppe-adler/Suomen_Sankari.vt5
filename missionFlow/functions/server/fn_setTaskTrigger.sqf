@@ -227,8 +227,6 @@ sleep 20;
 [{
     params ["_args", "_handle"];
     
-    _jussiCar = (missionNamespace getVariable ["suomen_obj_jussiCar", objNull]);
-
     if (END_MISSION) then {
         ["tsk_evacuate","SUCCEEDED",true] call BIS_fnc_taskSetState;
 

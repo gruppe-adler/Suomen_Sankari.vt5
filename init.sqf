@@ -1,5 +1,4 @@
 DEBUG = false;
-titleText ["", "BLACK", 999];
 
 call suomen_helpers_fnc_addZeusModules;
 call suomen_mission_fnc_setupGroupIds;

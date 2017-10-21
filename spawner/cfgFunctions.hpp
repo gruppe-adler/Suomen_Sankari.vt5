@@ -3,6 +3,7 @@ class suomen_spawner {
     class ambient {
             file = spawner\server\ambient;
 
+            class createDefendParkingLot {};
             class createDriveBy {};
             class createGasStationAction {};
             class createGasStationDisembark {};

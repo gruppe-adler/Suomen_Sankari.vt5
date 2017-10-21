@@ -5,7 +5,6 @@ class suomen_mission {
 
             class credits;
             class debugKnowsAbout;
-            class endMission;
     };
 
     class ai_server {

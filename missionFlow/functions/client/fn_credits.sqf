@@ -1,3 +1,6 @@
+suomen_creditsNext = false;
+
+sleep 20;
 
 _credits = [
 
@@ -28,7 +31,9 @@ _getText = {
 _moveUp = {
 		params ["_text", "_layer", "_isLast"];
 
-		private ["_moveToPosition"];
+		private ["_moveToPosition", "_isOnHalf"];
+
+		_isOnHalf = false;
 
 		if (_isLast) then {
 			_moveToPosition = -((safezoneH / 2) + 0.1);
@@ -64,6 +69,10 @@ _moveUp = {
 		{
 			_modifier = _modifier - 0.005;
 			_posTmp = [_posX, _posY + _modifier,_posW,_posH];
+			if (_posY + _modifier < (safeZoneY+ safezoneH/2) && !_isOnHalf) then {
+				_isOnHalf = true;
+				suomen_creditsNext = true;
+			};
 			_ctrlText ctrlsetposition _posTmp;
 			_ctrlText ctrlcommit 0;
 			uisleep 0.01;
@@ -92,8 +101,9 @@ _moveUp = {
 	} else {
 		[_text, _layer, false] spawn _moveUp;
 	};
-	
-	sleep 4;
+
+	waitUntil {suomen_creditsNext};
+	suomen_creditsNext = false;
 
 } forEach _credits;
 

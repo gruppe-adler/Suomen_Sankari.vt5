@@ -29,8 +29,7 @@ class Name {
 			goggles = "NeckTight_WhiteCLR";
 			backpack = "B_Messenger_Coyote_F";
 			addItemsToUniform[] = {
-			    "ACE_surgicalKit",
-			    "GRAD_ALK"
+			    "ACE_surgicalKit"
 			};
 			addItemsToBackpack[] = {
 			    LIST_4("ACE_salineIV"),
@@ -49,8 +48,7 @@ class Name {
 			headgear = "rds_Profiteer_cap1";
 			backpack = "B_Messenger_Olive_F";
 			addItemsToUniform[] = {
-			    "ACE_surgicalKit",
-			    "GRAD_ALK"
+			    "ACE_surgicalKit"
 			};
 			addItemsToBackpack[] = {
 			    LIST_4("ACE_salineIV"),
@@ -69,8 +67,7 @@ class Name {
 			headgear = "rds_Profiteer_cap1";
 			backpack = "B_Messenger_Black_F";
 			addItemsToUniform[] = {
-			    "ACE_surgicalKit",
-			    "GRAD_ALK"
+			    "ACE_surgicalKit"
 			};
 			addItemsToBackpack[] = {
 			    LIST_4("ACE_salineIV"),
@@ -89,8 +86,7 @@ class Name {
 			headgear = "rds_Profiteer_cap1";
 			backpack = "B_Messenger_Gray_F";
 			addItemsToUniform[] = {
-			    "ACE_surgicalKit",
-			    "GRAD_ALK"
+			    "ACE_surgicalKit"
 			};
 			addItemsToBackpack[] = {
 			    LIST_4("ACE_salineIV"),

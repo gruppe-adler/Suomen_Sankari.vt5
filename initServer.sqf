@@ -3,7 +3,6 @@
 [trg_border_finnish_out, finnish_gate_out, "mrk_guard_1", 213, "finnish"] call
 suomen_spawner_fnc_border_createBorderCrossing;
 */
-[] remoteExec ["suomen_helpers_fnc_intro", allPlayers, true];
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 
 HEADLESS_CONNECTED = false;
