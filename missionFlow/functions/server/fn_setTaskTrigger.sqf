@@ -67,7 +67,10 @@ sleep 20;
     } forEach _vehicleArray;
 
     // hintSilent format ["%1", _playersInVehicles];
-    ALL_IN_CARS = _playersInVehicles == east countSide allPlayers;
+    _playersInVehicles == east countSide allPlayers;
+    if (_playersInVehicles) then {
+        ALL_IN_CARS = true;
+    };
 
     if (ALL_IN_CARS) then {
     	["tsk_ikarus","SUCCEEDED",true] call BIS_fnc_taskSetState;
@@ -131,21 +134,23 @@ sleep 20;
     params ["_args", "_handle"];
     
     if (NUKE_DETONATE) then {
-        [   east,
-            ["tsk_extract"],
-            [
-                "Retreat back to your hideout.",
-                "Retreat back to your hideout.",
-                ""
-            ],
-            "",
-            "ASSIGNED",
-            2,
-            true
-        ] call BIS_fnc_taskCreate;
-        ["tsk_extract","run"] call BIS_fnc_taskSetType;
-
         [_handle] call CBA_fnc_removePerFrameHandler;
+        [{
+            [   east,
+                ["tsk_extract"],
+                [
+                    "Retreat back to your hideout.",
+                    "Retreat back to your hideout.",
+                    ""
+                ],
+                "",
+                "ASSIGNED",
+                2,
+                true
+            ] call BIS_fnc_taskCreate;
+            ["tsk_extract","run"] call BIS_fnc_taskSetType;
+
+        }, [], 9] call CBA_fnc_waitAndExecute;        
     };
 
 },5,[]] call CBA_fnc_addPerFrameHandler;
@@ -158,10 +163,11 @@ sleep 20;
     params ["_args", "_handle"];
     
     if (NUKE_DETONATE) then {
-        ["tsk_findComrades","CANCELED",true] call BIS_fnc_taskSetState;
-        ["tsk_extract", "ASSIGNED", true] call BIS_fnc_taskSetState;
-
         [_handle] call CBA_fnc_removePerFrameHandler;
+
+        [{
+            ["tsk_findComrades","CANCELED",true] call BIS_fnc_taskSetState;
+        }, [], 10] call CBA_fnc_waitAndExecute;
     };
 
 },3,[]] call CBA_fnc_addPerFrameHandler;

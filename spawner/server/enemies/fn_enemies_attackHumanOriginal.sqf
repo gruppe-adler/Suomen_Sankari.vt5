@@ -22,7 +22,7 @@ if ([_zombie,_target] call RZ_fnc_zombie_canAttackHuman) then
 	};
 
 	_aceDamageType = ["manNormal","manDemon"] select (_zombie getVariable "RZ_isDemon");
-	_normalDamage = [2,0.1] select (isPlayer _target);
+	_normalDamage = [2,0.3] select (isPlayer _target);
 	if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then 
 	{
 		// [_target,_aceDamageType] execVM "\ryanzombies\acedamage.sqf";

@@ -30,6 +30,8 @@ _veh setSpeedMode "LIMITED";
 _veh setCaptive true;
 
 
+
+
 _veh animateDoor ['DoorLB', 1]; 
 _veh animateDoor ['DoorRB', 1]; 
 

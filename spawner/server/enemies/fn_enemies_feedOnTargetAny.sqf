@@ -38,7 +38,7 @@ while {(_zombie distance _target < 80) && (alive _zombie) && !_feasted} do
 			if (random 2 < 1) then 
 			{
 				_eatingSound = selectRandom ([_zombie,"eat"] call RZ_fnc_zombie_getZombieSoundArray); 
-				playsound3d [_eatingSound, _zombie, false, getPosASL _zombie, 1, pitch _zombie];
+				playsound3d [_eatingSound, _zombie, false, getPosASL _zombie, 1, pitch _zombie, 80];
 			};
 			
 			_target = _zombie call RZ_fnc_zombie_checkForNewTarget;

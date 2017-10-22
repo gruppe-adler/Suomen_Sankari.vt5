@@ -27,6 +27,7 @@ class suomen_spawner {
             file = spawner\server\american;
 
             class createChaser {};
+            class createSingleAmerican {};
             class dropChaser {};
             class getAmericanLoadout {};
             class spawnAmericanZombieCrowd {};
@@ -46,6 +47,7 @@ class suomen_spawner {
     class civilian {
             file = spawner\server\civilian;
 
+            class createSingleCivilian {};
             class createCivilianCrowd {};
             class createDoc {};
             class createPriest {};

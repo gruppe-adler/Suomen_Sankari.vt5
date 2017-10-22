@@ -8,6 +8,38 @@
 	["AmbientTrack02_F_Orange"] remoteExec ["playMusic", allPlayers];
 }] call Ares_fnc_RegisterCustomModule;
 
+[CATEGORY, "Spawn American Soldier Slow", {
+	if (HEADLESS_CONNECTED) then {
+		[(_this select 0), false] remoteExec ["suomen_spawner_fnc_createSingleAmerican", suomen_headless];
+	} else {
+		[(_this select 0), false] call suomen_spawner_fnc_createSingleAmerican;
+	};
+}] call Ares_fnc_RegisterCustomModule;
+
+[CATEGORY, "Spawn American Soldier Fast", {
+	if (HEADLESS_CONNECTED) then {
+		[(_this select 0), true] remoteExec ["suomen_spawner_fnc_createSingleAmerican", suomen_headless];
+	} else {
+		[(_this select 0), true] call suomen_spawner_fnc_createSingleAmerican;
+	};
+}] call Ares_fnc_RegisterCustomModule;
+
+[CATEGORY, "Spawn Civilian Slow", {
+	if (HEADLESS_CONNECTED) then {
+		[(_this select 0), false] remoteExec ["suomen_spawner_fnc_createSingleCivilian", suomen_headless];
+	} else {
+		[(_this select 0), false] call suomen_spawner_fnc_createSingleCivilian;
+	};
+}] call Ares_fnc_RegisterCustomModule;
+
+[CATEGORY, "Spawn Civilian Fast", {
+	if (HEADLESS_CONNECTED) then {
+		[(_this select 0), true] remoteExec ["suomen_spawner_fnc_createSingleCivilian", suomen_headless];
+	} else {
+		[(_this select 0), true] call suomen_spawner_fnc_createSingleCivilian;
+	};
+}] call Ares_fnc_RegisterCustomModule;
+
 [CATEGORY, "All Players in Cars SUCCESS", {
 	ALL_IN_CARS = true; publicVariableServer "ALL_IN_CARS";
 }] call Ares_fnc_RegisterCustomModule;

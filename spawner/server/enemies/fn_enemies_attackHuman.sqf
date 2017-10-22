@@ -1,4 +1,4 @@
-params ["_unit","_target", ["_damageDealt",0.001]]; // default damage is 0.05 on easy
+params ["_unit","_target", ["_damageDealt",0.005]]; // default damage is 0.05 on easy
 _dir = _unit getDir _target;
 _unit setdir _dir;
 [_unit, "AwopPercMstpSgthWnonDnon_throw"] remoteExecCall ["fnc_RyanZombies_SwitchMove"];
