@@ -4,7 +4,7 @@ _unit setdir _dir;
 [_unit, "AwopPercMstpSgthWnonDnon_throw"] remoteExecCall ["fnc_RyanZombies_SwitchMove"];
 
 _attackSound = selectRandom ([_unit,"attack"] call RZ_fnc_zombie_getZombieSoundArray);
-playsound3d [_attackSound, _unit, false, getPosASL _unit, 1, pitch _unit];
+playsound3d [_attackSound, _unit, false, getPosASL _unit, 1, pitch _unit, 100];
 
 
 //_target allowfleeing 1;
@@ -13,7 +13,7 @@ _attackSpeed = [Ryanzombiesattackspeed,0.3] select (_unit getVariable "RZ_isDemo
 if ([_unit,_target] call RZ_fnc_zombie_canAttackHuman) then
 {
 	_hitSound = selectRandom ([_unit,"hit"] call RZ_fnc_zombie_getZombieSoundArray);
-	playsound3d [_hitSound, _target, false, getPosASL _target, 1, pitch _unit];	
+	playsound3d [_hitSound, _target, false, getPosASL _target, 1, pitch _unit, 100];	
 	
 	if (isnil "ryanzombiesdisablebleeding") then 
 	{ 
@@ -22,9 +22,9 @@ if ([_unit,_target] call RZ_fnc_zombie_canAttackHuman) then
 
 	if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then 
 	{
-		// [_target,_damageDealt] call suomen_spawner_fnc_enemies_aceDamage;
+		[_target,_damageDealt] call suomen_spawner_fnc_enemies_aceDamage;
 	} else {
-		// _target setdamage (damage _target + _damageDealt);
+		_target setdamage (damage _target + _damageDealt);
 	};
 
 

@@ -128,7 +128,6 @@ _gasattendant setVariable ["suomen_overwriteRZ", true]; // not allowed to target
 _gasattendant setVariable ["suomen_ignoreTargets", true];
 [_gasattendant, ""] remoteExec ["switchMove", 0];
 _gasattendant linkItem "murshun_cigs_cig1";
-[_gasattendant] remoteExec ["murshun_cigs_fnc_start_cig", _gasattendant];
 [_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
 _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 
@@ -243,7 +242,7 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 		GASATTENDANT_MOVE
 	},
 	{
-		[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
+		[_this] remoteExec ["murshun_cigs_fnc_smoke"];
 		
 			[{
 				params ["_args", "_handle"];
@@ -257,9 +256,9 @@ _gasattendant setVariable ["RZ_vehicleClass","RyanZombieC_man_1"];
 				};
 			
 				_gasattendant doMove (getMarkerPos "mrk_gasstation");
-				[(_this select 0)] remoteExec ["murshun_cigs_fnc_smoke"];
-			}, 2, [(_this select 0)]] call CBA_fnc_addPerFrameHandler;
-	}, [_gasattendant]] call CBA_fnc_waitUntilAndExecute;
+				[_gasattendant] remoteExec ["murshun_cigs_fnc_smoke"];
+			}, 2, [_this]] call CBA_fnc_addPerFrameHandler;
+	}, _gasattendant] call CBA_fnc_waitUntilAndExecute;
 	
 
 }, [_gasattendant, _chemlight, _positions]] call CBA_fnc_waitUntilAndExecute;

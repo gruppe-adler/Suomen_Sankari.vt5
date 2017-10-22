@@ -16,13 +16,13 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=50;
+		nextID=51;
 	};
 	class Camera
 	{
-		pos[]={3081.2012,43.488129,2393.3157};
-		dir[]={0,-0.70710677,0.70710683};
-		up[]={0,0.70710677,0.70710671};
+		pos[]={3769.9492,35.808563,2281.8372};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
 		aside[]={0.99999994,0,-0};
 	};
 };
@@ -45538,7 +45538,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3792.751,6.2305732,242.655};
-			angle=6.1395087;
+			angle=6.1395068;
 			class Attributes
 			{
 				name="trg_flyBy";
@@ -59201,7 +59201,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={2457.6824,6.2579131,1702.6915};
-			angle=0.6350255;
+			angle=0.63502544;
 			class Attributes
 			{
 				sizeA=200;
