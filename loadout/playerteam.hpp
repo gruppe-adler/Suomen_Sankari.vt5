@@ -299,7 +299,7 @@ class Name {
 			uniform = "U_C_Mechanic_01_F";
 			headgear = "H_Booniehat_khk";
 			radio = "tf_rf7800str";
-			goggles = "G_EyeProtectors_F";
+			goggles = "G_Squares";
 			gps = "ItemGPS";
 		};
 

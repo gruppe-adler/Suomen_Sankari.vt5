@@ -1,7 +1,7 @@
 SUOMEN_EXPLOSION_TIMER = 25;
 
 [getPos leakpos,270] call suomen_fx_fnc_steamLeak;
-[leakpos, 20, {NUKE_DETONATE}] call suomen_fx_fnc_gasEffectsAdd;
+
 
 if (isServer) then {
 	call suomen_fx_fnc_bombLoop;

@@ -3,7 +3,7 @@ params ["_vehicleArray"];
 // CREATE TASKS
 // _owner,_taskid,_texts,_destination,_state,_priority,_showNotification,_taskType,_alwaysVisible
 
-sleep 10;
+sleep 80;
 // jussi
 [   east,
     ["tsk_findComrades"],
@@ -60,6 +60,8 @@ sleep 20;
     params ["_args", "_handle"];
     _args params ["_vehicleArray"];
     
+    private ["_playersInVehicles", "_allIn"];
+
     _playersInVehicles = 0;
    	{
     	_vehicle = _x;
@@ -67,8 +69,8 @@ sleep 20;
     } forEach _vehicleArray;
 
     // hintSilent format ["%1", _playersInVehicles];
-    _playersInVehicles == east countSide allPlayers;
-    if (_playersInVehicles) then {
+    _allIn = east countSide allPlayers == _playersInVehicles;
+    if (_allIn) then {
         ALL_IN_CARS = true;
     };
 

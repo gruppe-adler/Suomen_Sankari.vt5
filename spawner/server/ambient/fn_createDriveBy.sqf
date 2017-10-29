@@ -70,7 +70,7 @@ _driver disableAI "FSM";
 _driver setCombatMode "BLUE";
 _driver allowFleeing 0;
 
-_veh setVehicleLock "LOCKED";
+_veh setVehicleLock "UNLOCKED";
 _veh setPilotLight true; 
 _veh setDriveOnPath _path;
 
@@ -109,6 +109,7 @@ _handle = [{
 		doStop _veh;
 		(driver _veh) forceWeaponFire ["AmbulanceHorn", "AmbulanceHorn"];
 		[_veh] spawn suomen_spawner_fnc_spawnDriveByDocs;
+		_veh setHit ["engine", 1];
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 }, 1, [_veh, _lastPosition]] call CBA_fnc_addPerFrameHandler;

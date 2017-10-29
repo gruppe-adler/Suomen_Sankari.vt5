@@ -1,8 +1,8 @@
 [[transporter_1, transporter_2, transporter_3]] spawn suomen_mission_fnc_setTaskTrigger;
-/*
-[trg_border_finnish_out, finnish_gate_out, "mrk_guard_1", 213, "finnish"] call
-suomen_spawner_fnc_border_createBorderCrossing;
-*/
+
+["Initialize"] call BIS_fnc_dynamicGroups; // Initializes the Dynamic Groups framework
+
+
 [car_ambulance,0.25,true] remoteExec ["suomen_fx_fnc_addBlueLight", allPlayers];
 
 HEADLESS_CONNECTED = false;
@@ -40,22 +40,19 @@ publicVariable "MISSION_COMPLETED";
 sleep 1;
 removeAIEventhandlers = {
 	{
-	_x removeAllEventHandlers "killed";
 	_x removeAllEventHandlers "FiredNear";
 	} forEach allUnits;
 };
 
 {
 	if (!isPlayer _x) then {
-		_x addEventHandler["killed", {if (isPlayer (_this select 1)) then { 
-			[] call removeAIEventhandlers; [] call suomen_mission_fnc_setEnemiesDetected;
-		};}];
-
 		_x addEventHandler["FiredNear", {
 			if (isPlayer (_this select 1)) then { 
-				[] call removeAIEventhandlers; [] call suomen_mission_fnc_setEnemiesDetected; 
+				[] call suomen_mission_fnc_setEnemiesDetected; [] call removeAIEventhandlers;
 		};}];
 	}
 } forEach allUnits;
 
 diag_log "killed eventhandler added for every ai unit";
+
+[trg_border_finnish_out, finnish_gate_out, "mrk_guard_1", 213, "finnish"] call suomen_spawner_fnc_border_createBorderCrossing;

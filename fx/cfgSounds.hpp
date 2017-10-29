@@ -227,3 +227,13 @@ class rus11 {
     };
     titles[] = {};
 };
+
+class russian_radio {
+    name = "russian_radio";
+    sound[] = {
+        "fx\radio\russian_radio.ogg",
+        3,
+        1.0
+    };
+    titles[] = {};
+};

@@ -73,4 +73,10 @@ class suomen_fx {
 
             class addBlueLight {};
     };
+
+    class radio {
+            file = fx\radio;
+
+            class createRadio {};
+    };
 };
